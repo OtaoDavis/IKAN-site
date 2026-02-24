@@ -117,3 +117,223 @@ footer { padding: 80px 0; background: #fff; border-top: 1px solid #eee; }
     .hero-image-box { order: 1; min-height: 400px; }
     .hero-text-box h1, .manifesto-header h2, .final-cta h2 { font-size: 3rem; }
 }
+
+/* --- 7. CONTACT SECTION STYLING --- */
+
+.contact-section {
+    padding: 140px 0;
+    background-color: var(--white);
+    border-top: 1px solid var(--border);
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 100px; /* Large gap for that "expensive" feel */
+    align-items: start;
+}
+
+/* Info Side (Left) */
+.contact-info h2 {
+    font-size: 4rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    color: var(--navy);
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    max-width: 450px;
+    margin-bottom: 50px;
+}
+
+.contact-details {
+    display: grid;
+    gap: 40px;
+}
+
+.detail-item span {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.detail-item p {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.6rem;
+    color: var(--navy);
+    margin-bottom: 0;
+}
+
+/* Form Side (Right) */
+.contact-form-box {
+    background-color: var(--slate); /* Subtle grey background */
+    padding: 60px;
+    border-radius: 0; /* Keeping it architectural/sharp */
+}
+
+.contact-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+/* --- UPDATED MINIMALIST CONTACT FORM --- */
+
+.contact-form-box {
+    background-color: var(--slate); 
+    padding: 60px;
+    /* Keeping the box sharp/no border-radius for an institutional feel */
+}
+
+.contact-form-box form {
+    display: flex;
+    flex-direction: column;
+    gap: 35px; /* Increased gap to let the lines breathe */
+}
+
+/* Base Input & Textarea Styling */
+.contact-form-box input, 
+.contact-form-box textarea {
+    width: 100%;
+    /* Remove all default borders and backgrounds */
+    border: none;
+    background: transparent;
+    
+    /* Add only the bottom line */
+    border-bottom: 1px solid rgba(26, 42, 58, 0.2); 
+    
+    /* Font styling */
+    font-family: 'Inter', sans-serif;
+    font-size: 1rem;
+    color: var(--navy);
+    padding: 12px 0; /* Vertical padding only to emphasize the line */
+    
+    transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+    outline: none;
+    border-radius: 0;
+}
+
+/* Placeholder Styling */
+.contact-form-box input::placeholder, 
+.contact-form-box textarea::placeholder {
+    color: #a0aec0;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.75rem;
+}
+
+/* HOVER STATE: Subtle darkening of the line */
+.contact-form-box input:hover, 
+.contact-form-box textarea:hover {
+    border-bottom: 1px solid var(--navy);
+}
+
+/* FOCUS STATE: The Blue Line Reveal */
+.contact-form-box input:focus, 
+.contact-form-box textarea:focus {
+    border-bottom: 1px solid var(--blue);
+    /* Adding a subtle background tint only on focus */
+    background: rgba(116, 189, 214, 0.05);
+}
+
+/* Handle Textarea resizing */
+.contact-form-box textarea {
+    resize: none; /* Keeps the clean lines from being distorted */
+    min-height: 120px;
+}
+
+/* Form Button - Refined for the minimalist look */
+.contact-form-box .btn-solid {
+    margin-top: 20px;
+    align-self: flex-start; /* Button doesn't span full width unless requested */
+    background: var(--navy); /* Navy feels more authoritative here */
+    color: white !important;
+    padding: 18px 45px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transition: 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.contact-form-box .btn-solid:hover {
+    background: var(--blue);
+    transform: translateY(-3px);
+}
+
+
+/* NEWSLETTER */
+.newsletter-banner { background: var(--navy); color: white; padding: 60px 0; }
+.newsletter-content { display: flex; justify-content: space-between; align-items: center; }
+.newsletter-content h3 { color: white; font-size: 2rem; }
+.news-form { display: flex; gap: 10px; }
+.news-form input { padding: 15px 25px; border: none; width: 300px; }
+.news-form button { background: var(--blue); color: white; border: none; padding: 0 30px; cursor: pointer; }
+
+/* ABOUT PAGE SPECIFIC */
+.about-hero { padding: 160px 0 100px 0; background: var(--off-white); text-align: center; }
+.about-hero h1 { font-size: 5rem; line-height: 1.1; }
+
+.differentiation { padding: 100px 0; }
+.diff-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.diff-image img { width: 100%; height: 600px; object-fit: cover; box-shadow: 40px -40px 0px var(--blue); }
+.diff-text h2 { font-size: 3rem; margin-bottom: 30px; }
+.diff-text p { font-size: 1.1rem; color: #555; margin-bottom: 20px; }
+
+.mission-purpose-dark { background: var(--navy); color: white; padding: 120px 0; }
+.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; }
+.mission-card h3 { color: white; font-size: 2.2rem; font-family: 'EB Garamond'; font-weight: 400; line-height: 1.3; }
+
+.values-section { padding: 120px 0; background: white; }
+.center-title { text-align: center; font-size: 4rem; margin-bottom: 80px; }
+.values-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 20px; }
+.value-item { padding: 30px; border: 1px solid var(--border); transition: 0.3s; }
+.value-item:hover { border-color: var(--blue); background: var(--off-white); }
+.value-item span { display: block; font-family: 'EB Garamond'; font-size: 1.5rem; color: var(--blue); margin-bottom: 20px; }
+.value-item h4 { margin-bottom: 15px; font-size: 1.2rem; }
+.value-item p { font-size: 0.85rem; color: #666; }
+
+.team-section { padding: 120px 0; background: var(--off-white); }
+.team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; margin-top: 60px; }
+.team-member { text-align: center; }
+.member-img img { width: 100%; height: 400px; object-fit: cover; filter: grayscale(100%); transition: 0.5s; margin-bottom: 20px; }
+.team-member:hover img { filter: grayscale(0%); }
+.team-member h4 { font-size: 1.8rem; }
+.team-member p { color: var(--blue); font-weight: 600; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 2px; }
+
+.commitment-section { padding: 120px 0; text-align: center; }
+.commitment-box { max-width: 800px; margin: 0 auto; }
+.commitment-box h2 { font-size: 4rem; margin-bottom: 20px; }
+.commitment-box p { font-size: 1.4rem; font-family: 'EB Garamond'; color: #555; margin-bottom: 40px; }
+
+@media (max-width: 1024px) {
+    .diff-grid, .mission-grid, .values-grid, .team-grid, .contact-grid, .newsletter-content { 
+        grid-template-columns: 1fr; 
+    }
+    .about-hero h1 { font-size: 3rem; }
+    .news-form { flex-direction: column; width: 100%; }
+    .news-form input { width: 100%; }
+    .diff-image img { height: 400px; box-shadow: none; }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    
+    .contact-info h2 {
+        font-size: 3rem;
+    }
+    
+    .contact-form-box {
+        padding: 40px 30px;
+    }
+}
