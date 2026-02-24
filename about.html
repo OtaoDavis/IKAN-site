@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About IKAN | Insight & Purpose</title>
+    <link rel="stylesheet" href="about.css">
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Nav -->
+    <nav class="sticky-nav">
+        <div class="nav-container">
+            <div class="logo">IKAN</div>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="services.html">Services</a>
+                <a href="#" class="nav-btn">Start Insights Pilot</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 1. HERO (White Background) --> 
+    <header class="about-hero-visual">
+        <div class="hero-split">
+            <!-- Text side gets the padding to stay aligned with the site -->
+            <div class="hero-text-content">
+                <p class="eyebrow">THE IKAN DIFFERENCE</p>
+                <h1>An accounting firm powered by <br><em>insight and purpose.</em></h1>
+                <p class="hero-subtext">We provide the financial stewardship and data intelligence that mission-driven founders need to scale responsibly.</p>
+                <!-- Moving the button lower -->
+                <a href="#" class="btn-solid-large">Start Your Pilot</a>
+            </div>
+
+            <!-- Image side spans to the edge -->
+            <div class="hero-visual-frame">
+                <img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200" alt="Executive Leadership">
+            </div>
+        </div>
+    </header>
+
+    <!-- 2. DIFFERENTIATION (Slate Grey Background) -->
+    <section class="differentiation-immersive section-slate">
+        <div class="container grid-2">
+            <div class="immersive-image-side">
+                <div class="image-stack-wrapper">
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000" class="main-stack-img">
+                    <div class="offset-box"></div>
+                </div>
+            </div>
+            <div class="immersive-text-side">
+                <p class="blue-tag">OUR IDENTITY</p>
+                <h2>Beyond the Ledger</h2>
+                <p class="large-garamond">At IKAN, people are at the heart of everything we do. You count on us to keep your finances accurate—but beyond the numbers, we provide the intelligence that helps you lead.</p>
+                <p>Many hire us for expertise; they stay for the personal relationships. By working with us, you’re also supporting elite graduates in Sub-Saharan Africa, helping them build global careers while they contribute to your success.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. MISSION & PURPOSE (Deep Navy - High Contrast) -->
+    <section class="mission-purpose-dark">
+        <div class="container">
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <p class="blue-tag">OUR MISSION</p>
+                    <h3>Top-notch accounting tailored to small and medium businesses. We believe excellent bookkeeping is the foundation for your success.</h3>
+                </div>
+                <div class="mission-card">
+                    <p class="blue-tag">OUR PURPOSE</p>
+                    <h3>Bridging professional accounting with actionable insights, helping owners drive growth—while creating meaningful global opportunities.</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. THE TEAM GALLERY (Museum Style) -->
+    <section class="team-gallery section-slate">
+        <div class="container">
+            <div class="gallery-intro">
+                <p class="blue-tag">LEADERSHIP</p>
+                <h2>The Minds Behind the Insights</h2>
+                <p>A partnership of experienced advisors and universal talent. Click a partner to read their story.</p>
+            </div>
+
+            <div class="team-mosaic">
+                <!-- Alice -->
+                <div class="mosaic-item" onclick="openBio(this, 'alice')">
+                    <img src="images/alice_img.jpg" alt="Alice Gatua">
+                    <div class="mosaic-overlay">
+                        <div class="mosaic-text">
+                            <h4>Alice Gatua</h4>
+                            <p>Managing Partner</p>
+                        </div>
+                        <span class="bio-cta">View Bio +</span>
+                    </div>
+                </div>
+                <!-- Peter -->
+                <div class="mosaic-item" onclick="openBio(this, 'peter')">
+                    <img src="images/peter_img.jpeg" alt="Peter Kagunye">
+                    <div class="mosaic-overlay">
+                        <div class="mosaic-text">
+                            <h4>Peter Kagunye</h4>
+                            <p>Advisory Board</p>
+                        </div>
+                        <span class="bio-cta">View Bio +</span>
+                    </div>
+                </div>
+                <!-- Davis -->
+                <div class="mosaic-item" onclick="openBio(this, 'davis')">
+                    <img src="images/davis_img (2).jpg" alt="Davis Otao">
+                    <div class="mosaic-overlay">
+                        <div class="mosaic-text">
+                            <h4>Davis Otao</h4>
+                            <p>Data Analyst</p>
+                        </div>
+                        <span class="bio-cta">View Bio +</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. OUR VALUES (Visual Grid) -->
+    <section class="values-visual">
+        <div class="container">
+            <div class="section-header-center">
+                <p class="blue-tag">OUR VALUES</p>
+                <h2>The Principles of Stewardship</h2>
+            </div>
+            <div class="values-list-visual">
+    <!-- 01 INTEGRITY (Existing) -->
+    <div class="value-v-item">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800" alt="Integrity"></div>
+        <div class="v-text">
+            <span>01</span>
+            <h4>Integrity</h4>
+            <p>Honesty and transparency in everything we do.</p>
+        </div>
+    </div>
+
+    <!-- 02 INNOVATION (New Image: Data & Logic) -->
+    <div class="value-v-item">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800" alt="Innovation"></div>
+        <div class="v-text">
+            <span>02</span>
+            <h4>Innovation</h4>
+            <p>Leveraging data and analytics to create smarter solutions.</p>
+        </div>
+    </div>
+
+    <!-- 03 EMPOWERMENT (Existing) -->
+    <div class="value-v-item">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Empowerment"></div>
+        <div class="v-text">
+            <span>03</span>
+            <h4>Empowerment</h4>
+            <p>Creating global careers for Sub-Saharan graduates.</p>
+        </div>
+    </div>
+
+    <!-- 04 EXCELLENCE (New Image: Precision/Architecture) -->
+    <div class="value-v-item">
+        <div class="v-img"><img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800" alt="Excellence"></div>
+        <div class="v-text">
+            <span>04</span>
+            <h4>Excellence</h4>
+            <p>Maintaining the highest standards of professional quality.</p>
+        </div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- 6. THE COMMITMENT (Parallax Finish) -->
+    <section class="immersive-commitment">
+        <div class="commitment-parallax-bg"></div>
+        <div class="container">
+            <div class="commitment-manifesto-box">
+                <p class="blue-tag">OUR PROMISE</p>
+                <h2>A Commitment <br>to Your Legacy.</h2>
+                <div class="manifesto-body-text">
+                    <p>We are committed to delivering accurate, timely, and reliable services that help businesses thrive. Every insight is crafted with care, precision, and a focus on empowering you to lead with confidence.</p>
+                    <a href="#" class="btn-solid-large">Explore Our Services</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODAL (Bio) -->
+    <div id="bioModal" class="modal-overlay" onclick="closeBio()">
+        <div class="modal-card" onclick="event.stopPropagation()">
+            <button class="close-modal" onclick="closeBio()">&times;</button>
+            <div class="modal-img-side">
+                <img id="modalImg" src="" alt="Portrait">
+            </div>
+            <div class="modal-content-side">
+                <h2 id="modalName">Name</h2>
+                <h5 id="modalRole">Role</h5>
+                <div class="bio-scroll" id="modalBio"></div>
+            </div>
+        </div>
+    </div>
+
+    <section class="newsletter-banner">
+        <div class="container">
+            <div class="newsletter-content">
+                <div class="news-text">
+                    <h3>Subscribe For Regular Insights</h3>
+                    <p>Sign up to our newsletter for practical insights on accounting, analytics, and business performance.</p>
+                </div>
+                <form class="news-form">
+                    <input type="email" placeholder="Enter your email">
+                    <button type="submit">Sign Up</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer class="minimal-footer">
+        <div class="container footer-wrap">
+            <div class="logo">IKAN</div>
+            <p>© 2026 IKAN Business Partners • Universal Talent. Global Impact.</p>
+        </div>
+    </footer>
+
+    <script>
+        const biographies = {
+            alice: {
+                name: "Alice Gatua",
+                role: "Managing Partner",
+                bio: "<p>Alice Gatua leads IKAN with a belief that financial clarity is the ultimate competitive advantage. With a background in strategic accounting, she ensures that every client receives not just a balance sheet, but a roadmap for growth.</p><p>She is passionate about the intersection of ethical leadership and community impact, guiding the firm's mission to empower entrepreneurs globally.</p>"
+            },
+            peter: {
+                name: "Peter Kagunye",
+                role: "Advisory Board",
+                bio: "<p>Peter provides high-level strategic oversight to IKAN's operations. His experience in business development and emerging technologies helps the firm stay ahead of the curve, ensuring our clients benefit from the most innovative tools in the industry.</p>"
+            },
+            davis: {
+                name: "Davis Otao",
+                role: "Data Analyst",
+                bio: "<p>Davis is the analytical engine of IKAN. He specializes in transforming raw financial data into actionable insights that business owners can use to optimize their performance.</p>"
+            }
+        };
+
+        function openBio(element, id) {
+            // "element" is the .mosaic-item that was clicked
+            // We find the <img> tag inside it and get its source
+            const clickedImgSrc = element.querySelector('img').src;
+            const person = biographies[id];
+            
+            document.getElementById('modalImg').src = clickedImgSrc; // Pulls from the HTML
+            document.getElementById('modalName').innerText = person.name;
+            document.getElementById('modalRole').innerText = person.role;
+            document.getElementById('modalBio').innerHTML = person.bio;
+            
+            document.getElementById('bioModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeBio() {
+            document.getElementById('bioModal').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>

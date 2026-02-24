@@ -1,0 +1,352 @@
+/* 
+    IKAN ABOUT PAGE STYLESHEET - COMPLETE VERSION
+    Theme: Institutional Premium
+    Typography: EB Garamond (Serif) & Inter (Sans)
+*/
+
+:root {
+    --blue: #74bdd6;
+    --navy: #1a2a3a;
+    --white: #ffffff;
+    --slate: #f1f5f9; 
+    --border: #e2e8f0;
+    --text-dark: #334155;
+    --text-muted: #64748b;
+    --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, .logo, em {
+    font-family: 'EB Garamond', serif;
+    font-weight: 500;
+}
+
+/* --- NAVIGATION --- */
+.sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: var(--nav-bg);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 20px 0;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color: var(--navy);
+    text-decoration: none;
+}
+
+.nav-links {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--navy);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--blue);
+}
+
+.nav-btn {
+    background: var(--blue);
+    color: #fff !important;
+    padding: 12px 25px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--navy);
+    transform: translateY(-2px);
+}
+
+/* --- GLOBAL UTILITIES --- */
+.section-slate { background-color: var(--slate); }
+.blue-tag { 
+    color: var(--blue); 
+    letter-spacing: 3px; 
+    font-weight: 600; 
+    font-size: 0.75rem; 
+    text-transform: uppercase; 
+    margin-bottom: 20px; 
+    display: block; 
+}
+.container { max-width: 1200px; margin: 0 auto; padding: 0 5%; }
+
+/* --- 1. ABOUT HERO --- */
+.about-hero-visual {
+    min-height: 70vh;
+    align-items: center;
+}
+
+.hero-split {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+.about-hero-visual h1 {
+    font-size: 5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+}
+.hero-text-content {
+    /* Increase this % to move the text further right */
+    padding-left: 12%; 
+}
+
+.hero-subtext {
+    font-size: 1.4rem;
+    font-weight: 300;
+    color: var(--text-muted);
+}
+
+.hero-visual-frame img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+
+/* --- 2. DIFFERENTIATION --- */
+.differentiation-immersive { padding: 140px 0; }
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+
+.image-stack-wrapper { position: relative; }
+.main-stack-img { width: 100%; position: relative; z-index: 2; box-shadow: 0 30px 60px rgba(0,0,0,0.1); }
+.offset-box { 
+    position: absolute; top: 40px; left: -40px; width: 100%; height: 100%; 
+    background: var(--blue); z-index: 1; 
+}
+
+.large-garamond {
+    font-family: 'EB Garamond', serif;
+    font-size: 2.2rem;
+    line-height: 1.3;
+    color: var(--navy);
+    margin-bottom: 30px;
+}
+
+/* --- 3. MISSION (DARK) --- */
+.mission-purpose-dark {
+    background: var(--navy);
+    color: var(--white);
+    padding: 120px 0;
+}
+.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; }
+.mission-card h3 {
+    color: var(--white); font-size: 2.2rem; font-family: 'EB Garamond'; font-weight: 400; line-height: 1.3;
+}
+
+/* --- 4. TEAM GALLERY (MOSAIC) --- */
+.team-gallery { padding: 140px 0; }
+.gallery-intro { max-width: 800px; margin-bottom: 80px; }
+.gallery-intro h2 { font-size: 3.5rem; margin-bottom: 20px; }
+
+.team-mosaic {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    background-color: var(--border);
+    border: 1px solid var(--border);
+}
+
+.mosaic-item {
+    background-color: var(--white);
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    aspect-ratio: 4 / 5;
+}
+
+.mosaic-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    filter: grayscale(100%);
+    transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.mosaic-item:hover img { filter: grayscale(0%); transform: scale(1.05); }
+
+.mosaic-overlay {
+    position: absolute; bottom: 0; left: 0; width: 100%;
+    padding: 30px;
+    background: linear-gradient(to top, rgba(15, 23, 42, 0.9) 0%, rgba(15, 23, 42, 0.4) 60%, transparent 100%);
+    display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
+    height: 45%;
+    transition: all 0.4s ease;
+}
+
+/* Text Visibility Logic */
+.mosaic-text {
+    transform: translateY(35px); /* Initially positioned lower */
+    transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+.mosaic-text h4 { color: white; font-size: 1.6rem; margin: 0; }
+.mosaic-text p { 
+    color: var(--blue); font-weight: 600; text-transform: uppercase; 
+    font-size: 0.7rem; letter-spacing: 2px; margin-top: 5px;
+}
+
+.bio-cta {
+    color: white; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; 
+    letter-spacing: 2px; border-bottom: 1px solid var(--blue);
+    padding-bottom: 2px; margin-top: 15px;
+    opacity: 0; transform: translateY(20px);
+    transition: all 0.4s ease;
+}
+
+.mosaic-item:hover .mosaic-text { transform: translateY(0); }
+.mosaic-item:hover .bio-cta { opacity: 1; transform: translateY(0); }
+
+/* --- 5. VALUES --- */
+.values-visual { padding: 120px 0; }
+.values-list-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-top: 60px; }
+.value-v-item { display: flex; background: #fff; border: 1px solid #eee; align-items: center; }
+.v-img { flex: 1; height: 300px; }
+.v-img img { width: 100%; height: 100%; object-fit: cover; }
+.v-text { flex: 1.2; padding: 40px; }
+.v-text span { font-family: 'EB Garamond'; color: var(--blue); font-size: 1.5rem; }
+
+/* --- 6. COMMITMENT (PARALLAX & LINK FIX) --- */
+.immersive-commitment {
+    position: relative;
+    padding: 160px 0;
+    color: white;
+    overflow: hidden;
+}
+
+.commitment-parallax-bg {
+    position: absolute; top: 0; left: 0; width: 100%; height: 120%;
+    background-image: url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=2070');
+    background-size: cover; background-position: center;
+    background-attachment: fixed;
+    filter: brightness(0.3); z-index: -1;
+}
+
+.commitment-manifesto-box h2 { font-size: 4.5rem; color: white; margin-bottom: 30px; }
+
+/* Fixing the Blue/Underlined Link */
+.btn-solid {
+    display: inline-block;
+    background: var(--blue);
+    color: white !important;
+    text-decoration: none !important; /* Removes underline */
+    padding: 18px 45px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: 0.3s;
+    border: none;
+}
+
+.btn-solid:hover {
+    background: white;
+    color: var(--navy) !important;
+    transform: translateY(-3px);
+}
+
+.btn-solid-large {
+    background: var(--blue); 
+    color: #fff !important; 
+    padding: 12px 25px; 
+    transition: 0.3s;
+    text-decoration: none;
+
+    /* Add these two lines */
+    display: inline-block; 
+    margin-top: 40px; /* Adjust this px value to move it further down */
+}
+
+/* --- 7. MODAL --- */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(15, 23, 42, 0.98);
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2000; opacity: 0; visibility: hidden; transition: 0.4s;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.modal-card { background: white; width: 90%; max-width: 1100px; height: 80vh; display: flex; overflow: hidden; position: relative; }
+.modal-img-side { flex: 1; background: #000; }
+.modal-img-side img { width: 100%; height: 100%; object-fit: cover; }
+.modal-content-side { flex: 1.3; padding: 60px; display: flex; flex-direction: column; }
+.close-modal { position: absolute; top: 20px; right: 30px; font-size: 2.5rem; border: none; background: none; cursor: pointer; }
+
+/* NEWSLETTER */
+.newsletter-banner { background: var(--navy); color: white; padding: 60px 0; }
+.newsletter-content { display: flex; justify-content: space-between; align-items: center; }
+.newsletter-content h3 { color: white; font-size: 2rem; }
+.news-form { display: flex; gap: 10px; }
+.news-form input { padding: 15px 25px; border: none; width: 300px; }
+.news-form button { background: var(--blue); color: white; border: none; padding: 0 30px; cursor: pointer; }
+
+/* --- FOOTER --- */
+.minimal-footer {
+    padding: 80px 0;
+    background: var(--white);
+    border-top: 1px solid var(--border);
+}
+
+.footer-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 5%;
+}
+
+.footer-wrap p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+    .hero-split, .grid-2, .mission-grid, .values-list-visual, .team-mosaic, .modal-card { 
+        grid-template-columns: 1fr; flex-direction: column;
+    }
+    .about-hero-visual h1, .commitment-manifesto-box h2 { font-size: 3rem; }
+    .modal-img-side { height: 300px; flex: none; }
+}

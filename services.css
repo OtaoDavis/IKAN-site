@@ -1,0 +1,111 @@
+/* 
+    IKAN SERVICES PAGE STYLESHEET 
+    Focus: Technical Clarity & Precision
+*/
+
+/* --- 1. SERVICES HERO --- */
+.services-hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    background-color: var(--white);
+    overflow: hidden;
+}
+
+.services-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    width: 100%;
+    align-items: center;
+}
+
+.s-hero-text {
+    /* Aligned with your custom padding from the About Hero */
+    padding-left: 12%; 
+    padding-right: 80px;
+}
+
+.s-hero-text h1 {
+    font-size: 5.5rem;
+    line-height: 1.05;
+    color: var(--navy);
+    margin-bottom: 30px;
+}
+
+.s-hero-lead {
+    font-size: 1.5rem;
+    color: var(--text-muted);
+    font-weight: 300;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 60px;
+}
+
+/* --- SERVICE QUICK-INDEX --- */
+.service-index {
+    display: flex;
+    gap: 60px;
+    border-top: 1px solid var(--border);
+    padding-top: 40px;
+    max-width: 600px;
+}
+
+.index-item {
+    display: flex;
+    flex-direction: column;
+}
+
+.index-item span {
+    font-family: 'EB Garamond', serif;
+    font-size: 1.8rem;
+    color: var(--blue);
+    margin-bottom: 10px;
+}
+
+.index-item p {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--navy);
+}
+
+/* --- HERO VISUAL --- */
+.s-hero-visual {
+    height: 90vh;
+    width: 100%;
+    background-color: var(--navy);
+}
+
+.s-hero-visual img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8; /* Subtle dark overlay for technical feel */
+    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1200px) {
+    .s-hero-text h1 { font-size: 4rem; }
+    .s-hero-text { padding-left: 5%; }
+}
+
+@media (max-width: 1024px) {
+    .services-hero-grid {
+        grid-template-columns: 1fr;
+    }
+    .s-hero-visual {
+        height: 400px;
+        order: -1;
+    }
+    .s-hero-text {
+        padding: 60px 5%;
+    }
+    .s-hero-visual img {
+        clip-path: none;
+    }
+    .service-index {
+        gap: 30px;
+    }
+}
