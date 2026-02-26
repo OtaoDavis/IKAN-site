@@ -414,8 +414,8 @@ em {
 }
 
 .btn-solid:hover {
-  background: white;
-  color: var(--navy) !important;
+  background: var(--navy);
+  color: white !important;
   transform: translateY(-3px);
 }
 

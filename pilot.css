@@ -1,0 +1,389 @@
+/* --- PRESET & THEME --- */
+:root {
+  --blue: #74bdd6;
+  --navy: #1a2a3a;
+  --white: #ffffff;
+  --soft-bg: #f4f7f8;
+  --dark-section: #121820;
+  --text: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+  line-height: 1.7;
+}
+
+h1,
+h2,
+h3,
+em,
+.italic {
+  font-family: "EB Garamond", serif;
+  font-weight: 500;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.pilot-hero {
+  padding: 0;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  overflow: hidden;
+}
+
+.hero-split-pilot {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  width: 100%;
+  align-items: center;
+}
+
+.btn-solid-large {
+  background: var(--blue);
+  color: #fff !important;
+  padding: 12px 25px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 40px;
+}
+
+.btn-solid-large:hover {
+  background: var(--navy);
+  color: white !important;
+  transform: translateY(-3px);
+}
+
+/* 1. Image Container (Left - Full Bleed) */
+.pilot-visual-frame {
+  position: relative;
+  height: 90vh;
+  width: 100%;
+}
+
+.slant-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* SLANT: Down-to-Up (Recedes at top, extends at bottom) */
+.pilot-visual-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+  position: relative;
+  z-index: 2;
+}
+
+/* Blue Accent Edge (Spilling over to the right side) */
+.slant-accent-line {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--blue);
+  clip-path: polygon(0 0, 88% 0, 100% 100%, 0% 100%);
+  z-index: 1;
+  transform: scaleX(1.02);
+  transform-origin: left center;
+}
+
+/* 2. Text Container (Right) */
+.pilot-text-content {
+  padding-left: 80px;
+  padding-right: 12%;
+  text-align: left; /* Aligned left to hug the slant */
+}
+
+/* Editorial Typography based on your image */
+.editorial-title {
+  font-size: clamp(3rem, 5.5vw, 5.5rem);
+  line-height: 0.95; /* Super tight stacking as per screenshot */
+  margin-bottom: 25px;
+  color: var(--navy);
+  font-family: "EB Garamond", serif;
+  letter-spacing: -1px;
+}
+
+.editorial-title em {
+  display: block;
+  font-style: italic;
+  margin-top: 10px;
+  font-weight: 400;
+}
+
+.hero-lead {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: var(--text-muted);
+  max-width: 550px;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+section {
+  padding: 20px 0;
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.section-header-center h2 {
+  font-size: 3.5rem;
+}
+.dual-deliverable {
+  background: var(--soft-bg);
+}
+.deliverable-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.deliv-card {
+  background: var(--navy);
+  padding: 50px;
+  border: 1px solid var(--border);
+  transition: 0.4s;
+}
+
+.deliv-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+}
+
+.deliv-icon {
+  font-family: "EB Garamond", serif;
+  font-size: 2.2rem;
+  color: var(--blue);
+  margin-bottom: 20px;
+}
+
+.deliv-card h3 {
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  color: var(--white);
+}
+
+.deliv-card p {
+  color: var(--white);
+}
+
+/* --- PILOT APPLY SECTION (Institutional Split) --- */
+.pilot-apply-section {
+  padding: 20px 0;
+  border-top: 1px solid var(--border);
+}
+
+.pilot-apply-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+}
+
+/* Left Info Side */
+.apply-info h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.apply-lead {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  max-width: 450px;
+}
+
+.apply-perks {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.perk {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.perk span {
+  color: var(--blue);
+  font-weight: bold;
+}
+
+.perk p {
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+}
+
+/* Right Form Card Side */
+.apply-form-card {
+  background: var(--white);
+  padding: 60px;
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.05);
+  border: 1px solid var(--border);
+}
+
+.pilot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-group label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  opacity: 0.6;
+}
+
+.pilot-form input,
+.pilot-form textarea {
+  border: none;
+  border-bottom: 1px solid rgba(26, 42, 58, 0.1);
+  padding: 10px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.pilot-form input:focus,
+.pilot-form textarea:focus {
+  border-bottom-color: var(--blue);
+}
+
+/* Align button to the left like premium designs */
+.pilot-form .btn-solid-large {
+  margin-top: 20px;
+  align-self: flex-start;
+}
+
+/* --- PILOT APPLY SECTION (With Offset Background) --- */
+
+/* Wrapper to hold both the form and the blue block */
+.form-visual-group {
+  position: relative;
+  padding-bottom: 40px; /* Space for the block to "spill" into */
+  padding-right: 40px;
+  z-index: 1;
+}
+
+/* The Blue Block: Positioned behind the form */
+.form-offset-block {
+  position: absolute;
+  /* This creates the offset effect (Bottom-Right) */
+  bottom: 0;
+  right: 0;
+  width: 90%; /* Doesn't cover the whole back, just like your image */
+  height: 90%;
+  background-color: var(--blue);
+  z-index: -1; /* Sits behind everything in the wrapper */
+}
+
+.apply-form-card {
+  background: var(--white);
+  padding: 60px;
+  border: 1px solid var(--border);
+  /* High shadow to make it lift off the blue block */
+  box-shadow: 20px 20px 60px rgba(15, 23, 42, 0.1);
+  position: relative;
+  z-index: 2;
+}
+
+/* Ensure the section has enough padding so the spill doesn't hit the next section */
+.pilot-apply-section {
+  padding: 120px 0 160px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .pilot-apply-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .apply-info h2 {
+    font-size: 3rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .apply-form-card {
+    padding: 40px 25px;
+  }
+
+  .form-visual-group {
+    padding: 0;
+  }
+  .form-offset-block {
+    display: none; /* Keeps it clean on small screens */
+  }
+  .apply-form-card {
+    padding: 40px 25px;
+  }
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .hero-split-pilot,
+  .deliverable-grid,
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+  .pilot-visual-frame {
+    height: 400px;
+    order: -1;
+  }
+  .pilot-visual-frame img,
+  .slant-accent-line {
+    clip-path: none;
+  }
+  .pilot-text-content {
+    padding: 60px 5%;
+    text-align: center;
+  }
+  .editorial-title {
+    font-size: 3.5rem;
+  }
+  .form-card-wide {
+    padding: 40px 20px;
+  }
+}
