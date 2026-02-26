@@ -1,4 +1,32 @@
-/* --- TALENT HERO (Consistent Slant Style) --- */
+:root {
+  --blue: #74bdd6;
+  --navy: #1a2a3a;
+  --white: #ffffff;
+  --slate: #f1f5f9;
+  --border: #e2e8f0;
+  --text-dark: #334155;
+  --text-muted: #64748b;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text-dark);
+  background-color: var(--white);
+  line-height: 1.6;
+}
+
+/* --- TALENT HERO  */
 .talent-hero {
   padding: 0;
   min-height: 80vh;
