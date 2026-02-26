@@ -1,111 +1,404 @@
-/* 
-    IKAN SERVICES PAGE STYLESHEET 
-    Focus: Technical Clarity & Precision
-*/
+/* --- PRESET & THEME --- */
+:root {
+  --blue: #74bdd6;
+  --navy: #1a2a3a;
+  --white: #ffffff;
+  --soft-bg: #f4f7f8;
+  --dark-section: #121820;
+  --text: #333;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  background-color: var(--white);
+  line-height: 1.7;
+}
+/* --- LOGO STYLING --- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  height: 100%;
+  overflow: visible;
+}
+
+.logo-img {
+  height: 45px;
+  width: auto;
+  display: block;
+  transform: scale(2);
+  transform-origin: left center;
+  margin: 0 30px;
+}
 
 /* --- 1. SERVICES HERO --- */
 .services-hero {
-    min-height: 90vh;
-    display: flex;
-    align-items: center;
-    background-color: var(--white);
-    overflow: hidden;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--white);
+  overflow: hidden;
 }
 
 .services-hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    width: 100%;
-    align-items: center;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  width: 100%;
+  align-items: center;
 }
 
 .s-hero-text {
-    /* Aligned with your custom padding from the About Hero */
-    padding-left: 12%; 
-    padding-right: 80px;
+  /* Aligned with your custom padding from the About Hero */
+  padding-left: 12%;
+  padding-right: 80px;
 }
 
 .s-hero-text h1 {
-    font-size: 5.5rem;
-    line-height: 1.05;
-    color: var(--navy);
-    margin-bottom: 30px;
+  font-size: 5.5rem;
+  line-height: 1.05;
+  color: var(--navy);
+  margin-bottom: 30px;
 }
 
 .s-hero-lead {
-    font-size: 1.5rem;
-    color: var(--text-muted);
-    font-weight: 300;
-    line-height: 1.6;
-    max-width: 600px;
-    margin-bottom: 60px;
+  font-size: 1.5rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  line-height: 1.6;
+  max-width: 600px;
+  margin-bottom: 60px;
 }
 
 /* --- SERVICE QUICK-INDEX --- */
 .service-index {
-    display: flex;
-    gap: 60px;
-    border-top: 1px solid var(--border);
-    padding-top: 40px;
-    max-width: 600px;
+  display: flex;
+  gap: 60px;
+  border-top: 1px solid var(--border);
+  padding-top: 40px;
+  max-width: 600px;
 }
 
 .index-item {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .index-item span {
-    font-family: 'EB Garamond', serif;
-    font-size: 1.8rem;
-    color: var(--blue);
-    margin-bottom: 10px;
+  font-family: "EB Garamond", serif;
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin-bottom: 10px;
 }
 
 .index-item p {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 0.75rem;
-    font-weight: 600;
-    color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
 }
 
 /* --- HERO VISUAL --- */
 .s-hero-visual {
-    height: 90vh;
-    width: 100%;
-    background-color: var(--navy);
+  height: 90vh;
+  width: 100%;
+  background-color: var(--navy);
 }
 
 .s-hero-visual img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    opacity: 0.8; /* Subtle dark overlay for technical feel */
-    clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.8; /* Subtle dark overlay for technical feel */
+  clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
-    .s-hero-text h1 { font-size: 4rem; }
-    .s-hero-text { padding-left: 5%; }
+  .s-hero-text h1 {
+    font-size: 4rem;
+  }
+  .s-hero-text {
+    padding-left: 5%;
+  }
 }
 
 @media (max-width: 1024px) {
-    .services-hero-grid {
-        grid-template-columns: 1fr;
-    }
-    .s-hero-visual {
-        height: 400px;
-        order: -1;
-    }
-    .s-hero-text {
-        padding: 60px 5%;
-    }
-    .s-hero-visual img {
-        clip-path: none;
-    }
-    .service-index {
-        gap: 30px;
-    }
+  .services-hero-grid {
+    grid-template-columns: 1fr;
+  }
+  .s-hero-visual {
+    height: 400px;
+    order: -1;
+  }
+  .s-hero-text {
+    padding: 60px 5%;
+  }
+  .s-hero-visual img {
+    clip-path: none;
+  }
+  .service-index {
+    gap: 30px;
+  }
+}
+
+/* --- SERVICE DETAIL SECTIONS --- */
+.service-detail {
+  padding: 140px 0;
+}
+
+.grid-detail {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 120px;
+  align-items: center;
+}
+
+/* Reverses the order of text/image for the second pillar */
+.service-detail.reverse .grid-detail {
+  direction: ltr; /* Ensure text flows correctly */
+}
+
+.detail-visual {
+  position: relative;
+  height: 600px;
+}
+
+.detail-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.1);
+}
+
+.detail-text h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  margin-bottom: 30px;
+}
+
+.detail-lead {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-weight: 300;
+}
+
+/* Capability List Styling */
+.capability-list {
+  list-style: none;
+  padding: 0;
+}
+
+.capability-list li {
+  padding: 15px 0;
+  border-top: 1px solid var(--border);
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--navy);
+  display: flex;
+  align-items: center;
+}
+
+.capability-list li::before {
+  content: "+";
+  color: var(--blue);
+  margin-right: 15px;
+  font-weight: 700;
+}
+
+/* Dark Mode Pillar Adjustment */
+.service-detail.dark-mode {
+  background-color: var(--navy);
+}
+
+.text-white {
+  color: white !important;
+}
+.dark-mode .capability-list li {
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* --- INSIGHTS PILOT CARD --- */
+.insights-pilot-section {
+  padding: 20px 0;
+}
+
+.pilot-wide-card {
+  background: white;
+  padding: 80px;
+  border: 1px solid var(--border);
+  box-shadow: 0 50px 100px rgba(15, 23, 42, 0.05);
+}
+
+.pilot-content {
+  max-width: 800px;
+}
+
+.pilot-process {
+  display: flex;
+  gap: 60px;
+  margin: 50px 0;
+}
+
+.p-step {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.8rem;
+}
+.p-step span {
+  font-family: "EB Garamond";
+  font-size: 1.8rem;
+  color: var(--blue);
+}
+
+/* --- FINAL CTA --- */
+.services-cta {
+  padding: 20px 0 60px 0;
+  background: var(--soft-bg);
+  text-align: center;
+}
+.services-cta h2 {
+  font-size: 5rem;
+  margin-bottom: 30px;
+}
+.services-cta p {
+  font-size: 1.4rem;
+  color: var(--text-muted);
+  margin-bottom: 50px;
+}
+
+.btn-outline-large {
+  display: inline-block;
+  padding: 20px 50px;
+  border: 1px solid var(--navy);
+  color: var(--navy);
+  text-decoration: none;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: 0.3s;
+}
+
+.btn-outline-large:hover {
+  background: var(--navy);
+  color: white;
+}
+
+/* --- REFINED INSTITUTIONAL FOOTER --- */
+
+.minimal-footer {
+  padding: 60px 0; /* Reduced padding for a tighter look */
+  background: var(--white);
+  border-top: 1px solid var(--border);
+}
+
+.footer-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Centers items vertically for a better "float" */
+  max-width: 1500px; /* Increased width to push logo further left */
+  margin: 0 auto;
+  padding: 0 4%;
+}
+
+/* 1. Logo Styling & Trimming */
+.footer-logo {
+  flex: 1; /* Takes up space on the left */
+}
+
+.footer-logo .logo-img {
+  height: 110px; /* Base height */
+  width: auto;
+  display: block;
+  /* TRIMMING THE PNG: Adjust these negative values to 
+       suck in the empty space around your logo */
+  margin-top: -35px;
+  margin-bottom: -35px;
+  margin-left: -15px; /* Pushes the visual logo even further left */
+  transform: scale(1.1);
+  transform-origin: left center;
+}
+
+/* 2. Center Section (Socials & Contact) */
+.footer-center {
+  flex: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-socials {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+}
+
+.social-link {
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
+}
+
+.social-link:hover {
+  color: var(--blue);
+}
+
+.footer-email {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-family: "Inter", sans-serif;
+}
+
+/* 3. Meta Section (Right) */
+.footer-meta {
+  flex: 1;
+  text-align: right;
+}
+
+.footer-meta p {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 0;
+}
+
+/* --- MOBILE RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .grid-detail {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .detail-visual {
+    height: 400px;
+  }
+  .detail-text h2 {
+    font-size: 3rem;
+  }
+  .pilot-process {
+    flex-direction: column;
+    gap: 20px;
+  }
 }

@@ -1,65 +1,208 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Expertise | IKAN Business Partners</title>
-    <link rel="stylesheet" href="style.css"> <!-- Global styles -->
-    <link rel="stylesheet" href="services.css"> <!-- Page specific styles -->
-    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-</head>
-<body>
-
-    <!-- Nav -->
+    <link rel="stylesheet" href="style.css" />
+    <!-- Global styles -->
+    <link rel="stylesheet" href="services.css" />
+    <!-- Page specific styles -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Dynamic Progress Nav -->
     <nav class="sticky-nav">
-        <div class="nav-container">
-            <div class="logo">IKAN</div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="services.html">Services</a>
-                <a href="#" class="nav-btn">Start Insights Pilot</a>
-            </div>
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img
+            src="images/ikan_trans.png"
+            alt="IKAN Business Partners"
+            class="logo-img"
+          />
+        </a>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="services.html">Services</a>
+          <a href="#" class="nav-btn">Start Insights Pilot</a>
         </div>
+      </div>
     </nav>
 
     <!-- 1. SERVICES HERO (Full Bleed Layout) -->
     <header class="services-hero">
-        <div class="services-hero-grid">
-            <div class="s-hero-text">
-                <p class="eyebrow">OUR EXPERTISE</p>
-                <h1>Precision meets <br><em>Strategic Insight.</em></h1>
-                <p class="s-hero-lead">We translate complex financial data into a roadmap for growth. Our services are designed for founders who refuse to guess and choose to lead with clarity.</p>
-                
-                <!-- Service Quick-Link Index -->
-                <div class="service-index">
-                    <div class="index-item">
-                        <span>01</span>
-                        <p>Accounting</p>
-                    </div>
-                    <div class="index-item">
-                        <span>02</span>
-                        <p>Intelligence</p>
-                    </div>
-                    <div class="index-item">
-                        <span>03</span>
-                        <p>Advisory</p>
-                    </div>
-                </div>
+      <div class="services-hero-grid">
+        <div class="s-hero-text">
+          <p class="eyebrow">OUR EXPERTISE</p>
+          <h1>Precision meets <br /><em>Strategic Insight.</em></h1>
+          <p class="s-hero-lead">
+            We translate complex financial data into a roadmap for growth. Our
+            services are designed for founders who refuse to guess and choose to
+            lead with clarity.
+          </p>
+
+          <!-- Service Quick-Link Index -->
+          <div class="service-index">
+            <div class="index-item">
+              <span>01</span>
+              <p>Accounting</p>
             </div>
-            <div class="s-hero-visual">
-<img src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" alt="Strategic Insight">            </div>
+            <div class="index-item">
+              <span>02</span>
+              <p>Intelligence</p>
+            </div>
+            <div class="index-item">
+              <span>03</span>
+              <p>Advisory</p>
+            </div>
+          </div>
         </div>
+        <div class="s-hero-visual">
+          <img
+            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
+            alt="Strategic Insight"
+          />
+        </div>
+      </div>
     </header>
 
-    <!-- More sections will follow here later -->
+    <!-- 2. PILLAR 01: ACCOUNTING & BOOKKEEPING (Slate Background) -->
+    <section id="accounting" class="service-detail section-slate">
+      <div class="container grid-detail">
+        <div class="detail-visual">
+          <img
+            src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000"
+            alt="Precision Accounting"
+          />
+        </div>
+        <div class="detail-text">
+          <p class="blue-tag">PILLAR 01</p>
+          <h2>The Foundation <br />of <em>Integrity.</em></h2>
+          <p class="detail-lead">
+            Precision is not an option; it is our baseline. We provide the
+            mathematical certainty required for brave business decisions.
+          </p>
+          <ul class="capability-list">
+            <li>Full-Cycle Bookkeeping & Reconciliations</li>
+            <li>Clean, Organization-Ready Financial Statements</li>
+            <li>Audit-Ready Record Maintenance</li>
+            <li>Accounts Payable & Receivable Stewardship</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. PILLAR 02: BUSINESS INTELLIGENCE (White Background) -->
+    <section id="intelligence" class="service-detail reverse">
+      <div class="container grid-detail">
+        <div class="detail-text">
+          <p class="blue-tag">PILLAR 02</p>
+          <h2>Data-Driven <br /><em>Intelligence.</em></h2>
+          <p class="detail-lead">
+            Numbers tell a story; we translate it. We turn your raw data into
+            interactive narratives that reveal the path forward.
+          </p>
+          <ul class="capability-list">
+            <li>Custom Performance Dashboards</li>
+            <li>KPI Identification & Tracking</li>
+            <li>Operational Efficiency Analytics</li>
+            <li>Predictive Cash-Flow Modeling</li>
+          </ul>
+        </div>
+        <div class="detail-visual">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bbbda536339a?auto=format&fit=crop&q=80&w=1000"
+            alt="Data Intelligence"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. PILLAR 03: STRATEGIC ADVISORY (Deep Navy Background) -->
+    <section id="advisory" class="service-detail dark-mode">
+      <div class="container grid-detail">
+        <div class="detail-visual">
+          <img
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"
+            alt="Strategic Advisory"
+          />
+        </div>
+        <div class="detail-text">
+          <p class="blue-tag">PILLAR 03</p>
+          <h2 class="text-white">Strategic <br /><em>Stewardship.</em></h2>
+          <p class="detail-lead text-white">
+            Scale with confidence. Our advisory services act as your fractional
+            CFO, guiding you through the complexities of growth.
+          </p>
+          <ul class="capability-list text-white">
+            <li>Fractional CFO & Executive Support</li>
+            <li>Global Talent Integration (Sub-Saharan Africa)</li>
+            <li>Impact & Mission Alignment Strategy</li>
+            <li>Capital Allocation & Growth Planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. THE INSIGHTS PILOT (Feature Section) -->
+    <section class="pilot-promo">
+      <div class="container">
+        <div class="pilot-box">
+          <div class="pilot-text">
+            <h2>Test your clarity.</h2>
+            <p>
+              Our 30-day Insights Pilot identifies the hidden bottlenecks in
+              your current financial reporting.
+            </p>
+          </div>
+          <div class="pilot-btn">
+            <a href="#" class="btn-primary">Learn More</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. FINAL CTA -->
+    <section class="services-cta">
+      <div class="container center-text">
+        <h2>Ready to move <br />beyond the <em>numbers?</em></h2>
+        <p>For founders who refuse to guess and choose to make a difference.</p>
+        <a href="index.html#contact" class="btn-outline-large"
+          >Schedule a Consultation</a
+        >
+      </div>
+    </section>
 
     <footer class="minimal-footer">
-        <div class="container footer-wrap">
-            <div class="logo">IKAN</div>
-            <p>© 2024 IKAN Business Partners • Universal Talent. Global Impact.</p>
+      <div class="footer-wrap">
+        <!-- 1. LOGO (Left) -->
+        <div class="footer-logo">
+          <img
+            src="images/ikan_trans.png"
+            alt="IKAN Business Partners"
+            class="logo-img"
+          />
         </div>
-    </footer>
 
-</body>
+        <!-- 2. CONTACT & SOCIALS (Center) -->
+        <div class="footer-center">
+          <div class="footer-socials">
+            <a href="#" class="social-link">LinkedIn</a>
+            <a href="#" class="social-link">Yelp</a>
+          </div>
+          <p class="footer-email">inquiries@ikanbusinesspartners.com</p>
+        </div>
+
+        <!-- 3. META (Right) -->
+        <div class="footer-meta">
+          <p>© 2026 IKAN BUSINESS PARTNERS</p>
+          <p>UNIVERSAL TALENT. GLOBAL IMPACT.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
