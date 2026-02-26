@@ -172,6 +172,16 @@
   filter: grayscale(20%);
 }
 
+.btn-solid-large {
+  background: var(--blue);
+  color: #fff !important;
+  padding: 12px 25px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 40px;
+}
+
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
   .hero-split-talent,
