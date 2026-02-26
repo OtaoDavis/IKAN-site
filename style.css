@@ -356,6 +356,7 @@ em,
   text-decoration: none;
   color: var(--navy);
   display: inline-block;
+  margin-top: 20px;
 }
 
 /* --- REFINED INSTITUTIONAL FOOTER --- */
