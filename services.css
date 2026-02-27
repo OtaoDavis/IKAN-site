@@ -155,14 +155,78 @@ body {
 
 /* --- SERVICE DETAIL SECTIONS --- */
 .service-detail {
-  padding: 30px 0;
+  padding: 60px 0;
   background: var(--soft-bg);
+}
+
+.service-detail.section-white {
+  background: var(--white);
+}
+
+/* --- UNIVERSAL BUTTON BASE --- */
+.btn-dark,
+.btn-light {
+  padding: 18px 45px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+  outline: none;
+}
+
+/* --- DARK VARIATION (For White/Slate Sections) --- */
+.btn-dark {
+  background-color: var(--navy);
+  color: white !important;
+}
+
+.btn-dark:hover {
+  background-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(116, 189, 214, 0.2);
+}
+
+/* --- LIGHT VARIATION (For Navy/Dark Sections) --- */
+.btn-light {
+  background-color: white;
+  color: var(--navy) !important;
+}
+
+.btn-light:hover {
+  background-color: var(--blue);
+  color: white !important;
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Services page modal button */
+.btn-solid-large-modal {
+  align-self: flex-start;
+  margin-top: 20px;
+  background: var(--navy);
+  color: #fff;
+  padding: 20px 50px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.btn-solid-large-modal:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
 }
 
 .grid-detail {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 120px;
+  gap: 80px;
   align-items: center;
 }
 
@@ -184,13 +248,13 @@ body {
 }
 
 .detail-text h2 {
-  font-size: 4rem;
+  font-size: 3.5rem;
   line-height: 1.1;
   margin-bottom: 30px;
 }
 
 .detail-lead {
-  font-size: 1.4rem;
+  font-size: 1.25rem;
   color: var(--text-muted);
   margin-bottom: 40px;
   font-weight: 300;
@@ -199,11 +263,11 @@ body {
 /* Capability List Styling */
 .capability-list {
   list-style: none;
-  padding: 0;
+  margin-bottom: 30px;
 }
 
 .capability-list li {
-  padding: 15px 0;
+  padding: 10px 0;
   border-top: 1px solid var(--border);
   font-size: 1rem;
   font-weight: 500;
@@ -270,8 +334,8 @@ body {
 
 /* --- FINAL CTA --- */
 .services-cta {
-  padding: 20px 0 60px 0;
-  background: var(--soft-bg);
+  padding: 80px 0;
+  background: var(--white);
   text-align: center;
 }
 .services-cta h2 {
@@ -408,6 +472,159 @@ body {
   }
   .pilot-process {
     flex-direction: column;
+    gap: 20px;
+  }
+}
+
+/* --- SERVICE MODAL --- */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.98);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-card {
+  background: var(--white);
+  width: 95%;
+  max-width: 700px; /* Reduced width for a sleeker look */
+  padding: 50px 60px; /* Tighter padding to reduce height */
+  position: relative;
+  box-shadow: 0 40px 100px rgba(0, 0, 0, 0.4);
+}
+
+.close-btn {
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: var(--navy);
+  opacity: 0.5;
+  transition: 0.3s;
+}
+
+.close-btn:hover {
+  opacity: 1;
+}
+
+#modalTitle {
+  font-size: 2.8rem; /* Slightly smaller to fit width */
+  margin-bottom: 5px;
+  line-height: 1.1;
+}
+
+.modal-subtext {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 35px;
+}
+
+/* Applying exact Pilot Form Styling */
+.pilot-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* Tighter vertical spacing */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Small Caps Labels from Pilot */
+.form-group label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--navy);
+  opacity: 0.6;
+}
+
+/* Minimalist Underlines */
+.pilot-form input,
+.pilot-form textarea {
+  border: none;
+  border-bottom: 1px solid rgba(26, 42, 58, 0.1);
+  padding: 10px 0;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  outline: none;
+  background: transparent;
+  transition: 0.3s;
+}
+
+.pilot-form input:focus,
+.pilot-form textarea:focus {
+  border-bottom-color: var(--blue);
+}
+
+/* Read-only field styling */
+.readonly-field {
+  color: var(--blue) !important;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-bottom-color: var(--blue) !important;
+}
+
+/* --- UPDATED MODAL BUTTON --- */
+.modal-card .btn-solid-large {
+  align-self: flex-start; /* Keeps it on the left */
+  margin-top: 25px;
+  background: var(--navy);
+  color: white !important;
+  border: none;
+  cursor: pointer;
+
+  /* Increased Size & Proportions */
+  padding: 20px 55px; /* Substantial height and width */
+
+  /* Typography to match the brand */
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
+  display: inline-block;
+}
+
+.modal-card .btn-solid-large:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.15);
+}
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .modal-card {
+    padding: 40px 25px;
+    max-height: 95vh;
+    overflow-y: auto;
+  }
+  #modalTitle {
+    font-size: 2rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
     gap: 20px;
   }
 }

@@ -1,9 +1,3 @@
-/* 
-    IKAN ABOUT PAGE STYLESHEET - COMPLETE VERSION
-    Theme: Institutional Premium
-    Typography: EB Garamond (Serif) & Inter (Sans)
-*/
-
 :root {
   --blue: #74bdd6;
   --navy: #1a2a3a;
@@ -63,18 +57,14 @@ em {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: var(--nav-bg);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eee;
   padding: 20px 0;
 }
-
 .nav-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
   padding: 0 5%;
 }
 
@@ -86,6 +76,41 @@ em {
   text-decoration: none;
 }
 
+/* --- NAVIGATION --- */
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  border-bottom: 1px solid #eee;
+  padding: 30px 0;
+  overflow: hidden;
+}
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+}
+/* --- LOGO STYLING --- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex: 1;
+}
+
+.sticky-nav .logo-img {
+  height: 104px;
+  width: auto;
+  display: block;
+  margin-top: -35px;
+  margin-bottom: -35px;
+  margin-left: -35px;
+  transform: scale(1.1);
+  transform-origin: left center;
+}
 .nav-links {
   display: flex;
   gap: 40px;
@@ -540,14 +565,12 @@ em {
 }
 
 .footer-logo .logo-img {
-  height: 110px; /* Base height */
+  height: 110px;
   width: auto;
   display: block;
-  /* TRIMMING THE PNG: Adjust these negative values to 
-       suck in the empty space around your logo */
   margin-top: -35px;
   margin-bottom: -35px;
-  margin-left: -15px; /* Pushes the visual logo even further left */
+  margin-left: -15px;
   transform: scale(1.1);
   transform-origin: left center;
 }

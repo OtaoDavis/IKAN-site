@@ -5,48 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Our Expertise | IKAN Business Partners</title>
     <link rel="stylesheet" href="style.css" />
-    <!-- Global styles -->
     <link rel="stylesheet" href="services.css" />
-    <!-- Page specific styles -->
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
-    <!-- Dynamic Progress Nav -->
+    <!-- Nav -->
     <nav class="sticky-nav">
       <div class="nav-container">
         <a href="index.html" class="logo">
-          <img
-            src="images/ikan_trans.png"
-            alt="IKAN Business Partners"
-            class="logo-img"
-          />
+          <img src="images/ikan_trans.png" alt="IKAN" class="logo-img" />
         </a>
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
           <a href="talent.html">Talent</a>
           <a href="services.html">Services</a>
-          <a href="pilot.html" class="nav-btn">Start Insights Pilot</a>
+          <a href="pilot.html" class="nav-btn">Start Pilot</a>
         </div>
       </div>
     </nav>
 
-    <!-- 1. SERVICES HERO (Full Bleed Layout) -->
+    <!-- 1. SERVICES HERO -->
     <header class="services-hero">
       <div class="services-hero-grid">
         <div class="s-hero-text">
-          <p class="eyebrow">OUR EXPERTISE</p>
+          <p class="blue-tag">OUR EXPERTISE</p>
           <h1>Precision meets <br /><em>Strategic Insight.</em></h1>
           <p class="s-hero-lead">
-            We translate complex financial data into a roadmap for growth. Our
-            services are designed for founders who refuse to guess and choose to
-            lead with clarity.
+            We translate complex financial data into an actionable roadmap. Our
+            services are built for founders who refuse to guess and choose to
+            lead with certain action.
           </p>
 
-          <!-- Service Quick-Link Index -->
           <div class="service-index">
             <div class="index-item">
               <span>01</span>
@@ -58,7 +51,7 @@
             </div>
             <div class="index-item">
               <span>03</span>
-              <p>Advisory</p>
+              <p>ROI</p>
             </div>
           </div>
         </div>
@@ -71,21 +64,22 @@
       </div>
     </header>
 
-    <!-- 2. PILLAR 01: ACCOUNTING & BOOKKEEPING (Slate Background) -->
+    <!-- 2. PILLAR 01: TIMELY ACCOUNTING -->
     <section id="accounting" class="service-detail section-slate">
       <div class="container grid-detail">
         <div class="detail-visual">
           <img
             src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&q=80&w=1000"
-            alt="Precision Accounting"
+            alt="Accounting"
           />
         </div>
         <div class="detail-text">
-          <p class="blue-tag">PILLAR 01</p>
+          <p class="blue-tag">SERVICE 01</p>
           <h2>The Foundation <br />of <em>Integrity.</em></h2>
           <p class="detail-lead">
-            Precision is not an option; it is our baseline. We provide the
-            mathematical certainty required for brave business decisions.
+            Precision is our baseline. We provide the
+            <strong>timely accounting</strong> required for brave business
+            decisions and sustainable operations.
           </p>
           <ul class="capability-list">
             <li>Full-Cycle Bookkeeping & Reconciliations</li>
@@ -93,26 +87,45 @@
             <li>Audit-Ready Record Maintenance</li>
             <li>Accounts Payable & Receivable Stewardship</li>
           </ul>
+          <!-- Button for Modal -->
+          <button
+            onclick="openServiceModal('Accounting & Bookkeeping')"
+            class="btn-dark"
+          >
+            Inquire for Stewardship
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- 3. PILLAR 02: BUSINESS INTELLIGENCE (White Background) -->
-    <section id="intelligence" class="service-detail reverse">
+    <!-- 3. PILLAR 02: CLEAR INSIGHTS -->
+    <section
+      id="intelligence"
+      class="service-detail reverse"
+      style="background: var(--white)"
+    >
       <div class="container grid-detail">
         <div class="detail-text">
-          <p class="blue-tag">PILLAR 02</p>
+          <p class="blue-tag">SERVICE 02</p>
           <h2>Data-Driven <br /><em>Intelligence.</em></h2>
           <p class="detail-lead">
             Numbers tell a story; we translate it. We turn your raw data into
-            interactive narratives that reveal the path forward.
+            <strong>clear insights</strong> that reveal the path forward for
+            your mission.
           </p>
           <ul class="capability-list">
-            <li>Custom Performance Dashboards</li>
+            <li>Custom Business Intelligence Dashboards</li>
             <li>KPI Identification & Tracking</li>
             <li>Operational Efficiency Analytics</li>
             <li>Predictive Cash-Flow Modeling</li>
           </ul>
+          <!-- Updated Button for Modal -->
+          <button
+            onclick="openServiceModal('Business Intelligence')"
+            class="btn-dark"
+          >
+            Inquire for Insight
+          </button>
         </div>
         <div class="detail-visual">
           <img
@@ -123,73 +136,109 @@
       </div>
     </section>
 
-    <!-- 4. PILLAR 03: STRATEGIC ADVISORY (Deep Navy Background) -->
-    <section id="advisory" class="service-detail dark-mode">
+    <!-- 4. PILLAR 03: PROFITABLE GROWTH -->
+    <section id="roi" class="service-detail dark-mode">
       <div class="container grid-detail">
         <div class="detail-visual">
           <img
             src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"
-            alt="Strategic Advisory"
+            alt="ROI Analysis"
           />
         </div>
         <div class="detail-text">
-          <p class="blue-tag">PILLAR 03</p>
-          <h2 class="text-white">Strategic <br /><em>Stewardship.</em></h2>
+          <p class="blue-tag">SERVICE 03</p>
+          <h2 class="text-white">Sales & <br /><em>Marketing ROI.</em></h2>
           <p class="detail-lead text-white">
-            Scale with confidence. Our advisory services act as your fractional
-            CFO, guiding you through the complexities of growth.
+            Scale with conviction. We measure the effectiveness of your spend to
+            ensure every strategic investment results in
+            <strong>profitable growth</strong>.
           </p>
           <ul class="capability-list text-white">
-            <li>Fractional CFO & Executive Support</li>
-            <li>Global Talent Integration (Sub-Saharan Africa)</li>
-            <li>Impact & Mission Alignment Strategy</li>
-            <li>Capital Allocation & Growth Planning</li>
+            <li>Conversion Rate Optimization Analysis</li>
+            <li>Cost-Per-Acquisition Stewardship</li>
+            <li>Revenue Driver Modeling</li>
+            <li>Capital Allocation Planning</li>
           </ul>
+          <!-- Updated Button for Modal -->
+          <button
+            onclick="openServiceModal('Sales & Marketing ROI')"
+            class="btn-light"
+          >
+            Inquire for Growth
+          </button>
         </div>
       </div>
     </section>
 
-    <!-- 5. THE INSIGHTS PILOT (Feature Section) -->
-    <section class="pilot-promo">
-      <div class="container">
-        <div class="pilot-box">
-          <div class="pilot-text">
-            <h2>Test your clarity.</h2>
-            <p>
-              Our 30-day Insights Pilot identifies the hidden bottlenecks in
-              your current financial reporting.
-            </p>
-          </div>
-          <div class="pilot-btn">
-            <a href="#" class="btn-primary">Learn More</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 6. FINAL CTA -->
+    <!-- 5. FINAL CTA (Scroll Back Up) -->
     <section class="services-cta">
       <div class="container center-text">
         <h2>Ready to move <br />beyond the <em>numbers?</em></h2>
-        <p>For founders who refuse to guess and choose to make a difference.</p>
-        <a href="index.html#contact" class="btn-outline-large"
-          >Schedule a Consultation</a
+        <p>For founders who refuse to guess and choose to lead.</p>
+        <!-- This now scrolls back to the top of the services list -->
+        <a href="#accounting" class="btn-outline-large"
+          >Explore Our Expertise</a
         >
       </div>
     </section>
 
+    <!-- INQUIRY MODAL -->
+    <div
+      id="serviceModal"
+      class="modal-overlay"
+      onclick="closeServiceModal(event)"
+    >
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeServiceModal(event)">
+          &times;
+        </button>
+        <div class="modal-form-content">
+          <p class="blue-tag">INQUIRY</p>
+          <h2 id="modalTitle">Request Info</h2>
+          <p class="modal-subtext">
+            Complete the form below and our strategic team will reach out
+            shortly.
+          </p>
+          <form class="pilot-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>YOUR NAME</label
+                ><input type="text" placeholder="Full Name" required />
+              </div>
+              <div class="form-group">
+                <label>PHONE NUMBER</label
+                ><input type="tel" placeholder="+1 (000) 000-0000" required />
+              </div>
+            </div>
+            <div class="form-group">
+              <label>SERVICE OF INTEREST</label
+              ><input
+                type="text"
+                id="selectedService"
+                readonly
+                class="readonly-field"
+              />
+            </div>
+            <div class="form-group">
+              <label>ADDITIONAL INFORMATION</label
+              ><textarea
+                rows="3"
+                placeholder="How can we help you find clarity?"
+              ></textarea>
+            </div>
+            <button type="submit" class="btn-solid-large-modal">
+              Send Inquiry
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <footer class="minimal-footer">
       <div class="footer-wrap">
-        <!-- 1. LOGO (Left) -->
         <div class="footer-logo">
-          <img
-            src="images/ikan_trans.png"
-            alt="IKAN Business Partners"
-            class="logo-img"
-          />
+          <img src="images/ikan_trans.png" class="logo-img" />
         </div>
-
-        <!-- 2. CONTACT & SOCIALS (Center) -->
         <div class="footer-center">
           <div class="footer-socials">
             <a href="#" class="social-link">LinkedIn</a>
@@ -197,13 +246,26 @@
           </div>
           <p class="footer-email">inquiries@ikanbusinesspartners.com</p>
         </div>
-
-        <!-- 3. META (Right) -->
         <div class="footer-meta">
           <p>© 2026 IKAN BUSINESS PARTNERS</p>
           <p>UNIVERSAL TALENT. GLOBAL IMPACT.</p>
         </div>
       </div>
     </footer>
+
+    <script>
+      function openServiceModal(serviceName) {
+        document.getElementById("selectedService").value = serviceName;
+        document.getElementById("modalTitle").innerHTML =
+          "Inquire: " + serviceName;
+        document.getElementById("serviceModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeServiceModal(e) {
+        document.getElementById("serviceModal").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    </script>
   </body>
 </html>

@@ -58,7 +58,8 @@ em,
   z-index: 1000;
   background: rgba(255, 255, 255, 0.95);
   border-bottom: 1px solid #eee;
-  padding: 20px 0;
+  padding: 30px 0;
+  overflow: hidden;
 }
 .nav-container {
   display: flex;
@@ -66,41 +67,55 @@ em,
   align-items: center;
   padding: 0 5%;
 }
-/* --- LOGO STYLING --- */
 
 .logo {
   display: flex;
   align-items: center;
   text-decoration: none;
-  height: 100%;
-  overflow: visible;
+  flex: 1;
 }
 
-.logo-img {
-  height: 45px;
+.sticky-nav .logo-img {
+  height: 104px;
   width: auto;
   display: block;
-  transform: scale(2);
+  margin-top: -35px;
+  margin-bottom: -35px;
+  margin-left: -35px;
+  transform: scale(1.1);
   transform-origin: left center;
-  margin: 0 30px;
 }
 .nav-links {
   display: flex;
   gap: 40px;
   align-items: center;
 }
+
 .nav-links a {
   text-decoration: none;
-  color: var(--text);
+  color: var(--navy);
   font-size: 0.85rem;
-  font-weight: 500;
+  font-weight: 600;
   text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s;
 }
+
+.nav-links a:hover {
+  color: var(--blue);
+}
+
 .nav-btn {
   background: var(--blue);
   color: #fff !important;
   padding: 12px 25px;
+  font-weight: 600;
   transition: 0.3s;
+}
+
+.nav-btn:hover {
+  background: var(--navy);
+  transform: translateY(-2px);
 }
 
 /* --- HERO SECTION --- */
@@ -292,28 +307,140 @@ em,
   margin-top: 20px;
 }
 
-/* --- SERVICES ARCHITECTURAL --- */
-.services-list {
-  background: var(--soft-bg);
+/* --- SERVICES SECTION REVAMP --- */
+.services-curated {
+  padding: 30px 0 0 0;
+  background-color: var(--white);
 }
-.service-row {
+
+.section-header-left {
+  margin-bottom: 40px;
+}
+
+.institutional-title {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+/* Full-width container for the hover effect */
+.curated-item-wrapper {
+  width: 100%;
+  border-top: 1px solid var(--border);
+  background-color: transparent;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+  position: relative;
+}
+
+/* Restoring the Subtle Blue Background Hover */
+.curated-item-wrapper:hover {
+  /* Using a very soft tint of your brand blue */
+  background-color: rgba(116, 189, 214, 0.08);
+}
+
+/* The actual content grid stays inside the site container */
+.curated-row {
   display: grid;
-  grid-template-columns: 0.5fr 1.5fr 2fr;
-  padding: 60px 0;
-  border-bottom: 1px solid #eee;
-  align-items: center;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 60px;
+  padding: 60px 0; /* Tightened from 80px to feel less "empty" */
+  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
 }
-.s-num {
-  font-size: 1.2rem;
-  font-family: "EB Garamond";
+
+.curated-item-wrapper:hover .curated-row {
+  transform: translateX(15px); /* Subtle nudge */
+}
+
+/* Title Styling */
+.c-title h3 {
+  font-size: 2.5rem;
+  line-height: 1.1;
+  color: var(--navy);
+  transition: color 0.3s ease;
+}
+
+.curated-item-wrapper:hover h3 {
   color: var(--blue);
 }
-.s-title h3 {
-  font-size: 2.5rem;
+
+/* Content Styling */
+.c-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
-.s-desc p {
-  font-size: 1.1rem;
-  color: #666;
+
+.c-content p {
+  font-size: 1.2rem;
+  color: var(--text-muted);
+  max-width: 550px;
+  margin-bottom: 25px;
+  line-height: 1.7;
+}
+
+/* Tagline Boldness */
+.c-content p strong {
+  color: var(--navy);
+  font-weight: 600;
+}
+
+/* Explore Link with Growing Blue Underline */
+.btn-explore {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-decoration: none;
+  color: var(--navy);
+  position: relative;
+  padding-bottom: 8px;
+  transition: color 0.3s ease;
+}
+
+.btn-explore::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30px; /* Initially short */
+  height: 2px;
+  background-color: var(--blue);
+  transition: width 0.4s ease;
+}
+
+.curated-item-wrapper:hover .btn-explore::after {
+  width: 100%; /* Spills across the whole link on hover */
+}
+
+.btn-explore:hover {
+  color: var(--blue);
+}
+
+/* Last item border */
+.curated-item-wrapper:last-child {
+  border-bottom: 1px solid var(--border);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .curated-row {
+    grid-template-columns: 1fr;
+    gap: 25px;
+    padding: 40px 0;
+  }
+
+  .curated-item-wrapper:hover .curated-row {
+    transform: none;
+  }
+
+  .institutional-title {
+    font-size: 2.8rem;
+  }
+
+  .c-title h3 {
+    font-size: 2rem;
+  }
 }
 
 /* --- PILOT PROMO --- */
@@ -376,20 +503,18 @@ em,
   padding: 0 4%;
 }
 
-/* 1. Logo Styling & Trimming */
 .footer-logo {
-  flex: 1; /* Takes up space on the left */
+  flex: 1;
 }
 
 .footer-logo .logo-img {
-  height: 110px; /* Base height */
+  height: 110px;
   width: auto;
   display: block;
-  /* TRIMMING THE PNG: Adjust these negative values to 
-       suck in the empty space around your logo */
   margin-top: -35px;
   margin-bottom: -35px;
-  margin-left: -15px; /* Pushes the visual logo even further left */
+  margin-left: -20px;
+
   transform: scale(1.1);
   transform-origin: left center;
 }
@@ -558,37 +683,30 @@ em,
   gap: 25px;
 }
 
-/* --- UPDATED MINIMALIST CONTACT FORM --- */
+/* --- CONTACT FORM --- */
 
 .contact-form-box {
   background-color: var(--slate);
   padding: 60px;
-  /* Keeping the box sharp/no border-radius for an institutional feel */
 }
 
 .contact-form-box form {
   display: flex;
   flex-direction: column;
-  gap: 35px; /* Increased gap to let the lines breathe */
+  gap: 35px;
 }
 
 /* Base Input & Textarea Styling */
 .contact-form-box input,
 .contact-form-box textarea {
   width: 100%;
-  /* Remove all default borders and backgrounds */
   border: none;
   background: transparent;
-
-  /* Add only the bottom line */
   border-bottom: 1px solid rgba(26, 42, 58, 0.2);
-
-  /* Font styling */
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   color: var(--navy);
-  padding: 12px 0; /* Vertical padding only to emphasize the line */
-
+  padding: 12px 0;
   transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
   outline: none;
   border-radius: 0;
@@ -604,7 +722,7 @@ em,
   font-size: 0.75rem;
 }
 
-/* HOVER STATE: Subtle darkening of the line */
+/* HOVER STATE */
 .contact-form-box input:hover,
 .contact-form-box textarea:hover {
   border-bottom: 1px solid var(--navy);
@@ -614,21 +732,20 @@ em,
 .contact-form-box input:focus,
 .contact-form-box textarea:focus {
   border-bottom: 1px solid var(--blue);
-  /* Adding a subtle background tint only on focus */
   background: rgba(116, 189, 214, 0.05);
 }
 
-/* Handle Textarea resizing */
+/* Handle Textarea */
 .contact-form-box textarea {
-  resize: none; /* Keeps the clean lines from being distorted */
+  resize: none;
   min-height: 120px;
 }
 
-/* Form Button - Refined for the minimalist look */
+/* Form Button  */
 .contact-form-box .btn-solid {
   margin-top: 20px;
-  align-self: flex-start; /* Button doesn't span full width unless requested */
-  background: var(--navy); /* Navy feels more authoritative here */
+  align-self: flex-start;
+  background: var(--navy);
   color: white !important;
   padding: 18px 45px;
   text-transform: uppercase;

@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sales & Marketing ROI | IKAN Business Partners</title>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="stylesheet" href="../services.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="sticky-nav">
+      <div class="nav-container">
+        <a href="../index.html" class="logo">
+          <img src="../images/ikan_trans.png" alt="IKAN" class="logo-img" />
+        </a>
+        <div class="nav-links">
+          <a href="../index.html">Home</a>
+          <a href="../about.html">About</a>
+          <a href="../talent.html">Talent</a>
+          <a href="../services.html">Services</a>
+          <a href="../pilot.html" class="nav-btn">Start Pilot</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Detailed Section (Dark Mode from services.html) -->
+    <section id="advisory" class="service-detail dark-mode">
+      <div class="container grid-detail">
+        <div class="detail-visual">
+          <img
+            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"
+            alt="Strategic ROI"
+          />
+        </div>
+        <div class="detail-text">
+          <p class="blue-tag">3 Sales and Marketing ROI</p>
+          <h2 class="text-white">Profitable <br /><em>Growth.</em></h2>
+          <p class="detail-lead text-white">
+            Scale with confidence. We measure the effectiveness of your spend to
+            ensure every strategic investment results in sustainable growth.
+          </p>
+          <ul class="capability-list text-white">
+            <li>Conversion Rate Optimization Analysis</li>
+            <li>Cost-Per-Acquisition Stewardship</li>
+            <li>Revenue Driver Modeling</li>
+            <li>Capital Allocation Planning</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Additional Description Section -->
+    <section class="service-description section-white">
+      <div class="container">
+        <div style="max-width: 800px">
+          <h3 style="font-size: 2.5rem; margin-bottom: 20px">
+            Measured Momentum.
+          </h3>
+          <p style="font-size: 1.2rem; color: var(--text-muted)">
+            Growth is only valuable if it is profitable. Our ROI specialists
+            bridge the gap between marketing effort and financial result. We
+            look deep into your sales funnel to identify where capital is
+            working and where it is being wasted—ensuring your mission has the
+            fuel it needs to reach its full potential.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standard Contact Section -->
+    <section class="contact-section section-slate">
+      <div class="container">
+        <div
+          style="
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+          "
+        >
+          <div>
+            <h2>Invest in <br /><em>Impact.</em></h2>
+            <p>Start maximizing your growth drivers today.</p>
+          </div>
+          <button
+            onclick="openServiceModal()"
+            class="btn-outline-large"
+            style="text-align: center; cursor: pointer"
+          >
+            Optimize Spend
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICE INQUIRY MODAL -->
+    <div
+      id="serviceModal"
+      class="modal-overlay"
+      onclick="closeServiceModal(event)"
+    >
+      <div class="modal-card" onclick="event.stopPropagation()">
+        <button class="close-btn" onclick="closeServiceModal(event)">
+          &times;
+        </button>
+
+        <div class="modal-form-content">
+          <p class="blue-tag">INQUIRY</p>
+          <h2 id="modalTitle">Request Info</h2>
+          <p class="modal-subtext">
+            Complete the form below and our strategic team will reach out
+            shortly.
+          </p>
+
+          <form class="pilot-form">
+            <div class="form-row">
+              <div class="form-group">
+                <label>YOUR NAME</label>
+                <input type="text" placeholder="Full Name" required />
+              </div>
+              <div class="form-group">
+                <label>PHONE NUMBER</label>
+                <input type="tel" placeholder="+1 (000) 000-0000" required />
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label>SERVICE OF INTEREST</label>
+              <!-- Read-only field styled to match the theme -->
+              <input
+                type="text"
+                id="selectedService"
+                readonly
+                class="readonly-field"
+              />
+            </div>
+
+            <div class="form-group">
+              <label>ADDITIONAL INFORMATION</label>
+              <textarea
+                rows="3"
+                placeholder="How can we help you find clarity?"
+              ></textarea>
+            </div>
+
+            <button type="submit" class="btn-solid-large">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function openServiceModal() {
+        const serviceTag = document.querySelector(".blue-tag").innerText;
+        // Removes numbers and leading space to get just the name
+        const cleanedService = serviceTag.replace(/[0-9]/g, "").trim();
+
+        document.getElementById("selectedService").value = cleanedService;
+        document.getElementById("modalTitle").innerHTML =
+          "Inquire: " + cleanedService;
+        document.getElementById("serviceModal").classList.add("active");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeServiceModal(e) {
+        document.getElementById("serviceModal").classList.remove("active");
+        document.body.style.overflow = "auto";
+      }
+    </script>
+
+    <footer class="minimal-footer">
+      <div class="footer-wrap">
+        <div class="footer-logo">
+          <img src="../images/ikan_trans.png" class="logo-img" />
+        </div>
+        <div class="footer-meta"><p>© 2026 IKAN BUSINESS PARTNERS</p></div>
+      </div>
+    </footer>
+  </body>
+</html>
