@@ -85,6 +85,11 @@ em,
   transform: scale(1.1);
   transform-origin: left center;
 }
+.sticky-nav .logo-img:hover {
+  transform: scale(1.15);
+  transition: transform 0.8s ease;
+  filter: grayscale(50%);
+}
 .nav-links {
   display: flex;
   gap: 40px;
