@@ -306,6 +306,10 @@ em,
   text-decoration: none;
   margin-top: 20px;
 }
+.btn-secondary:hover {
+  background: var(--navy);
+  color: white !important;
+}
 
 /* --- SERVICES SECTION REVAMP --- */
 .services-curated {
@@ -485,8 +489,12 @@ em,
   display: inline-block;
   margin-top: 20px;
 }
+.btn-secondary-large:hover {
+  background: var(--navy);
+  color: white !important;
+}
 
-/* --- REFINED INSTITUTIONAL FOOTER --- */
+/* --- FOOTER --- */
 
 .minimal-footer {
   padding: 60px 0; /* Reduced padding for a tighter look */
@@ -519,7 +527,6 @@ em,
   transform-origin: left center;
 }
 
-/* 2. Center Section (Socials & Contact) */
 .footer-center {
   display: flex;
   flex-direction: column;
@@ -535,9 +542,9 @@ em,
 }
 
 .social-icon-link {
-  color: var(--navy); /* Default institutional color */
+  color: var(--navy);
   text-decoration: none;
-  font-size: 1.3rem; /* Perfectly weighted icon size */
+  font-size: 1.3rem;
   transition: all 0.3s cubic-bezier(0.2, 1, 0.3, 1);
   display: inline-block;
 }
@@ -548,7 +555,6 @@ em,
   display: block;
 }
 
-/* Hover Effect: Turns Brand Blue and lifts slightly */
 .social-icon-link:hover {
   color: var(--blue);
   transform: translateY(-4px);
