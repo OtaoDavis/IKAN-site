@@ -6,6 +6,20 @@
     <title>Universal Talent | IKAN Business Partners</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="talent.css" />
+
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -15,7 +29,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-52VC0EZHLF");
+  </script>
   <body>
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
     <!-- Dynamic Progress Nav -->
     <nav class="sticky-nav">
       <div class="nav-container">
@@ -144,10 +182,7 @@
           </div>
         </div>
         <div class="impact-image">
-          <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800"
-            alt="Impact"
-          />
+          <img src="images/growth.jpg" alt="Impact" />
         </div>
       </div>
     </section>
@@ -168,7 +203,7 @@
           <div class="footer-socials">
             <!-- LinkedIn Icon -->
             <a
-              href="https://linkedin.com/company/your-profile"
+              href="https://www.linkedin.com/company/ikan-business-partners/"
               class="social-icon-link"
               target="_blank"
               aria-label="LinkedIn"
@@ -178,7 +213,7 @@
 
             <!-- Yelp Icon -->
             <a
-              href="https://yelp.com/biz/your-profile"
+              href="https://www.yelp.com/biz/ikan-business-partners-dallas-2"
               class="social-icon-link"
               target="_blank"
               aria-label="Yelp"
@@ -196,5 +231,6 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
   </body>
 </html>

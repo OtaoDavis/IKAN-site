@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>IKAN | Strategic Stewardship & Global Impact</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -14,7 +27,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-52VC0EZHLF");
+  </script>
   <body>
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
     <!-- Dynamic Progress Nav -->
     <nav class="sticky-nav">
       <div class="nav-container">
@@ -38,10 +75,7 @@
     <!-- 1. HERO: IMMERSIVE & MATURE -->
     <header class="hero-split">
       <div class="hero-image-box">
-        <img
-          src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=2069"
-          alt="Executive Office"
-        />
+        <img src="images/op2.jpg" alt="Executive Office" />
       </div>
       <div class="hero-text-box">
         <p class="tagline">ESTABLISHED IMPACT</p>
@@ -55,7 +89,7 @@
           mission-driven founders need to scale responsibly.
         </p>
         <div class="hero-actions">
-          <a href="#" class="btn-primary">Apply for a Pilot</a>
+          <a href="pilot.html" class="btn-primary">Apply for a Pilot</a>
           <a href="#mission" class="btn-link">Our Worldview ↓</a>
         </div>
       </div>
@@ -84,6 +118,61 @@
               a ecosystem where talent meets opportunity and insight meets
               action.
             </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FANCY FOUNDER STORY SECTION -->
+    <section class="founder-story-fancy">
+      <div class="container">
+        <div class="fancy-grid">
+          <!-- Left Side: Founder + Bubble -->
+          <div class="founder-visual">
+            <div class="founder-image-container">
+              <img
+                src="images/alice_img.jpeg"
+                alt="Alice - Founder of IKAN"
+                class="founder-img"
+              />
+
+              <!-- The Speech Bubble -->
+              <div class="speech-bubble">
+                <p>
+                  "The battle of building a business is only known to those who
+                  have tried to build one"
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Side: The Story Brief -->
+          <div class="founder-text">
+            <p class="blue-tag">The IKAN Story</p>
+            <h2 class="italic">
+              From Financial Rescue to <br />Global Stewardship
+            </h2>
+            <div class="story-excerpt">
+              <p>
+                Alice’s journey began when she stepped in to save a struggling
+                coffee roasting business in Massachusetts. As she was joining
+                the company, the "battle" of daily operations had made growth
+                impossible.
+              </p>
+              <p>
+                By implementing <strong>QuickBooks precision</strong> and
+                streamlined reporting, Alice didn't just clean the books, she
+                restored the founder's vision.
+              </p>
+              <p>
+                That success became the blueprint for IKAN. Today, Alice leads a
+                global team dedicated to giving mission-driven founders the
+                mathematical foundation they need to scale with confidence.
+              </p>
+            </div>
+            <a href="about.html#story" class="btn-secondary"
+              >Read Founder's Full Story</a
+            >
           </div>
         </div>
       </div>
@@ -129,10 +218,7 @@
           </div>
           <div class="outcome-card">
             <div class="card-img">
-              <img
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=2071"
-                alt="Confidence"
-              />
+              <img src="images/trust.jpg" alt="Confidence" />
             </div>
             <div class="card-info">
               <h3>Strategic Trust</h3>
@@ -144,10 +230,7 @@
           </div>
           <div class="outcome-card">
             <div class="card-img">
-              <img
-                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&q=80&w=2070"
-                alt="Foundation"
-              />
+              <img src="images/clean.jpg" alt="Foundation" />
             </div>
             <div class="card-info">
               <h3>Clean Books</h3>
@@ -157,33 +240,6 @@
               </p>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 4. THE HUMAN FACTOR: GLOBAL OPPORTUNITY -->
-    <section id="talent" class="talent-feature">
-      <div class="container-full split-image-text">
-        <div class="talent-content">
-          <p class="blue-tag">UNIVERSAL TALENT</p>
-          <h2>A Pipeline of <br /><em>Excellence.</em></h2>
-          <p>
-            We believe talent is universal, but opportunity is not. IKAN bridges
-            this gap by connecting elite, highly-trained young professionals
-            from Sub-Saharan Africa to your business.
-          </p>
-          <p>
-            This isn't "outsourcing." This is a strategic partnership that
-            empowers local talent to build global careers while providing your
-            business with world-class analytical support.
-          </p>
-          <a href="talent.html" class="btn-secondary">The IKAN Talent Story</a>
-        </div>
-        <div class="talent-image">
-          <img
-            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2070"
-            alt="Team at Work"
-          />
         </div>
       </div>
     </section>
@@ -269,18 +325,83 @@
       <div class="container">
         <div class="pilot-box">
           <div class="pilot-text">
-            <h2>Test your clarity.</h2>
+            <h2>Assess Your Financial Health.</h2>
             <p>
-              Our 30-day Insights Pilot identifies the hidden bottlenecks in
-              your current financial reporting.
+              Our Insights Pilot identifies the hidden bottlenecks in your
+              current financial reporting.
             </p>
           </div>
           <div class="pilot-btn">
-            <a href="#" class="btn-primary">Learn More</a>
+            <a href="pilot.html" class="btn-primary">Learn More</a>
           </div>
         </div>
       </div>
     </section>
+
+    <!-- TESTIMONIAL: STRATEGIC PARTNERSHIP -->
+    <section class="trust-section section-slate">
+      <div class="container">
+        <div class="trust-grid">
+          <!-- Left Side: The Theme Anchor -->
+          <div class="trust-theme">
+            <p class="blue-tag">CLIENT REVIEWS</p>
+            <h2 class="theme-title">The Standard of <em>Trust.</em></h2>
+            <div class="theme-divider"></div>
+            <p class="theme-sub">
+              Partnering with founders to protect and project their vision.
+            </p>
+          </div>
+
+          <!-- Right Side: The Narrative -->
+          <div class="testimonial-content">
+            <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
+            <blockquote class="main-quote">
+              IKAN has been an invaluable partner to our company. They
+              successfully managed our QuickBooks system and led our transition
+              to an online accounting platform, improving efficiency and
+              clarity. Reliable, patient, and professional, the IKAN team works
+              seamlessly with vendors, payroll, and our CPA, making them a true
+              asset to any business.
+            </blockquote>
+
+            <div class="testimonial-author">
+              <div class="author-line"></div>
+              <div class="author-info">
+                <p class="author-name">Executive Leadership</p>
+                <p class="author-org">PDI International, Inc.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. THE HUMAN FACTOR: GLOBAL OPPORTUNITY -->
+    <!-- <section id="talent" class="talent-feature">
+      <div class="container-full split-image-text">
+        <div class="talent-content">
+          <p class="blue-tag">UNIVERSAL TALENT</p>
+          <h2>A Pipeline of <br /><em>Excellence.</em></h2>
+          <p>
+            We believe talent is universal, but opportunity is not. IKAN bridges
+            this gap by connecting elite, highly-trained young professionals
+            from Sub-Saharan Africa to your business.
+          </p>
+          <p>
+            This isn't "outsourcing." This is a strategic partnership that
+            empowers local talent to build global careers while providing your
+            business with world-class analytical support.
+          </p>
+          <a href="talent.html" class="btn-secondary">The IKAN Talent Story</a>
+        </div>
+        <div class="talent-image">
+          <img
+            src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=2070"
+            alt="Team at Work"
+          />
+        </div>
+      </div>
+    </section> -->
 
     <!-- 7 CONTACT US -->
     <section id="contact" class="contact-section">
@@ -307,10 +428,27 @@
             </div>
           </div>
           <div class="contact-form-box">
-            <form>
-              <input type="text" placeholder="Your Name" required />
-              <input type="email" placeholder="Email Address" required />
+            <form id="ikan-contact-form">
+              <input
+                type="text"
+                id="user_name"
+                placeholder="Your Name"
+                required
+              />
+              <input
+                type="tel"
+                id="user_phone"
+                placeholder="Phone Number"
+                required
+              />
+              <input
+                type="email"
+                id="user_email"
+                placeholder="Email Address"
+                required
+              />
               <textarea
+                id="message"
                 placeholder="How can we help you grow?"
                 rows="5"
               ></textarea>
@@ -326,7 +464,7 @@
       <div class="container">
         <h2>For founders who <br />refuse to guess.</h2>
         <p>Your legacy is built on the decisions you make today.</p>
-        <a href="#" class="btn-secondary-large">Connect With Our Team</a>
+        <a href="#contact" class="btn-secondary-large">Connect With Our Team</a>
       </div>
     </section>
 
@@ -365,7 +503,7 @@
           <div class="footer-socials">
             <!-- LinkedIn Icon -->
             <a
-              href="https://linkedin.com/company/your-profile"
+              href="https://www.linkedin.com/company/ikan-business-partners/"
               class="social-icon-link"
               target="_blank"
               aria-label="LinkedIn"
@@ -375,7 +513,7 @@
 
             <!-- Yelp Icon -->
             <a
-              href="https://yelp.com/biz/your-profile"
+              href="https://www.yelp.com/biz/ikan-business-partners-dallas-2"
               class="social-icon-link"
               target="_blank"
               aria-label="Yelp"
@@ -393,5 +531,11 @@
         </div>
       </div>
     </footer>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

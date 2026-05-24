@@ -679,3 +679,191 @@ em {
     flex: none;
   }
 }
+
+/* --- IKAN PREMIUM LOADER --- */
+.ikan-loader-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 1;
+  visibility: visible;
+  transition:
+    opacity 0.6s ease-in-out,
+    visibility 0.6s ease-in-out;
+}
+
+.loader-logo-pulse {
+  height: 120px; /* Adjust to match your logo's visual weight */
+  width: auto;
+  animation: ikanPulse 2s infinite ease-in-out;
+}
+
+@keyframes ikanPulse {
+  0% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.4;
+    transform: scale(0.98);
+  }
+}
+
+.loader-finished {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none;
+}
+
+/* --- ACTIVE NAVIGATION LINK --- */
+.nav-links a.active-link {
+  color: var(--blue) !important; /* #74bdd6 */
+  font-weight: 700;
+}
+
+/* Subtle architectural line under the active link */
+.nav-links a.active-link::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: var(--blue);
+  margin-top: 5px;
+}
+
+/* Prevent content flashing before loader finishes */
+body.content-hidden {
+  opacity: 0;
+}
+
+/* --- STORY SWIPER STYLES --- */
+.story-swiper-section {
+  padding: 40px 0;
+  background: var(--white);
+}
+
+.story-intro {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.swiper-lead-quote {
+  font-family: "EB Garamond", serif;
+  font-size: 2.5rem;
+  font-style: italic;
+  color: var(--navy);
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.2;
+}
+
+/* Slide Structure */
+.slide-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.slide-image img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  box-shadow: 20px 20px 0px var(--soft-bg);
+}
+
+.slide-text {
+  padding-right: 40px;
+}
+
+.slide-year {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--blue);
+  letter-spacing: 3px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+.slide-text h3 {
+  font-size: 3rem;
+  margin-bottom: 25px;
+  color: var(--navy);
+}
+
+.slide-text p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* Navigation & Pagination */
+.swiper-nav-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 50px;
+  position: relative;
+}
+
+/* Fix for Swiper Fade Overlay */
+.storySwiper .swiper-slide {
+  background-color: var(--white); /* Ensures slides aren't transparent */
+  opacity: 0 !important; /* Default state for fade */
+  transition-property: opacity;
+}
+
+.storySwiper .swiper-slide-active {
+  opacity: 1 !important; /* Only show the active slide */
+}
+
+/* Optional: Ensure the container height stays consistent */
+.storySwiper {
+  height: auto;
+  min-height: 600px; /* Adjust based on your content height */
+}
+.swiper-button-next,
+.swiper-button-prev {
+  position: static !important;
+  color: var(--navy) !important;
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  font-size: 1.2rem !important;
+  font-weight: bold;
+}
+
+.swiper-pagination-bullet-active {
+  background: var(--blue) !important;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .slide-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .slide-text {
+    padding-right: 0;
+  }
+  .slide-image img {
+    height: 300px;
+  }
+  .swiper-lead-quote {
+    font-size: 1.8rem;
+  }
+}

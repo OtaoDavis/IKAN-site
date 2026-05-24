@@ -5,6 +5,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>About IKAN | Insight & Purpose</title>
     <link rel="stylesheet" href="about.css" />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -13,8 +26,37 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-52VC0EZHLF");
+  </script>
   <body>
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
     <!-- Dynamic Progress Nav -->
     <nav class="sticky-nav">
       <div class="nav-container">
@@ -49,15 +91,12 @@
             mission-driven founders need to scale responsibly.
           </p>
           <!-- Moving the button lower -->
-          <a href="#" class="btn-solid-large">Start Your Pilot</a>
+          <a href="pilot.html" class="btn-solid-large">Start Your Pilot</a>
         </div>
 
         <!-- Image side spans to the edge -->
         <div class="hero-visual-frame">
-          <img
-            src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200"
-            alt="Executive Leadership"
-          />
+          <img src="images/op4.jpg" alt="Executive Leadership" />
         </div>
       </div>
     </header>
@@ -67,10 +106,7 @@
       <div class="container grid-2">
         <div class="immersive-image-side">
           <div class="image-stack-wrapper">
-            <img
-              src="https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1000"
-              class="main-stack-img"
-            />
+            <img src="images/team.jpg" class="main-stack-img" />
             <div class="offset-box"></div>
           </div>
         </div>
@@ -88,29 +124,6 @@
             graduates in Sub-Saharan Africa, helping them build global careers
             while they contribute to your success.
           </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- 3. MISSION & PURPOSE (Deep Navy - High Contrast) -->
-    <section class="mission-purpose-dark">
-      <div class="container">
-        <div class="mission-grid">
-          <div class="mission-card">
-            <p class="blue-tag">OUR MISSION</p>
-            <h3>
-              Top-notch accounting tailored to small and medium businesses. We
-              believe excellent bookkeeping is the foundation for your success.
-            </h3>
-          </div>
-          <div class="mission-card">
-            <p class="blue-tag">OUR PURPOSE</p>
-            <h3>
-              Bridging professional accounting with actionable insights, helping
-              owners drive growth—while creating meaningful global
-              opportunities.
-            </h3>
-          </div>
         </div>
       </div>
     </section>
@@ -152,14 +165,127 @@
           </div>
           <!-- Davis -->
           <div class="mosaic-item" onclick="openBio(this, 'davis')">
-            <img src="images/davis_img (2).jpg" alt="Davis Otao" />
+            <img
+              src="images/davis_img.jpeg"
+              style="object-position: 20%"
+              alt="Davis Otao"
+            />
             <div class="mosaic-overlay">
               <div class="mosaic-text">
                 <h4>Davis Otao</h4>
-                <p>Data Analyst</p>
+                <p>Client Accounting Services (CAS) Consultant</p>
               </div>
               <span class="bio-cta">View Bio +</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT STORY SWIPER SECTION -->
+    <section class="story-swiper-section" id="story">
+      <div class="container">
+        <!-- Static Intro -->
+        <div class="story-intro">
+          <p class="blue-tag">Our History</p>
+          <blockquote class="swiper-lead-quote">
+            "The battle of building a business is only known to those who have
+            tried to build one"
+          </blockquote>
+        </div>
+
+        <!-- The Swiper -->
+        <div class="swiper storySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: The Struggle -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/orig2.png" alt="The Beginning" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">2006</span>
+                  <h3>The Entrepreneurial Battle</h3>
+                  <p>
+                    In 2006, a coffee roasting business launched in
+                    Massachusetts. Despite an MBA and 12 years of finance
+                    experience, the founder was drowning. Three years in, the
+                    "dream" had become a struggle of spreadsheets and backlogged
+                    books.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2: The Alice Effect -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/alice_img.jpeg" alt="The Solution" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">The Turning Point</span>
+                  <h3>The Alice Effect</h3>
+                  <p>
+                    Alice stepped in and transformed chaos into clarity. She
+                    didn't just do bookkeeping; she built an ecosystem by
+                    integrating QuickBooks, merchant services, and monthly
+                    closings that allowed the founder to finally lead with
+                    vision instead of fear.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: The Vision -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/ikan_trans.png" alt="IKAN Today" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">2014 — Present</span>
+                  <h3>The Birth of IKAN</h3>
+                  <p>
+                    Alice realized her expertise was a lifeline for founders
+                    everywhere. IKAN Business Partners was born to scale that
+                    excellence, connecting elite talent from Sub-Saharan Africa
+                    with global visionaries to provide world-class financial
+                    stewardship.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Navigation Buttons -->
+          <div class="swiper-nav-wrapper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. MISSION & PURPOSE (Deep Navy - High Contrast) -->
+    <section class="mission-purpose-dark">
+      <div class="container">
+        <div class="mission-grid">
+          <div class="mission-card">
+            <p class="blue-tag">OUR MISSION</p>
+            <h3>
+              Top-notch accounting tailored to small and medium businesses. We
+              believe excellent bookkeeping is the foundation for your success.
+            </h3>
+          </div>
+          <div class="mission-card">
+            <p class="blue-tag">OUR PURPOSE</p>
+            <h3>
+              Bridging professional accounting with actionable insights, helping
+              owners drive growth—while creating meaningful global
+              opportunities.
+            </h3>
           </div>
         </div>
       </div>
@@ -176,10 +302,7 @@
           <!-- 01 INTEGRITY (Existing) -->
           <div class="value-v-item">
             <div class="v-img">
-              <img
-                src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=800"
-                alt="Integrity"
-              />
+              <img src="images/integrity2.jpg" alt="Integrity" />
             </div>
             <div class="v-text">
               <span>01</span>
@@ -191,10 +314,7 @@
           <!-- 02 INNOVATION (New Image: Data & Logic) -->
           <div class="value-v-item">
             <div class="v-img">
-              <img
-                src="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800"
-                alt="Innovation"
-              />
+              <img src="images/innovate.jpg" alt="Innovation" />
             </div>
             <div class="v-text">
               <span>02</span>
@@ -206,10 +326,7 @@
           <!-- 03 EMPOWERMENT (Existing) -->
           <div class="value-v-item">
             <div class="v-img">
-              <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800"
-                alt="Empowerment"
-              />
+              <img src="images/empowerment.jpg" alt="Empowerment" />
             </div>
             <div class="v-text">
               <span>03</span>
@@ -218,7 +335,7 @@
             </div>
           </div>
 
-          <!-- 04 EXCELLENCE (New Image: Precision/Architecture) -->
+          <!-- 04 EXCELLENCE -->
           <div class="value-v-item">
             <div class="v-img">
               <img
@@ -250,7 +367,9 @@
               with care, precision, and a focus on empowering you to lead with
               confidence.
             </p>
-            <a href="#" class="btn-solid-large">Explore Our Services</a>
+            <a href="services.html" class="btn-solid-large"
+              >Explore Our Services</a
+            >
           </div>
         </div>
       </div>
@@ -305,7 +424,7 @@
           <div class="footer-socials">
             <!-- LinkedIn Icon -->
             <a
-              href="https://linkedin.com/company/your-profile"
+              href="https://www.linkedin.com/company/ikan-business-partners/"
               class="social-icon-link"
               target="_blank"
               aria-label="LinkedIn"
@@ -315,7 +434,7 @@
 
             <!-- Yelp Icon -->
             <a
-              href="https://yelp.com/biz/your-profile"
+              href="https://www.yelp.com/biz/ikan-business-partners-dallas-2"
               class="social-icon-link"
               target="_blank"
               aria-label="Yelp"
@@ -333,13 +452,15 @@
         </div>
       </div>
     </footer>
+    <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <script>
       const biographies = {
         alice: {
           name: "Alice Gatua",
           role: "Managing Partner",
-          bio: "<p>Alice Gatua leads IKAN with a belief that financial clarity is the ultimate competitive advantage. With a background in strategic accounting, she ensures that every client receives not just a balance sheet, but a roadmap for growth.</p><p>She is passionate about the intersection of ethical leadership and community impact, guiding the firm's mission to empower entrepreneurs globally.</p>",
+          bio: "<p>Strategic Senior Accountant and Compliance‑focused Systems Specialist recognized for leading full‑cycle accounting operations, optimizing ERP systems, and implementing robust GAAP‑aligned controls. Skilled in multi‑entity consolidations, ledger automation, and audit‑ready documentation that improves accuracy, reduces risk, and accelerates financial close cycles.</p><p>Alice also has expertise over a decade of executive-level leadership managing complex fund accounting, and investor relations. Proven expert in optimizing financial systems infrastructure, streamlining multi-entity portfolios, and mitigating institutional risk for high-growth equity funds. Recognized for establishing rigorous internal controls that guarantee audit-ready precision and seamless transaction execution.</p><p>She is passionate about the intersection of ethical leadership and community impact, guiding the firm's mission to empower entrepreneurs globally.</p>",
         },
         peter: {
           name: "Peter Kagunye",
@@ -348,8 +469,8 @@
         },
         davis: {
           name: "Davis Otao",
-          role: "Data Analyst",
-          bio: "<p>Davis is the analytical engine of IKAN. He specializes in transforming raw financial data into actionable insights that business owners can use to optimize their performance.</p>",
+          role: "Client Accounting Services (CAS) Consultant",
+          bio: "<p>Strategic Accounting Consultant specializing in optimizing financial workflows, managing accurate general ledgers, and delivering actionable insights to drive business growth.</p>",
         },
       };
 

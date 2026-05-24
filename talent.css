@@ -90,6 +90,10 @@ body {
 }
 
 /* --- PIPELINE SECTION (University Connection) --- */
+.university-pipeline {
+  padding: 40px 0;
+  background: var(--soft-bg);
+}
 .pipeline-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
@@ -131,6 +135,9 @@ body {
 }
 
 /* --- METHODOLOGY (Extra Section) --- */
+.methodology {
+  padding: 20px;
+}
 .section-header-center {
   text-align: center;
   margin-bottom: 60px;

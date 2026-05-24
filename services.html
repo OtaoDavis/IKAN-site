@@ -6,6 +6,19 @@
     <title>Our Expertise | IKAN Business Partners</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="services.css" />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -15,7 +28,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-52VC0EZHLF");
+  </script>
   <body>
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
     <!-- Nav -->
     <nav class="sticky-nav">
       <div class="nav-container">
@@ -60,10 +97,7 @@
           </div>
         </div>
         <div class="s-hero-visual">
-          <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200"
-            alt="Strategic Insight"
-          />
+          <img src="images/op1.jpg" alt="Strategic Insight" />
         </div>
       </div>
     </header>
@@ -144,10 +178,7 @@
     <section id="roi" class="service-detail dark-mode">
       <div class="container grid-detail">
         <div class="detail-visual">
-          <img
-            src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&q=80&w=1000"
-            alt="ROI Analysis"
-          />
+          <img src="images/effective.jpg" alt="ROI Analysis" />
         </div>
         <div class="detail-text">
           <p class="blue-tag">03 SALES & MARKETING ROI</p>
@@ -203,33 +234,59 @@
             Complete the form below and our strategic team will reach out
             shortly.
           </p>
-          <form class="pilot-form">
+
+          <form class="pilot-form" id="service-inquiry-form">
             <div class="form-row">
               <div class="form-group">
-                <label>YOUR NAME</label
-                ><input type="text" placeholder="Full Name" required />
+                <label>YOUR NAME</label>
+                <input
+                  type="text"
+                  id="modal_user_name"
+                  placeholder="Full Name"
+                  required
+                />
               </div>
               <div class="form-group">
-                <label>PHONE NUMBER</label
-                ><input type="tel" placeholder="+1 (000) 000-0000" required />
+                <label>PHONE NUMBER</label>
+                <input
+                  type="tel"
+                  id="modal_user_phone"
+                  placeholder="+1 (000) 000-0000"
+                  required
+                />
               </div>
             </div>
+
+            <!-- NEW: Added Email field back in for the modal -->
             <div class="form-group">
-              <label>SERVICE OF INTEREST</label
-              ><input
+              <label>EMAIL ADDRESS</label>
+              <input
+                type="email"
+                id="modal_user_email"
+                placeholder="name@company.com"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label>SERVICE OF INTEREST</label>
+              <input
                 type="text"
                 id="selectedService"
                 readonly
                 class="readonly-field"
               />
             </div>
+
             <div class="form-group">
-              <label>ADDITIONAL INFORMATION</label
-              ><textarea
+              <label>ADDITIONAL INFORMATION</label>
+              <textarea
+                id="modal_message"
                 rows="3"
                 placeholder="How can we help you find clarity?"
               ></textarea>
             </div>
+
             <button type="submit" class="btn-solid-large-modal">
               Send Inquiry
             </button>
@@ -254,7 +311,7 @@
           <div class="footer-socials">
             <!-- LinkedIn Icon -->
             <a
-              href="https://linkedin.com/company/your-profile"
+              href="https://www.linkedin.com/company/ikan-business-partners/"
               class="social-icon-link"
               target="_blank"
               aria-label="LinkedIn"
@@ -264,7 +321,7 @@
 
             <!-- Yelp Icon -->
             <a
-              href="https://yelp.com/biz/your-profile"
+              href="https://www.yelp.com/biz/ikan-business-partners-dallas-2"
               class="social-icon-link"
               target="_blank"
               aria-label="Yelp"
@@ -297,5 +354,11 @@
         document.body.style.overflow = "auto";
       }
     </script>
+
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>

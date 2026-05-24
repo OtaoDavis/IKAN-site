@@ -6,6 +6,19 @@
     <title>The Insights Pilot | IKAN Business Partners</title>
     <link rel="stylesheet" href="style.css" />
     <link rel="stylesheet" href="pilot.css" />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
     <link
       href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;600&display=swap"
       rel="stylesheet"
@@ -15,7 +28,31 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
   </head>
+  <!-- Google tag (gtag.js) -->
+  <script
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+  ></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+    gtag("js", new Date());
+
+    gtag("config", "G-52VC0EZHLF");
+  </script>
   <body>
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
     <nav class="sticky-nav">
       <div class="nav-container">
         <a href="index.html" class="logo">
@@ -40,10 +77,7 @@
             <!-- The Blue Accent Line -->
             <div class="slant-accent-line"></div>
             <!-- The Main Image -->
-            <img
-              src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=1200"
-              alt="Financial Intelligence"
-            />
+            <img src="images/numbers.jpg" alt="Financial Intelligence" />
           </div>
         </div>
 
@@ -128,26 +162,42 @@
 
             <!-- The Actual Form Card -->
             <div class="apply-form-card">
-              <form class="pilot-form">
+              <form id="ikan-pilot-form" class="pilot-form">
                 <div class="form-row">
                   <div class="form-group">
                     <label>YOUR NAME</label>
-                    <input type="text" placeholder="John Doe" required />
+                    <input
+                      type="text"
+                      id="pilot_user_name"
+                      placeholder="John Doe"
+                      required
+                    />
                   </div>
                   <div class="form-group">
                     <label>COMPANY NAME</label>
-                    <input type="text" placeholder="Acme Corp" required />
+                    <input
+                      type="text"
+                      id="pilot_company"
+                      placeholder="Acme Corp"
+                      required
+                    />
                   </div>
                 </div>
 
                 <div class="form-group">
                   <label>BUSINESS EMAIL</label>
-                  <input type="email" placeholder="john@company.com" required />
+                  <input
+                    type="email"
+                    id="pilot_email"
+                    placeholder="john@company.com"
+                    required
+                  />
                 </div>
 
                 <div class="form-group">
                   <label>DESCRIBE YOUR CURRENT FINANCIAL CHALLENGE...</label>
                   <textarea
+                    id="pilot_message"
                     rows="4"
                     placeholder="How can we help you find clarity?"
                   ></textarea>
@@ -179,7 +229,7 @@
           <div class="footer-socials">
             <!-- LinkedIn Icon -->
             <a
-              href="https://linkedin.com/company/your-profile"
+              href="https://www.linkedin.com/company/ikan-business-partners/"
               class="social-icon-link"
               target="_blank"
               aria-label="LinkedIn"
@@ -189,7 +239,7 @@
 
             <!-- Yelp Icon -->
             <a
-              href="https://yelp.com/biz/your-profile"
+              href="https://www.yelp.com/biz/ikan-business-partners-dallas-2"
               class="social-icon-link"
               target="_blank"
               aria-label="Yelp"
@@ -207,5 +257,10 @@
         </div>
       </div>
     </footer>
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script src="js/script.js"></script>
   </body>
 </html>
