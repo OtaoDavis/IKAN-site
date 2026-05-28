@@ -213,7 +213,7 @@ em {
 /* Primary CTA Button Style */
 .btn-primary {
   display: inline-block;
-  background: var(--navy);
+  background: var(--blue);
   color: white !important;
   padding: 18px 40px;
   text-decoration: none;
@@ -226,7 +226,7 @@ em {
 }
 
 .btn-primary:hover {
-  background: var(--blue);
+  background: var(--navy);
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
