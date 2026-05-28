@@ -141,7 +141,7 @@ em,
 }
 .hero-text-box {
   flex: 1;
-  padding: 0 8%;
+  padding: 0 4%;
 }
 .tagline {
   color: var(--blue);
@@ -151,8 +151,8 @@ em,
   margin-bottom: 20px;
 }
 .hero-text-box h1 {
-  font-size: 5rem;
-  line-height: 1;
+  font-size: 4.5rem;
+  line-height: 1.1;
   margin-bottom: 30px;
   color: var(--navy);
 }
@@ -200,77 +200,153 @@ em,
   border-bottom: 2px solid var(--blue);
 }
 
-/* --- DARK MANIFESTO (High Contrast) --- */
-.dark-manifesto {
-  background: var(--dark-section);
-  color: white;
-  padding: 50px 0;
+/* --- STRATEGIC PARTNERSHIP SECTION --- */
+.partnership-section {
+  padding-top: 100px;
+  background: var(--soft-bg);
 }
-.manifesto-grid {
-  display: grid;
-  grid-template-columns: 1.2fr 1fr;
-  gap: 100px;
-  align-items: center;
+
+.partnership-intro {
+  max-width: 900px;
+  margin-bottom: 80px;
 }
-.manifesto-header h2 {
-  font-size: 4rem;
+
+.guide-headline {
+  font-size: 3.5rem;
   line-height: 1.1;
+  color: var(--navy);
+}
+
+/* 2. Outlined Testimonial Box */
+.testimonial-outline-box {
+  border: 1px solid #e0e6ed;
+  background-color: var(--soft-bg);
+  padding: 60px;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.testimonial-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding-bottom: 20px;
+}
+
+.stars {
+  color: var(--blue);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+}
+
+.outlined-quote {
+  font-family: "EB Garamond", serif;
+  font-size: 2rem;
+  font-style: italic;
+  line-height: 1.4;
+  color: var(--navy);
+  margin-bottom: 40px;
+}
+
+.author-name {
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.85rem;
+  color: var(--navy);
+  margin-bottom: 5px;
+}
+
+.author-org {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+/* 3. Authority & Service Grid */
+.authority-service-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  margin-bottom: 120px;
+}
+
+.statement-card h3 {
+  font-size: 2.2rem;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+
+.statement-card p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #555;
+  margin-bottom: 30px;
+}
+
+/* 4. Talent Mission Block */
+.talent-mission-block {
+  background: var(--navy);
+  padding: 100px 0;
   color: white;
 }
-.manifesto-body p {
-  font-size: 1.3rem;
-  font-weight: 200;
-  margin-bottom: 30px;
+
+.mission-content {
+  max-width: 800px;
+}
+
+.mission-content h2 {
+  color: white;
+  font-size: 3.2rem;
+  margin-bottom: 25px;
+}
+
+.mission-content p {
+  font-size: 1.2rem;
+  line-height: 1.8;
+  margin-bottom: 40px;
   opacity: 0.8;
 }
 
-/* --- OUTCOMES VISUAL --- */
-.outcomes-visual {
-  padding: 40px 0 100px 0;
-  background: var(--white);
-}
-.section-intro {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.section-intro h2 {
-  font-size: 3.5rem;
-  margin-bottom: 10px;
+/* White Outlined Button */
+.btn-secondary-white {
+  display: inline-block;
+  padding: 16px 35px;
+  border: 1px solid white;
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
-.outcome-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+.btn-secondary-white:hover {
+  background: white;
+  color: var(--navy) !important;
 }
-.outcome-card {
-  background: var(--soft-bg);
-  transition: 0.4s;
-}
-.card-img {
-  height: 250px;
-  overflow: hidden;
-}
-.card-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: 0.6s;
-}
-.card-info {
-  padding: 30px;
-}
-.card-info h3 {
-  font-size: 1.8rem;
-  margin-bottom: 15px;
-}
-.outcome-card:hover {
-  transform: translateY(-10px);
-  background: #fff;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
-}
-.outcome-card:hover .card-img img {
-  transform: scale(1.1);
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .guide-headline {
+    font-size: 2.6rem;
+  }
+  .testimonial-outline-box {
+    padding: 30px;
+  }
+  .outlined-quote {
+    font-size: 1.6rem;
+  }
+  .authority-service-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .mission-content h2 {
+    font-size: 2.4rem;
+  }
 }
 
 /* --- TALENT FEATURE --- */
@@ -396,34 +472,22 @@ em,
 
 /* Explore Link with Growing Blue Underline */
 .btn-explore {
-  font-size: 0.75rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
+  font-size: 0.95rem;
+  font-weight: bold;
+  text-transform: none;
+  letter-spacing: 0.5px;
   text-decoration: none;
   color: var(--navy);
   position: relative;
-  padding-bottom: 8px;
+  padding-bottom: 2px;
   transition: color 0.3s ease;
-}
-
-.btn-explore::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 30px; /* Initially short */
-  height: 2px;
-  background-color: var(--blue);
-  transition: width 0.4s ease;
-}
-
-.curated-item-wrapper:hover .btn-explore::after {
-  width: 100%; /* Spills across the whole link on hover */
+  border-bottom: 2px solid var(--blue);
+  display: inline-block;
 }
 
 .btn-explore:hover {
   color: var(--blue);
+  border-bottom-color: var(--navy);
 }
 
 /* Last item border */
@@ -634,7 +698,7 @@ em,
   .hero-text-box h1,
   .manifesto-header h2,
   .final-cta h2 {
-    font-size: 3rem;
+    font-size: 3.8rem;
   }
 }
 
@@ -1115,126 +1179,389 @@ body.content-hidden {
   }
 }
 
-/* --- FANCY FOUNDER STORY --- */
-.founder-story-fancy {
+/* --- FRICTION ANALYSIS SECTION --- */
+.friction-analysis {
   padding: 40px 0;
   background-color: var(--soft-bg);
-  overflow: visible; /* Allows bubble to overlap if needed */
+  border-bottom: 1px solid #eee;
 }
 
-.fancy-grid {
+.friction-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  margin-top: 60px;
+}
+
+.friction-card {
+  padding: 40px;
+  background: var(--navy);
+  transition: all 0.4s ease;
+  border-top: 4px solid transparent;
+}
+
+.friction-card:hover {
+  background: #1a2a3add;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  border-top: 4px solid var(--blue);
+  transform: translateY(-10px);
+}
+
+.friction-number {
+  display: block;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  color: var(--blue);
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.friction-card h3 {
+  font-size: 2.2rem;
+  line-height: 1.1;
+  margin-bottom: 20px;
+  color: var(--white);
+}
+
+.friction-card p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--white);
+}
+
+/* Staircase Offset for Cards */
+.friction-card.step-2 {
+  margin-top: 40px; /* Nudges the middle card down */
+}
+
+.friction-card.step-3 {
+  margin-top: 80px; /* Nudges the third card further down */
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .friction-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .friction-card.step-2,
+  .friction-card.step-3 {
+    margin-top: 0; /* Remove staircase on mobile */
+  }
+
+  .friction-card {
+    padding: 30px;
+  }
+}
+
+/* --- FOUNDER ORIGIN STORY --- */
+.founder-origin-story {
+  padding: 40px 0;
+  background-color: var(--white);
+  border-top: 1px solid #eee;
+}
+
+.origin-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start; /* Required for sticky to work */
+}
+
+/* Visual Side (Sticky) */
+.origin-visual {
+  position: sticky;
+  top: 120px; /* Adjust this based on your nav height */
+}
+
+.image-frame {
+  position: relative;
+  border: 1px solid #eee;
+  padding: 15px;
+  background: var(--white);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.03);
+}
+
+.main-founder-img {
+  width: 100%;
+  display: block;
+  filter: grayscale(15%);
+}
+
+/* Content Side */
+.origin-title {
+  font-size: 3.2rem;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 40px;
+}
+
+.story-body p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: #444;
+}
+
+.lead-para {
+  font-size: 1.35rem !important;
+  color: var(--navy) !important;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  margin-bottom: 35px !important;
+}
+
+/* Technical Highlight Box */
+.technical-highlight {
+  background: var(--soft-bg);
+  padding: 30px;
+  border-left: 3px solid var(--blue);
+  margin: 35px 0;
+}
+
+.technical-highlight p {
+  margin-bottom: 0;
+  font-size: 1.05rem;
+  color: var(--navy);
+}
+
+.story-conclusion {
+  font-weight: 500;
+  color: var(--navy) !important;
+  margin-top: 35px;
+  margin-bottom: 45px !important;
+  border-top: 1px solid #eee;
+  padding-top: 25px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .origin-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .origin-visual {
+    position: static; /* Disable sticky on mobile */
+    max-width: 500px;
+    margin: 0 auto;
+  }
+
+  .origin-title {
+    font-size: 2.6rem;
+  }
+}
+
+/* final additions */
+/* --- HOW IT WORKS --- */
+.how-it-works {
+  padding: 40px 0;
+  background: var(--white);
+}
+
+.section-intro-center {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.section-intro-center h2 {
+  font-size: 3.5rem;
+  color: var(--navy);
+}
+
+.process-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 30px;
+  position: relative;
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.step-number {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--blue);
+  margin-bottom: 15px;
+  letter-spacing: 2px;
+}
+
+.step-icon {
+  font-size: 2.5rem;
+  color: var(--navy);
+  margin-bottom: 20px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-step h3 {
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  color: var(--navy);
+}
+
+.process-step p {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Bonus Opportunity */
+.bonus-opportunity {
+  margin-top: 80px;
+  padding: 40px;
+  background: var(--soft-bg);
+  border-left: 4px solid var(--blue);
+  text-align: center;
+}
+
+.bonus-tag {
+  display: block;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--blue);
+  margin-bottom: 10px;
+}
+
+.bonus-content p {
+  font-size: 1.1rem;
+  color: var(--navy);
+  margin: 0;
+}
+
+/* --- STAKES SECTION --- */
+.stakes-section {
+  padding: 100px 0;
+  background: var(--navy);
+  color: white;
+}
+
+.stakes-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
   gap: 80px;
   align-items: center;
 }
 
-/* Visual Container */
-.founder-visual {
-  position: relative;
-}
-
-.founder-image-container {
-  position: relative;
-  display: inline-block;
-}
-
-.founder-img {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  display: block;
-  filter: grayscale(20%);
-  border-bottom: 8px solid var(--navy); /* Architectural accent */
-}
-
-/* The Speech Bubble */
-.speech-bubble {
-  position: absolute;
-  top: -20px;
-  right: -40px;
-  background: var(--navy);
+.stakes-column h3 {
   color: white;
-  padding: 30px;
-  width: 280px;
-  border-radius: 0; /* Keeping it sharp/premium */
-  box-shadow: 20px 20px 0px rgba(116, 189, 214, 0.2); /* Blue offset shadow */
-  z-index: 2;
-  animation: float 4s ease-in-out infinite;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
 }
 
-.speech-bubble p {
-  font-family: "EB Garamond", serif;
-  font-style: italic;
-  font-size: 1.4rem;
-  line-height: 1.3;
-  margin: 0;
+.stakes-list {
+  list-style: none;
+  padding: 0;
 }
 
-/* The Bubble Tail (The "Pointer") */
-.speech-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -20px;
-  left: 30px;
-  border-width: 20px 20px 0 0;
-  border-style: solid;
-  border-color: var(--navy) transparent transparent transparent;
+.stakes-list li {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
-/* Floating Animation */
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.stakes-list i {
+  color: var(--blue);
 }
 
-/* Text Side Styling */
-.founder-text h2 {
-  font-size: 3.5rem;
-  margin-bottom: 25px;
+.failure-box {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 40px;
+  border-radius: 0;
+}
+
+.failure-box p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  opacity: 0.8;
+}
+
+/* --- FINAL CONVERSION --- */
+.final-conversion {
+  padding: 40px 0;
+  background: var(--soft-bg);
+  text-align: center;
+}
+
+.conversion-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.primary-cta h2 {
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 40px;
   color: var(--navy);
 }
 
-.story-excerpt p {
-  font-size: 1.15rem;
-  margin-bottom: 20px;
-  color: #555;
-  line-height: 1.8;
+.cta-subtext {
+  margin-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
 }
 
-/* Responsive Adjustments */
+.cta-divider {
+  margin: 60px 0;
+  position: relative;
+  border-bottom: 1px solid #eee;
+}
+
+.cta-divider span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 0 20px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #ccc;
+}
+
+.secondary-cta h3 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #666;
+  font-weight: 400;
+}
+
+.btn-text-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+
+.btn-text-link:hover {
+  color: var(--navy);
+  text-decoration: underline;
+}
+
+/* RESPONSIVE */
 @media (max-width: 1024px) {
-  .fancy-grid {
+  .process-grid,
+  .stakes-grid {
     grid-template-columns: 1fr;
-    text-align: center;
-    gap: 60px;
+    gap: 50px;
   }
-
-  .founder-image-container {
-    margin-bottom: 40px;
+  .primary-cta h2 {
+    font-size: 2.2rem;
   }
-
-  .speech-bubble {
-    position: relative;
-    top: 0;
-    right: 0;
-    margin: -50px auto 20px; /* Overlaps image slightly on mobile */
-    width: 90%;
-  }
-
-  .speech-bubble::after {
-    left: 50%;
-    transform: translateX(-50%);
-  }
-
-  .founder-text h2 {
-    font-size: 2.8rem;
+  .section-intro-center h2 {
+    font-size: 2.5rem;
   }
 }

@@ -2,6 +2,7 @@
   --blue: #74bdd6;
   --navy: #1a2a3a;
   --white: #ffffff;
+  --dark-section: #121820;
   --slate: #f1f5f9;
   --border: #e2e8f0;
   --text-dark: #334155;
@@ -165,7 +166,7 @@ em {
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 5%;
+  padding: 0 2%;
 }
 
 /* --- 1. ABOUT HERO --- */
@@ -202,6 +203,30 @@ em {
   height: 600px;
   object-fit: cover;
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
+}
+
+/* --- DARK MANIFESTO (High Contrast) --- */
+.dark-manifesto {
+  background: var(--dark-section);
+  color: white;
+  padding: 50px 0;
+}
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+.manifesto-header h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: white;
+}
+.manifesto-body p {
+  font-size: 1.3rem;
+  font-weight: 200;
+  margin-bottom: 30px;
+  opacity: 0.8;
 }
 
 /* --- 2. DIFFERENTIATION --- */
@@ -662,6 +687,7 @@ em {
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
   .hero-split,
+  .manifesto-grid,
   .grid-2,
   .mission-grid,
   .values-list-visual,
@@ -673,6 +699,9 @@ em {
   .about-hero-visual h1,
   .commitment-manifesto-box h2 {
     font-size: 3rem;
+  }
+  .manifesto-header h2 {
+    font-size: 3.8rem;
   }
   .modal-img-side {
     height: 300px;
