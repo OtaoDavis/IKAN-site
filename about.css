@@ -8,6 +8,7 @@
   --text-dark: #334155;
   --text-muted: #64748b;
   --nav-bg: rgba(255, 255, 255, 0.95);
+  --soft-bg: #f4f7f8;
 }
 
 * {
@@ -169,121 +170,481 @@ em {
   padding: 0 2%;
 }
 
-/* --- 1. ABOUT HERO --- */
+/* --- ABOUT HERO REVAMPED --- */
 .about-hero-visual {
-  min-height: 70vh;
+  background-color: var(--white);
+  min-height: 80vh;
+  display: flex;
   align-items: center;
 }
 
 .hero-split {
   display: grid;
   grid-template-columns: 1fr 1.1fr;
-  gap: 80px;
+  gap: 40px;
   align-items: center;
+  width: 100%;
+}
+
+.hero-text-content {
+  padding-left: 8%;
+  max-width: 800px;
 }
 
 .about-hero-visual h1 {
-  font-size: 5rem;
+  font-size: 4.2rem;
   line-height: 1.1;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  color: var(--navy);
 }
-.hero-text-content {
-  padding-left: 12%;
-  padding-top: 5%;
+
+.no-wrap {
+  white-space: nowrap;
 }
 
 .hero-subtext {
-  font-size: 1.4rem;
-  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--text-muted);
+  margin-bottom: 40px;
+}
+
+/* Primary CTA Button Style */
+.btn-primary {
+  display: inline-block;
+  background: var(--navy);
+  color: white !important;
+  padding: 18px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  border: none;
+}
+
+.btn-primary:hover {
+  background: var(--blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Image Frame with the Clip-Path */
+.hero-visual-frame {
+  height: 100%;
+  min-height: 600px;
 }
 
 .hero-visual-frame img {
   width: 100%;
-  height: 600px;
+  height: 100%;
   object-fit: cover;
+  display: block;
+  /* Keeps that sharp architectural edge */
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
 }
 
-/* --- DARK MANIFESTO (High Contrast) --- */
-.dark-manifesto {
-  background: var(--dark-section);
-  color: white;
-  padding: 50px 0;
+/* RESPONSIVE HERO STYLES*/
+
+@media (max-width: 1200px) {
+  .about-hero-visual h1 {
+    font-size: 3.5rem;
+  }
 }
-.manifesto-grid {
+@media (max-width: 1024px) {
+  .no-wrap {
+    white-space: normal;
+  }
+  .hero-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .hero-text-content {
+    padding: 60px 5%;
+    text-align: center;
+    order: 2;
+  }
+  .hero-visual-frame {
+    order: 1;
+    min-height: 400px;
+    clip-path: none; /* Remove clip-path on mobile for better fit */
+  }
+  .about-hero-visual h1 {
+    font-size: 3rem;
+  }
+}
+
+/* --- PHILOSOPHY STATEMENT --- */
+.philosophy-statement {
+  padding: 40px 0;
+  background-color: var(--navy);
+  text-align: center;
+}
+
+.philosophy-content {
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.philosophy-statement .blue-tag {
+  margin-bottom: 15px;
+}
+
+.philosophy-divider {
+  width: 40px;
+  height: 3px;
+  background-color: var(--blue);
+  margin: 0 auto 40px auto;
+}
+
+.philosophy-statement h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 40px;
+  letter-spacing: -1px;
+}
+
+.philosophy-body {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.lead-text {
+  font-size: 1.6rem;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  color: var(--white);
+  line-height: 1.4;
+  margin-bottom: 25px;
+}
+
+.philosophy-body p:not(.lead-text) {
+  font-size: 1.2rem;
+  color: var(--white);
+  line-height: 1.7;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .philosophy-statement {
+    padding: 80px 0;
+  }
+  .philosophy-statement h2 {
+    font-size: 2.8rem;
+  }
+  .lead-text {
+    font-size: 1.4rem;
+  }
+}
+
+/* --- CREDIBILITY PARALLAX --- */
+.credibility-parallax {
+  position: relative;
+  padding: 80px 0;
+  color: white;
+  overflow: hidden;
+  background-image: url("images/back.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Dark overlay to ensure text is readable */
+.parallax-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(26, 42, 58, 0.9) 0%,
+    rgba(26, 42, 58, 0.7) 50%,
+    transparent 100%
+  );
+  z-index: 1;
+}
+
+.credibility-parallax .container {
+  position: relative;
+  z-index: 2;
+}
+
+.credibility-content {
+  max-width: 750px;
+}
+
+.credibility-parallax h2 {
+  font-size: 4rem;
+  line-height: 1.1;
+  color: white;
+  margin-bottom: 35px;
+}
+
+.credibility-body p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Highlighting the big names */
+.highlight {
+  color: white;
+  font-weight: 600;
+  border-bottom: 1px solid var(--blue);
+}
+
+.credibility-body strong {
+  color: var(--blue);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .credibility-parallax {
+    padding: 100px 0;
+    background-attachment: scroll;
+  }
+
+  .credibility-parallax h2 {
+    font-size: 2.8rem;
+  }
+
+  .parallax-overlay {
+    background: rgba(26, 42, 58, 0.85);
+  }
+}
+
+/* --- TALENT DIFFERENCE SECTION --- */
+.talent-difference {
+  padding: 40px 0;
+  background-color: var(--soft-bg);
+  border-bottom: 1px solid #eee;
+}
+
+.difference-grid {
   display: grid;
   grid-template-columns: 1.2fr 1fr;
   gap: 100px;
   align-items: center;
 }
-.manifesto-header h2 {
-  font-size: 4rem;
+
+.difference-header h2 {
+  font-size: 3.8rem;
   line-height: 1.1;
-  color: white;
-}
-.manifesto-body p {
-  font-size: 1.3rem;
-  font-weight: 200;
-  margin-bottom: 30px;
-  opacity: 0.8;
-}
-
-/* --- 2. DIFFERENTIATION --- */
-.differentiation-immersive {
-  padding: 80px 0;
-}
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-}
-
-.image-stack-wrapper {
-  position: relative;
-}
-.main-stack-img {
-  width: 100%;
-  position: relative;
-  z-index: 2;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
-.offset-box {
-  position: absolute;
-  top: 40px;
-  left: -40px;
-  width: 100%;
-  height: 100%;
-  background: var(--blue);
-  z-index: 1;
-}
-
-.large-garamond {
-  font-family: "EB Garamond", serif;
-  font-size: 2.2rem;
-  line-height: 1.3;
   color: var(--navy);
-  margin-bottom: 30px;
+  letter-spacing: -1px;
+  margin-top: 10px; /* Space between blue tag and headline */
 }
 
-/* --- 3. MISSION (DARK) --- */
-.mission-purpose-dark {
-  background: var(--navy);
-  color: var(--white);
-  padding: 60px 0;
+/* Right Side Styling */
+.difference-body .lead-text {
+  font-size: 1.4rem;
+  line-height: 1.6;
+  color: var(--navy);
+  margin-bottom: 35px;
+  font-family: "EB Garamond", serif; /* Matching your screenshot's serif look */
 }
-.mission-grid {
+
+.cavendish-link {
+  color: var(--blue);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.cavendish-link i {
+  font-size: 0.7rem;
+  vertical-align: middle;
+  margin-left: 4px;
+}
+
+.cavendish-link:hover {
+  border-bottom: 1px solid var(--navy);
+  opacity: 0.8;
+  color: var(--navy);
+}
+
+.mission-statement {
+  padding: 0 0 0 30px;
+  border-left: 3px solid var(--blue);
+  margin-bottom: 35px;
+}
+
+.mission-statement p {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  line-height: 1.4;
+  color: var(--navy);
+}
+
+.mission-statement strong {
+  color: var(--blue);
+  font-style: normal;
+}
+
+.difference-body .sub-text {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .difference-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    align-items: start; /* Reset to top-aligned for mobile stack */
+  }
+
+  .difference-header h2 {
+    font-size: 3rem;
+  }
+}
+
+/* --- HOW IKAN SUPPORTS (WIDE ICON SECTION) --- */
+
+/* 1. Section Wrapper */
+.support-wide {
+  padding: 40px 0;
+  background-color: var(--white);
+  border-bottom: 1px solid #eee;
+}
+
+/* 2. Wide Container - Prevents the "Squeezed" look */
+.container-wide {
+  max-width: 1450px; /* Increased from standard 1200px */
+  margin: 0 auto;
+  padding: 0 5%;
+}
+
+/* 3. Header Alignment */
+.section-header-center {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.section-header-center h2 {
+  font-size: 3.8rem;
+  line-height: 1.1;
+  color: var(--navy);
+  letter-spacing: -1px;
+}
+
+/* 4. The Grid */
+.support-icon-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 100px; /* Large gap for an expensive, open feel */
+  align-items: start;
 }
-.mission-card h3 {
-  color: var(--white);
-  font-size: 2.2rem;
-  font-family: "EB Garamond";
-  font-weight: 400;
-  line-height: 1.3;
+
+/* 5. Individual Cards */
+.support-card {
+  text-align: center;
+  padding: 20px;
+  transition: all 0.5s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+/* 6. Icon & Number Badge Logic */
+.support-icon-box {
+  position: relative;
+  margin-bottom: 40px;
+  display: inline-block;
+}
+
+.support-icon-box i {
+  font-size: 4rem; /* Large architectural icons */
+  color: var(--navy);
+  transition: color 0.4s ease;
+}
+
+.support-number {
+  position: absolute;
+  top: -12px;
+  right: -25px;
+  background: var(--blue);
+  color: white;
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 800;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(116, 189, 214, 0.3);
+}
+
+/* 7. Typography */
+.support-card h3 {
+  font-family: "EB Garamond", serif;
+  font-size: 2rem;
+  line-height: 1.2;
+  color: var(--navy);
+  margin-bottom: 25px;
+  min-height: 5rem; /* Ensures paragraphs start on the same line */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.support-card p {
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  max-width: 380px;
+  margin: 0 auto;
+}
+
+/* 8. Interaction */
+.support-card:hover {
+  transform: translateY(-15px);
+}
+
+.support-card:hover i {
+  color: var(--blue);
+}
+
+/* 9. Responsive Design */
+@media (max-width: 1200px) {
+  .support-icon-grid {
+    gap: 50px;
+  }
+
+  .support-card h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .support-icon-grid {
+    grid-template-columns: 1fr; /* Stack on tablets/phones */
+    max-width: 600px;
+    margin: 0 auto;
+    gap: 60px;
+  }
+
+  .support-card h3 {
+    min-height: auto; /* Remove alignment height on mobile stack */
+    margin-bottom: 15px;
+  }
+
+  .section-header-center h2 {
+    font-size: 2.8rem;
+  }
+
+  .support-wide {
+    padding: 80px 0;
+  }
 }
 
 /* --- 4. TEAM GALLERY (MOSAIC) --- */
@@ -387,41 +748,6 @@ em {
 .mosaic-item:hover .bio-cta {
   opacity: 1;
   transform: translateY(0);
-}
-
-/* --- 5. VALUES --- */
-.values-visual {
-  padding: 30px 0;
-}
-.values-list-visual {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-  margin-top: 60px;
-}
-.value-v-item {
-  display: flex;
-  background: #fff;
-  border: 1px solid #eee;
-  align-items: center;
-}
-.v-img {
-  flex: 1;
-  height: 300px;
-}
-.v-img img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.v-text {
-  flex: 1.2;
-  padding: 40px;
-}
-.v-text span {
-  font-family: "EB Garamond";
-  color: var(--blue);
-  font-size: 1.5rem;
 }
 
 /* --- 6. COMMITMENT (PARALLAX & LINK FIX) --- */
@@ -575,7 +901,30 @@ em {
   padding: 0 30px;
   cursor: pointer;
 }
-
+/* --- FINAL CTA --- */
+.final-cta {
+  padding: 50px 0;
+  text-align: center;
+  background: var(--soft-bg);
+}
+.final-cta h2 {
+  font-size: 5rem;
+  line-height: 1;
+  margin-bottom: 30px;
+}
+.btn-secondary-large {
+  font-size: 1.2rem;
+  padding: 25px 60px;
+  border: 1px solid var(--navy);
+  text-decoration: none;
+  color: var(--navy);
+  display: inline-block;
+  margin-top: 20px;
+}
+.btn-secondary-large:hover {
+  background: var(--navy);
+  color: white !important;
+}
 /* --- REFINED INSTITUTIONAL FOOTER --- */
 
 .minimal-footer {
@@ -686,6 +1035,9 @@ em {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1024px) {
+  .hero-split {
+    min-height: auto;
+  }
   .hero-split,
   .manifesto-grid,
   .grid-2,
@@ -696,9 +1048,21 @@ em {
     grid-template-columns: 1fr;
     flex-direction: column;
   }
-  .about-hero-visual h1,
   .commitment-manifesto-box h2 {
     font-size: 3rem;
+  }
+  .hero-split {
+    gap: 40px;
+  }
+  .hero-text-content {
+    padding: 4% 5% 0;
+  }
+  .hero-visual-frame {
+    min-height: 420px;
+    height: auto;
+  }
+  .hero-visual-frame img {
+    clip-path: none;
   }
   .manifesto-header h2 {
     font-size: 3.8rem;
@@ -706,6 +1070,15 @@ em {
   .modal-img-side {
     height: 300px;
     flex: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero-visual-frame {
+    min-height: 300px;
+  }
+  .hero-text-content {
+    padding: 2% 5% 0;
   }
 }
 
@@ -809,7 +1182,7 @@ body.content-hidden {
   width: 100%;
   height: 500px;
   object-fit: cover;
-  box-shadow: 20px 20px 0px var(--soft-bg);
+  box-shadow: 20px 20px 0px var(--blue);
 }
 
 .slide-text {
