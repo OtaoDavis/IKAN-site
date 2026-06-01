@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Book a Discovery Call | IKAN Business Partners</title>
+    <!-- Link to your main style.css for Nav/Footer consistency -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="booking.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    />
+    <link rel="icon" href="images/favicon.ico" sizes="any" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-52VC0EZHLF"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-52VC0EZHLF");
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+  </head>
+  <body class="booking-page-body">
+    <!-- IKAN LOADER -->
+    <div id="ikan-loader" class="ikan-loader-overlay">
+      <div class="loader-content">
+        <img
+          src="images/ikan_trans.png"
+          alt="IKAN Business Partners"
+          class="loader-logo-pulse"
+        />
+      </div>
+    </div>
+    <!-- NAVIGATION -->
+    <nav class="sticky-nav">
+      <div class="nav-container">
+        <a href="index.html" class="logo">
+          <img src="images/ikan_trans.png" alt="IKAN" class="logo-img" />
+        </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="talent.html">Talent</a>
+          <a href="services.html">Your Plan</a>
+          <a href="pilot.html" class="nav-btn">Book Discovery Call</a>
+        </div>
+      </div>
+    </nav>
+
+    <main class="booking-main">
+      <!-- Glassmorphism Background Orbs -->
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+
+      <div class="container">
+        <div class="booking-header">
+          <p class="blue-tag">Strategic Partnership</p>
+          <h1>Book Your Discovery Call</h1>
+          <p>
+            Select a date and time to begin your journey toward financial
+            clarity.
+          </p>
+        </div>
+
+        <div class="booking-interface" id="bookingInterface">
+          <!-- STEP 1: CALENDAR (Always Active) -->
+          <div class="booking-col active" id="step-date">
+            <div class="glass-card">
+              <div class="cal-nav">
+                <button id="prevMo">
+                  <i class="fa-solid fa-chevron-left"></i>
+                </button>
+                <h3 id="monthYear">Month 202X</h3>
+                <button id="nextMo">
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+              <div class="cal-weeks">
+                <span>S</span><span>M</span><span>T</span><span>W</span
+                ><span>T</span><span>F</span><span>S</span>
+              </div>
+              <div class="cal-days" id="calDays"></div>
+            </div>
+          </div>
+
+          <!-- STEP 2: TIME SLOTS (Fades in) -->
+          <!-- STEP 2: TIME SLOTS -->
+          <div class="booking-col" id="step-time">
+            <div class="glass-card">
+              <h3>Select a Time</h3>
+              <p class="timezone-info">Timezone: Central Time (US)</p>
+              <div class="time-grid" id="timeGrid"></div>
+            </div>
+          </div>
+
+          <!-- STEP 3: FORM (Fades in) -->
+          <div class="booking-col" id="step-form">
+            <div class="glass-card">
+              <h3>Your Information</h3>
+              <form id="bookingForm" class="glass-form">
+                <div class="input-group">
+                  <input
+                    type="text"
+                    placeholder="Full Name"
+                    required
+                    id="name"
+                  />
+                  <input type="text" placeholder="Role" required id="role" />
+                </div>
+                <input
+                  type="text"
+                  placeholder="Company Name"
+                  required
+                  id="company"
+                />
+                <input
+                  type="text"
+                  placeholder="Product or Service Provided"
+                  required
+                  id="product"
+                />
+
+                <select required id="service">
+                  <option value="" disabled selected>Service Needed?</option>
+                  <option value="Accounting">Accounting & Bookkeeping</option>
+                  <option value="Intelligence">Business Intelligence</option>
+                  <option value="ROI">Sales & Marketing ROI</option>
+                </select>
+
+                <div class="input-group">
+                  <input type="email" placeholder="Email" required id="email" />
+                  <input type="tel" placeholder="Phone" required id="phone" />
+                </div>
+
+                <button type="submit" class="btn-primary">
+                  Confirm Meeting
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- DYNAMIC SUMMARY FOOTER -->
+        <div class="booking-footer" id="bookingFooter">
+          <div class="summary-box">
+            <p>
+              Meeting Summary: <br />
+              <span id="finalDetails">Please select a date...</span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+  </body>
+</html>

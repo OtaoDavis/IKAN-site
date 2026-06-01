@@ -26,10 +26,10 @@ body {
   line-height: 1.6;
 }
 
-/* --- TALENT HERO  */
+/* --- TALENT HERO REVAMPED --- */
 .talent-hero {
   padding: 0;
-  min-height: 80vh;
+  min-height: 85vh;
   display: flex;
   align-items: center;
   background: var(--white);
@@ -38,27 +38,51 @@ body {
 
 .hero-split-talent {
   display: grid;
-  grid-template-columns: 1fr 1.1fr;
+  /* Giving text side slightly more room for the long headline */
+  grid-template-columns: 1.1fr 0.9fr;
   width: 100%;
   align-items: center;
 }
 
 .talent-text-content {
-  padding-left: 12%;
-  padding-right: 80px;
+  padding-left: 8%;
+  padding-right: 20px;
 }
 
 .talent-text-content h1 {
-  font-size: clamp(3.5rem, 5.5vw, 5.5rem);
-  line-height: 1.05;
+  font-size: 4.2rem; /* Adjusted for 3-line balance */
+  line-height: 1.1;
   margin-bottom: 25px;
+  color: var(--navy);
 }
 
 .hero-lead {
-  font-size: 1.3rem;
-  font-weight: 300;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  font-weight: 400;
   color: var(--text-muted);
-  max-width: 550px;
+  max-width: 580px;
+  margin-bottom: 40px;
+}
+
+/* Primary CTA (Navy) */
+.btn-primary {
+  display: inline-block;
+  background: var(--blue);
+  color: white !important;
+  padding: 18px 40px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background: var(--navy);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 .talent-visual-frame {
@@ -70,7 +94,6 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  /* Consistent slant with Pilot page */
   clip-path: polygon(15% 0, 100% 0, 100% 100%, 0% 100%);
   position: relative;
   z-index: 2;
@@ -89,132 +112,487 @@ body {
   transform-origin: right center;
 }
 
-/* --- PIPELINE SECTION (University Connection) --- */
-.university-pipeline {
-  padding: 40px 0;
-  background: var(--soft-bg);
+/* RESPONSIVE */
+@media (max-width: 1200px) {
+  .talent-text-content h1 {
+    font-size: 3.5rem;
+  }
 }
-.pipeline-grid {
+
+@media (max-width: 1024px) {
+  .hero-split-talent {
+    grid-template-columns: 1fr;
+  }
+  .talent-visual-frame {
+    height: 400px;
+    order: -1;
+  }
+  .talent-visual-frame img,
+  .slant-accent-line {
+    clip-path: none;
+  }
+  .talent-text-content {
+    padding: 60px 5%;
+    text-align: center;
+  }
+  .hero-lead {
+    margin: 0 auto 30px auto;
+  }
+}
+
+/* --- BELIEF MANIFESTO SECTION --- */
+.belief-manifesto {
+  padding: 80px 0;
+  background-color: var(--navy);
+}
+
+.manifesto-header {
+  margin-bottom: 80px;
+}
+
+.manifesto-hook {
+  font-size: 5rem; /* Massive and impactful */
+  line-height: 1;
+  color: var(--white);
+  letter-spacing: -2px;
+}
+
+.manifesto-hook em {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  color: var(--blue);
+}
+
+.manifesto-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  border-top: 1px solid #eee;
+  padding-top: 50px;
+}
+
+.manifesto-col p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: var(--white);
+  margin: 0;
+}
+
+/* Add a subtle vertical divider between columns on desktop */
+.manifesto-col:first-child {
+  position: relative;
+}
+
+.manifesto-col:first-child::after {
+  content: "";
+  position: absolute;
+  right: -50px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #eee;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .manifesto-hook {
+    font-size: 3.5rem;
+  }
+
+  .manifesto-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .manifesto-col:first-child::after {
+    display: none;
+  }
+
+  .manifesto-col p {
+    font-size: 1.15rem;
+  }
+}
+
+/* --- FINANCE TEAM SECTION --- */
+.finance-team-section {
+  padding: 40px 0 0 0;
+  background-color: var(--soft-bg);
+}
+
+.team-layout-grid {
   display: grid;
   grid-template-columns: 1fr 1.2fr;
+  gap: 100px;
+  align-items: start;
+}
+
+.team-intro h2 {
+  font-size: 3.5rem;
+  line-height: 1.1;
+  color: var(--navy);
+  margin-bottom: 30px;
+}
+
+.team-description {
+  font-size: 1.4rem;
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  color: var(--navy);
+  line-height: 1.5;
+  margin-bottom: 25px;
+}
+
+.team-intro p:not(.team-description) {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+}
+
+/* Expertise Grid */
+.expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.expertise-card {
+  background: var(--white);
+  padding: 30px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.4s ease;
+}
+
+.expertise-card:hover {
+  border-color: var(--blue);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.expertise-card.full-width {
+  grid-column: span 2;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  text-align: left;
+}
+
+.exp-icon {
+  font-size: 1.8rem;
+  color: var(--blue);
+  margin-bottom: 15px;
+}
+
+.full-width .exp-icon {
+  margin-bottom: 0;
+}
+
+.expertise-card h4 {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.expertise-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .team-layout-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .team-intro h2 {
+    font-size: 2.8rem;
+  }
+
+  .expertise-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expertise-card.full-width {
+    grid-column: span 1;
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+/* ================================================================
+   IKAN-CAVENDISH INTERNSHIP SECTION (ON-PAGE)
+   ================================================================ */
+
+.internship-talent-feature {
+  padding: 40px 0;
+  background-color: var(--white);
+  border-top: 1px solid #eee;
+}
+
+.intern-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 100px;
   align-items: center;
 }
 
-.visual-offset-group {
-  position: relative;
-  padding-bottom: 30px;
-}
-
-.offset-bg-blue {
-  position: absolute;
-  bottom: 0;
-  left: -30px;
-  width: 80%;
-  height: 80%;
-  background: var(--blue);
-  z-index: 1;
-}
-
-.visual-offset-group img {
-  position: relative;
-  z-index: 2;
-  width: 100%;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
-}
-
-.pipeline-text h2 {
-  font-size: 4rem;
+.intern-text h2 {
+  font-size: 3.5rem;
   line-height: 1.1;
+  color: var(--navy);
   margin-bottom: 30px;
 }
-.pipeline-text p {
+
+.intern-text .lead-para {
+  font-size: 1.35rem;
+  color: var(--navy);
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  margin-bottom: 25px;
+  line-height: 1.4;
+}
+
+.intern-text p {
   font-size: 1.1rem;
+  line-height: 1.8;
+  color: var(--text-muted);
   margin-bottom: 20px;
-  color: var(--text);
 }
 
-/* --- METHODOLOGY (Extra Section) --- */
-.methodology {
-  padding: 20px;
-}
-.section-header-center {
-  text-align: center;
-  margin-bottom: 60px;
-}
-.section-header-center h2 {
-  font-size: 3.5rem;
+/* The Dark CTA Box */
+.complimentary-offer-box {
+  margin-top: 50px;
+  padding: 45px;
+  background: var(--navy);
+  color: white;
+  text-align: left;
+  position: relative;
 }
 
-.method-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-}
-
-.method-card {
-  padding: 40px;
-  border: 1px solid var(--border);
-  background: var(--white);
-  transition: 0.3s;
-}
-
-.method-card:hover {
-  border-color: var(--blue);
-  transform: translateY(-5px);
-}
-.method-card h3 {
-  font-size: 1.8rem;
+.complimentary-offer-box h4 {
+  color: var(--blue);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 2px;
   margin-bottom: 15px;
 }
 
-/* --- IMPACT SECTION (Dark Mode) --- */
-.talent-impact.dark-mode {
-  background: var(--navy);
-  color: white;
-  padding: 120px 0;
-}
-
-.impact-split {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-
-.impact-content h2 {
-  color: white;
-  font-size: 4.5rem;
-  line-height: 1;
-  margin-bottom: 30px;
-}
-.impact-content p {
-  font-size: 1.2rem;
-  opacity: 0.8;
-  margin-bottom: 40px;
-}
-
-.large-garamond {
+.complimentary-offer-box p {
+  font-size: 1.5rem;
   font-family: "EB Garamond", serif;
-  font-size: 2rem;
+  margin-bottom: 30px;
+  color: white;
   line-height: 1.3;
 }
 
-.impact-image img {
-  width: 100%;
-  height: 550px;
-  object-fit: cover;
-  filter: grayscale(20%);
+/* Projects List Card (Right Side) */
+.projects-card {
+  background: var(--soft-bg);
+  padding: 60px;
+  border: 1px solid #e2e8f0;
 }
 
-.btn-solid-large {
-  background: var(--blue);
-  color: #fff !important;
-  padding: 12px 25px;
-  transition: 0.3s;
-  text-decoration: none;
-  display: inline-block;
-  margin-top: 40px;
+.projects-card h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: var(--navy);
+}
+
+.project-list {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 40px;
+}
+
+.project-list li {
+  font-size: 1.1rem;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  color: var(--navy);
+}
+
+.project-list i {
+  color: var(--blue);
+  font-size: 1.2rem;
+}
+
+.project-note {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+/* ================================================================
+   INTERNSHIP MODAL & FORM STYLING (THE POPUP)
+   ================================================================ */
+
+/* 1. Modal Overlay Reset */
+#internshipModal.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.96); /* Deep Navy Blur */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+}
+
+#internshipModal.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* 2. Modal Card Reset - Overriding Bio Modal Flexbox */
+.internship-modal-card {
+  background: white;
+  width: 95%;
+  max-width: 850px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 60px !important;
+  display: block !important; /* Forces vertical layout */
+  position: relative;
+  border-radius: 0;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
+}
+
+.modal-form-container .form-header {
+  margin-bottom: 45px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+  text-align: left;
+}
+
+.modal-form-container h2 {
+  font-family: "EB Garamond", serif;
+  font-size: 3rem;
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+/* 3. Form Grid Layout */
+.project-glass-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.project-glass-form .form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+/* 4. Input & Textarea Styling (Institutional Underline) */
+.project-glass-form input,
+.project-glass-form textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #cbd5e0;
+  padding: 15px 5px;
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  color: var(--navy);
+  outline: none;
+  background: transparent;
+  transition: all 0.3s ease;
+}
+
+.project-glass-form input:focus,
+.project-glass-form textarea:focus {
+  border-bottom-color: var(--blue);
+  background: rgba(116, 189, 214, 0.03);
+}
+
+.project-glass-form textarea {
+  resize: none;
+  margin-top: 10px;
+}
+
+/* Placeholder color */
+.project-glass-form input::placeholder,
+.project-glass-form textarea::placeholder {
+  color: #a0aec0;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+/* 5. Form Button */
+.project-glass-form .btn-primary {
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 20px 50px;
+  cursor: pointer;
+  border: none;
+}
+
+/* 6. Close Button */
+.internship-modal-card .close-modal {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 2.5rem;
+  line-height: 1;
+  background: none;
+  border: none;
+  color: var(--navy);
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.internship-modal-card .close-modal:hover {
+  color: var(--blue);
+}
+
+/* ================================================================
+   RESPONSIVE ADJUSTMENTS
+   ================================================================ */
+
+@media (max-width: 1024px) {
+  .intern-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .intern-text h2 {
+    font-size: 2.8rem;
+  }
+
+  .projects-card {
+    padding: 40px 25px;
+  }
+
+  .internship-modal-card {
+    padding: 40px 25px !important;
+    width: 92%;
+  }
+
+  .project-glass-form .form-row {
+    grid-template-columns: 1fr; /* Stack on mobile */
+    gap: 20px;
+  }
+
+  .modal-form-container h2 {
+    font-size: 2.2rem;
+  }
 }
 
 /* --- RESPONSIVE --- */

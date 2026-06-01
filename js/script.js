@@ -5,7 +5,6 @@
 (function () {
   // --- 0. EMAILJS INITIALIZATION ---
   if (typeof emailjs !== "undefined") {
-    // Your Public Key
     emailjs.init("mY7kmKYVI_e0uo_q6");
   } else {
     console.warn("EmailJS SDK not found.");
@@ -14,8 +13,6 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("ikan-loader");
-  const btn = document.getElementById("menu-btn");
-  const menu = document.getElementById("menu");
 
   // --- 1. LOADER HIDE LOGIC ---
   const hideLoader = () => {
@@ -49,8 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
   allLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const destination = link.getAttribute("href");
-
-      // Only apply transition to internal page links
       if (
         destination &&
         !destination.startsWith("#") &&
@@ -62,7 +57,6 @@ document.addEventListener("DOMContentLoaded", () => {
         !e.ctrlKey
       ) {
         e.preventDefault();
-        // Show loader again before leaving
         if (preloader) {
           preloader.classList.remove("loader-finished");
         }
@@ -74,198 +68,134 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // --- 4. MOBILE MENU LOGIC ---
-  if (btn && menu) {
-    btn.addEventListener("click", (e) => {
+  const navContainers = document.querySelectorAll(".sticky-nav .nav-container");
+  navContainers.forEach((container) => {
+    const toggleBtn = container.querySelector(".nav-toggle");
+    const menu = container.querySelector(".nav-links");
+
+    if (!toggleBtn || !menu) return;
+
+    const closeMenu = () => {
+      container.classList.remove("nav-open");
+      toggleBtn.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open-lock");
+    };
+
+    const openMenu = () => {
+      container.classList.add("nav-open");
+      toggleBtn.setAttribute("aria-expanded", "true");
+      document.body.classList.add("nav-open-lock");
+    };
+
+    toggleBtn.addEventListener("click", (e) => {
       e.stopPropagation();
-      btn.classList.toggle("open");
-      menu.classList.toggle("hidden");
+      if (container.classList.contains("nav-open")) {
+        closeMenu();
+      } else {
+        openMenu();
+      }
+    });
+
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!container.contains(e.target)) {
+        closeMenu();
+      }
+    });
+  });
+
+  // --- 5. SWIPER INITIALIZATIONS ---
+
+  // Hero Swiper (Home Page)
+  if (document.querySelector(".heroSwiper")) {
+    new Swiper(".heroSwiper", {
+      loop: true,
+      speed: 4000,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
     });
   }
 
-  // --- 5. EMAILJS: HOME PAGE CONTACT FORM ---
-  const homeContactForm = document.getElementById("ikan-contact-form");
-  if (homeContactForm && typeof emailjs !== "undefined") {
-    homeContactForm.addEventListener("submit", function (e) {
+  // Story Swiper (About Page)
+  if (document.querySelector(".storySwiper")) {
+    new Swiper(".storySwiper", {
+      loop: true,
+      speed: 1000,
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      pagination: { el: ".swiper-pagination", clickable: true },
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  }
+
+  // --- 6. FORM LOGIC (Home, Pilot, Project, Internship) ---
+
+  const setupForm = (formId, serviceName, templateId) => {
+    const form = document.getElementById(formId);
+    if (!form || typeof emailjs === "undefined") return;
+
+    form.addEventListener("submit", function (e) {
       e.preventDefault();
-
       const submitBtn = this.querySelector("button");
-      const originalText = submitBtn ? submitBtn.innerText : "Send Message";
+      const originalText = submitBtn.innerText;
 
-      const nameInp = document.getElementById("user_name");
-      const phoneInp = document.getElementById("user_phone");
-      const emailInp = document.getElementById("user_email");
-      const msgInp = document.getElementById("message");
+      submitBtn.innerText = "SENDING...";
+      submitBtn.disabled = true;
 
-      if (submitBtn) {
-        submitBtn.innerText = "INITIATING DIALOGUE...";
-        submitBtn.disabled = true;
-      }
+      // Collect all form data dynamically
+      const formData = new FormData(form);
+      const params = Object.fromEntries(formData.entries());
+      params.selected_service = serviceName;
 
-      const params = {
-        user_name: nameInp ? nameInp.value : "N/A",
-        user_phone: phoneInp ? phoneInp.value : "N/A",
-        user_email: emailInp ? emailInp.value : "N/A",
-        selected_service: "General Inquiry",
-        message: msgInp ? msgInp.value : "N/A",
-      };
-
-      emailjs.send("service_apy8trc", "template_6czv8uv", params).then(
+      emailjs.send("service_apy8trc", templateId, params).then(
         () => {
-          if (submitBtn) {
-            submitBtn.innerText = "MESSAGE RECEIVED";
-            submitBtn.style.background = "#48bb78";
-          }
-          homeContactForm.reset();
+          submitBtn.innerText = "SUCCESS";
+          submitBtn.style.background = "#48bb78";
+          form.reset();
           setTimeout(() => {
-            if (submitBtn) {
-              submitBtn.innerText = originalText;
-              submitBtn.style.background = "";
-              submitBtn.disabled = false;
+            submitBtn.innerText = originalText;
+            submitBtn.style.background = "";
+            submitBtn.disabled = false;
+            if (formId.includes("Modal")) {
+              // Close modals if they are part of the form
+              if (typeof closeProjectModal === "function") closeProjectModal();
+              if (typeof closeInternshipModal === "function")
+                closeInternshipModal();
             }
           }, 4000);
         },
         (error) => {
           console.error("EmailJS Error:", error);
-          if (submitBtn) {
-            submitBtn.innerText = "ERROR. RETRY.";
-            submitBtn.disabled = false;
-          }
+          submitBtn.innerText = "ERROR. RETRY.";
+          submitBtn.disabled = false;
         },
       );
     });
-  }
+  };
 
-  // --- 5b. EMAILJS: PILOT PAGE FORM ---
-  const pilotForm = document.getElementById("ikan-pilot-form");
-  if (pilotForm && typeof emailjs !== "undefined") {
-    pilotForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const submitBtn = this.querySelector("button");
-      const originalText = submitBtn
-        ? submitBtn.innerText
-        : "Request Pilot Info";
-
-      const nameInp = document.getElementById("pilot_user_name");
-      const companyInp = document.getElementById("pilot_company");
-      const emailInp = document.getElementById("pilot_email");
-      const msgInp = document.getElementById("pilot_message");
-
-      if (submitBtn) {
-        submitBtn.innerText = "SENDING REQUEST...";
-        submitBtn.disabled = true;
-      }
-
-      const params = {
-        user_name: nameInp ? nameInp.value : "N/A",
-        user_email: emailInp ? emailInp.value : "N/A",
-        company_name: companyInp ? companyInp.value : "N/A",
-        selected_service: "Insights Pilot Application",
-        message: msgInp ? msgInp.value : "N/A",
-      };
-
-      emailjs.send("service_apy8trc", "template_fhiskuk", params).then(
-        () => {
-          if (submitBtn) {
-            submitBtn.innerText = "APPLICATION RECEIVED";
-            submitBtn.style.background = "#48bb78";
-          }
-          pilotForm.reset();
-          setTimeout(() => {
-            if (submitBtn) {
-              submitBtn.innerText = originalText;
-              submitBtn.style.background = "";
-              submitBtn.disabled = false;
-            }
-          }, 4000);
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          if (submitBtn) {
-            submitBtn.innerText = "ERROR. RETRY.";
-            submitBtn.disabled = false;
-          }
-        },
-      );
-    });
-  }
-
-  // --- 6. EMAILJS: SERVICES MODAL FORM ---
-  const serviceModalForm = document.getElementById("service-inquiry-form");
-  if (serviceModalForm && typeof emailjs !== "undefined") {
-    serviceModalForm.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      const submitBtn = this.querySelector("button");
-      const originalText = submitBtn ? submitBtn.innerText : "Send Inquiry";
-
-      const nameInp = document.getElementById("modal_user_name");
-      const emailInp = document.getElementById("modal_user_email");
-      const phoneInp = document.getElementById("modal_user_phone");
-      const serviceInp = document.getElementById("selectedService");
-      const msgInp = document.getElementById("modal_message");
-
-      if (submitBtn) {
-        submitBtn.innerText = "SENDING INQUIRY...";
-        submitBtn.disabled = true;
-      }
-
-      const params = {
-        user_name: nameInp ? nameInp.value : "N/A",
-        user_email: emailInp ? emailInp.value : "N/A",
-        user_phone: phoneInp ? phoneInp.value : "N/A",
-        selected_service: serviceInp ? serviceInp.value : "Service Inquiry",
-        message: msgInp ? msgInp.value : "N/A",
-      };
-
-      emailjs.send("service_apy8trc", "template_6czv8uv", params).then(
-        () => {
-          if (submitBtn) {
-            submitBtn.innerText = "SENT SUCCESSFULLY";
-            submitBtn.style.background = "#48bb78";
-          }
-          serviceModalForm.reset();
-          setTimeout(() => {
-            closeServiceModal();
-            if (submitBtn) {
-              submitBtn.innerText = originalText;
-              submitBtn.style.background = "";
-              submitBtn.disabled = false;
-            }
-          }, 2000);
-        },
-        (error) => {
-          console.error("EmailJS Error:", error);
-          if (submitBtn) {
-            submitBtn.innerText = "FAILED TO SEND";
-            submitBtn.disabled = false;
-          }
-        },
-      );
-    });
-  }
+  setupForm("ikan-contact-form", "General Inquiry", "template_6czv8uv");
+  setupForm("ikan-pilot-form", "Insights Pilot", "template_fhiskuk");
+  setupForm("projectAnalysisForm", "Project Analysis", "template_6czv8uv");
+  setupForm("internshipProjectForm", "Internship Brief", "template_6czv8uv");
 });
 
-// --- 7. GLOBAL FUNCTIONS (Safe for all pages) ---
+// --- 7. GLOBAL FUNCTIONS ---
 
 function openServiceModal(serviceName) {
   const modal = document.getElementById("serviceModal");
   const serviceField = document.getElementById("selectedService");
-  const title = document.getElementById("modalTitle");
-
-  // Auto-detect service name from page if not provided
-  if (!serviceName) {
-    const serviceTag = document.querySelector(".blue-tag");
-    if (serviceTag) {
-      serviceName = serviceTag.innerText.replace(/[0-9]/g, "").trim();
-    } else {
-      serviceName = "Service Inquiry";
-    }
-  }
-
   if (modal) {
-    if (serviceField) serviceField.value = serviceName;
-    if (title) title.innerHTML = "Inquire: " + serviceName;
+    if (serviceField) serviceField.value = serviceName || "Service Inquiry";
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
   }
@@ -282,9 +212,7 @@ function closeServiceModal() {
 function openVideoModal(videoID) {
   const modal = document.getElementById("videoModal");
   const player = document.getElementById("videoPlayer");
-
   if (modal && player) {
-    // Fixed the syntax error here
     player.src = `https://www.youtube.com/embed/${videoID}?autoplay=1`;
     modal.classList.add("active");
     document.body.style.overflow = "hidden";
@@ -301,22 +229,34 @@ function closeVideoModal() {
   }
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  const swiper = new Swiper(".storySwiper", {
-    loop: true,
-    speed: 2500,
-    effect: "fade",
-    fadeEffect: {
-      crossFade: true,
-    },
-    // spaceBetween is not needed for fade effect
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-  });
-});
+function openProjectModal() {
+  const m = document.getElementById("projectModal");
+  if (m) {
+    m.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeProjectModal() {
+  const m = document.getElementById("projectModal");
+  if (m) {
+    m.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}
+
+function openInternshipModal() {
+  const m = document.getElementById("internshipModal");
+  if (m) {
+    m.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeInternshipModal() {
+  const m = document.getElementById("internshipModal");
+  if (m) {
+    m.classList.remove("active");
+    document.body.style.overflow = "auto";
+  }
+}

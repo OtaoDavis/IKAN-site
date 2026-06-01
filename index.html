@@ -26,6 +26,10 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
   </head>
   <!-- Google tag (gtag.js) -->
   <script
@@ -62,21 +66,45 @@
             class="logo-img"
           />
         </a>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
         <div class="nav-links">
           <a href="index.html">Home</a>
           <a href="about.html">About</a>
-          <a href="talent.html">Mission</a>
-          <a href="services.html">Services</a>
+          <a href="talent.html">Talent</a>
+          <a href="services.html">Your Plan</a>
           <a href="pilot.html" class="nav-btn">Book Discovery Call</a>
         </div>
       </div>
     </nav>
 
-    <!-- 1. HERO: IMMERSIVE & MATURE -->
     <header class="hero-split">
+      <!-- ONLY THIS PART CHANGES -->
       <div class="hero-image-box">
-        <img src="images/op2.jpg" alt="Executive Office" />
+        <div class="swiper heroSwiper">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="images/op2.jpg" alt="Executive Office" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/home1.jpg" alt="Successful Partnership" />
+            </div>
+            <div class="swiper-slide">
+              <img src="images/home2.jpg" alt="IKAN Team" />
+            </div>
+          </div>
+        </div>
       </div>
+
+      <!-- LEAVE YOUR hero-text-box EXACTLY AS IT IS BELOW -->
       <div class="hero-text-box">
         <p class="tagline">ESTABLISHED IMPACT</p>
         <h1>
@@ -88,7 +116,7 @@
           decisions
         </p>
         <div class="hero-actions">
-          <a href="#contact" class="btn-primary">Book a Discovery Call</a>
+          <a href="booking.html" class="btn-primary">Book a Discovery Call</a>
           <a href="#how-it-works" class="btn-link">See how it works ↓</a>
         </div>
       </div>
@@ -108,9 +136,9 @@
             <span class="friction-number">01</span>
             <h3>The Complexity <br />Barrier</h3>
             <p>
-              Traditional accounting is expensive and challenging. High-level
-              financial reporting should be accessible to growing businesses at
-              every stage.
+              Traditional accounting is expensive and challenging. You need
+              affordable and reliable accounting and financial reporting without
+              the overhead of a traditional firm.
             </p>
           </div>
 
@@ -119,10 +147,9 @@
             <span class="friction-number">02</span>
             <h3>The Visibility <br />Gap</h3>
             <p>
-              There is a unique frustration in leading a mission-driven company
-              while flying blind. Making critical decisions without clear
-              financial visibility isn't just stressful—it's a risk to your
-              legacy.
+              It is frustrating to make important business decisions without
+              clear financial visibility. You need clear financial insights to
+              make smart business decisions.
             </p>
           </div>
 
@@ -132,8 +159,8 @@
             <h3>The Founder's <br />Standard</h3>
             <p>
               You have done the hard work of building a business that matters.
-              You deserve a standard of reliable financial insight that you can
-              trust implicitly, without the overhead of a traditional firm.
+              You deserve a clear financial dashboard to help you realize your
+              vision.
             </p>
           </div>
         </div>
@@ -191,7 +218,7 @@
             <p>
               Our leadership brings combined experience across
               <strong>PwC</strong>, <strong>Bain Capital</strong>, and financial
-              operations for high-growth businesses globally.
+              operations for growing businesses globally.
             </p>
           </div>
 
@@ -200,7 +227,7 @@
             <h3>Dedicated support for your mission.</h3>
             <p>
               Your business is supported by a dedicated accountant and financial
-              analyst with the full strategic backing of the IKAN team.
+              analyst with the backing of the IKAN team
             </p>
             <a href="about.html" class="pillar-link"
               >Meet the Team Behind IKAN <i class="fa-solid fa-arrow-right"></i
@@ -234,7 +261,7 @@
     <section id="how-it-works" class="how-it-works">
       <div class="container">
         <div class="section-intro-center">
-          <p class="blue-tag">The Process</p>
+          <p class="blue-tag">The Plan</p>
           <h2 class="italic">Four Steps to Financial Clarity</h2>
         </div>
 
@@ -269,8 +296,8 @@
             <div class="step-icon"><i class="fa-solid fa-users-gear"></i></div>
             <h3>Assign your finance team</h3>
             <p>
-              We assign a dedicated accountant and analyst backed by the IKAN
-              ecosystem.
+              We assign a dedicated accountant and an analyst backed by the IKAN
+              team .
             </p>
           </div>
           <!-- Step 4 -->
@@ -279,8 +306,8 @@
             <div class="step-icon"><i class="fa-solid fa-rocket"></i></div>
             <h3>Your team gets to work</h3>
             <p>
-              Seamless integration begins, delivering timely reports and clear
-              insights.
+              Your team starts working on your bookkeeping and systems right
+              away.
             </p>
           </div>
         </div>
@@ -308,16 +335,16 @@
               Struggling to get reliable accounting and insightful financial
               reporting for your growing business?
             </h2>
-            <a href="pilot.html" class="btn-primary"
+            <a href="booking.html" class="btn-primary"
               >Book Your Discovery Call</a
             >
-            <!-- <p class="cta-subtext">
+            <p class="cta-subtext">
               In four simple steps, your dedicated finance team gets to work.
-            </p> -->
+            </p>
           </div>
 
           <div class="secondary-cta">
-            <div class="cta-divider"><span>OR</span></div>
+            <div class="cta-divider"><span>ALSO</span></div>
             <h3>Explore a complimentary business analysis project</h3>
             <a href="analysis-form.html" class="btn-text-link"
               >Answer a few simple questions and we will get you started →</a
@@ -356,8 +383,9 @@
             <!-- <p class="blue-tag" style="color: #e53e3e">The Risk</p> -->
             <h3>Don't Let Uncertainty Slow Your Growth</h3>
             <p>
-              Without reliable accounting, it becomes harder to make confident
-              decisions, manage profitability, and plan for sustainable growth.
+              Without reliable accounting and financial reporting, it becomes
+              harder to make confident business decisions, manage profitability,
+              and plan for sustainable growth.
             </p>
           </div>
         </div>
@@ -369,7 +397,6 @@
       <div class="container">
         <!-- Section Heading -->
         <div class="section-header-left">
-          <p class="blue-tag">What We Offer</p>
           <h2 class="institutional-title">Our <em>Expertise.</em></h2>
         </div>
       </div>
@@ -385,12 +412,12 @@
               </div>
               <div class="c-content">
                 <p>
-                  The bedrock of your mission. We provide the
-                  <strong>timely accounting</strong> and precision required to
-                  ensure your financial foundation is always beyond reproach.
+                  The nuts and bolts of a clear and reliable accounting system.
+                  We clean up your past financial records, set up your
+                  accounting system, and manage your daily bookkeeping needs.
                 </p>
                 <a href="services/accounting.html" class="btn-explore"
-                  >Explore Accounting</a
+                  >Select Your Plan</a
                 >
               </div>
             </div>
@@ -402,16 +429,16 @@
           <div class="container">
             <div class="curated-row">
               <div class="c-title">
-                <h3>Business <br />Intelligence</h3>
+                <h3>Financial Reporting & <br />Business Intelligence</h3>
               </div>
               <div class="c-content">
                 <p>
-                  Complexity translated into narrative. Our custom dashboards
-                  deliver the <strong>clear insights</strong> needed to turn raw
-                  data into an actionable roadmap for growth.
+                  We don't just prepare your financial statements. We prepare
+                  customed reports to help you understand how your business is
+                  performing and make smarter decisions.
                 </p>
                 <a href="services/intelligence.html" class="btn-explore"
-                  >Explore Intelligence</a
+                  >Select Your Plan</a
                 >
               </div>
             </div>
@@ -423,16 +450,17 @@
           <div class="container">
             <div class="curated-row">
               <div class="c-title">
-                <h3>Sales & <br />Marketing ROI</h3>
+                <h3>Sales & <br />Marketing Analytics</h3>
               </div>
               <div class="c-content">
                 <p>
-                  Strategic clarity for scaling impact. We measure the
-                  effectiveness of your spend to ensure every strategic
-                  investment results in sustainable,
-                  <strong>profitable growth</strong>.
+                  The core of your business is how you acquire and keep
+                  customers. We developed customized sales and marketing
+                  analytics to help you optimize your sales and marketing.
                 </p>
-                <a href="services/roi.html" class="btn-explore">Explore ROI</a>
+                <a href="services/roi.html" class="btn-explore"
+                  >Select Your Plan</a
+                >
               </div>
             </div>
           </div>
@@ -680,6 +708,7 @@
       type="text/javascript"
       src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
     ></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>
