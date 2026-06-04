@@ -100,97 +100,194 @@
           </p>
         </div>
 
-        <div class="booking-interface" id="bookingInterface">
-          <!-- STEP 1: CALENDAR (Always Active) -->
-          <div class="booking-col active" id="step-date">
-            <div class="glass-card">
-              <div class="cal-nav">
-                <button id="prevMo">
-                  <i class="fa-solid fa-chevron-left"></i>
-                </button>
-                <h3 id="monthYear">Month 202X</h3>
-                <button id="nextMo">
-                  <i class="fa-solid fa-chevron-right"></i>
-                </button>
-              </div>
-              <div class="cal-weeks">
-                <span>S</span><span>M</span><span>T</span><span>W</span
-                ><span>T</span><span>F</span><span>S</span>
-              </div>
-              <div class="cal-days" id="calDays"></div>
-            </div>
-          </div>
-
-          <!-- STEP 2: TIME SLOTS (Fades in) -->
-          <!-- STEP 2: TIME SLOTS -->
-          <div class="booking-col" id="step-time">
-            <div class="glass-card">
-              <h3>Select a Time</h3>
-              <p class="timezone-info">Timezone: Central Time (US)</p>
-              <div class="time-grid" id="timeGrid"></div>
-            </div>
-          </div>
-
-          <!-- STEP 3: FORM (Fades in) -->
-          <div class="booking-col" id="step-form">
-            <div class="glass-card">
-              <h3>Your Information</h3>
-              <form id="bookingForm" class="glass-form">
-                <div class="input-group">
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    required
-                    id="name"
-                  />
-                  <input type="text" placeholder="Role" required id="role" />
+        <div class="booking-layout">
+          <div class="booking-interface" id="bookingInterface">
+            <!-- STEP 1: DATE -->
+            <div class="booking-col active" id="step-date">
+              <div class="glass-card">
+                <div class="cal-nav">
+                  <button id="prevMo">
+                    <i class="fa-solid fa-chevron-left"></i>
+                  </button>
+                  <h3 id="monthYear">Month 202X</h3>
+                  <button id="nextMo">
+                    <i class="fa-solid fa-chevron-right"></i>
+                  </button>
                 </div>
-                <input
-                  type="text"
-                  placeholder="Company Name"
-                  required
-                  id="company"
-                />
-                <input
-                  type="text"
-                  placeholder="Product or Service Provided"
-                  required
-                  id="product"
-                />
-
-                <select required id="service">
-                  <option value="" disabled selected>Service Needed?</option>
-                  <option value="Accounting">Accounting & Bookkeeping</option>
-                  <option value="Intelligence">Business Intelligence</option>
-                  <option value="ROI">Sales & Marketing ROI</option>
-                </select>
-
-                <div class="input-group">
-                  <input type="email" placeholder="Email" required id="email" />
-                  <input type="tel" placeholder="Phone" required id="phone" />
+                <div class="cal-weeks">
+                  <span>S</span><span>M</span><span>T</span><span>W</span
+                  ><span>T</span><span>F</span><span>S</span>
                 </div>
+                <div class="cal-days" id="calDays"></div>
+              </div>
+            </div>
 
-                <button type="submit" class="btn-primary">
-                  Confirm Meeting
-                </button>
-              </form>
+            <!-- STEP 2: TIME -->
+            <div class="booking-col" id="step-time">
+              <div class="glass-card">
+                <h3>Select a Time</h3>
+                <div class="step-actions">
+                  <button
+                    type="button"
+                    class="step-link"
+                    id="changeDateFromTime"
+                  >
+                    Change date
+                  </button>
+                </div>
+                <p class="timezone-info">Timezone: Central Time (US)</p>
+                <div class="time-grid" id="timeGrid"></div>
+              </div>
+            </div>
+
+            <!-- STEP 3: INFORMATION FORM -->
+            <div class="booking-col" id="step-form">
+              <div class="glass-card">
+                <h3>Your Information</h3>
+                <div class="step-actions">
+                  <button
+                    type="button"
+                    class="step-link"
+                    id="changeDateFromForm"
+                  >
+                    Change date
+                  </button>
+                  <button
+                    type="button"
+                    class="step-link"
+                    id="changeTimeFromForm"
+                  >
+                    Change time
+                  </button>
+                </div>
+                <form id="bookingForm" class="glass-form">
+                  <div class="form-field">
+                    <label for="name">Full Name</label>
+                    <input type="text" required id="name" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="role">Your Role</label>
+                    <input type="text" required id="role" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="company">Company Name</label>
+                    <input type="text" required id="company" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="location">State and Country</label>
+                    <input type="text" required id="location" />
+                  </div>
+
+                  <div class="form-field">
+                    <label for="businessDescription"
+                      >Brief Description of Your Business</label
+                    >
+                    <textarea required id="businessDescription"></textarea>
+                  </div>
+
+                  <div class="form-field">
+                    <label for="service">Preferred Plan</label>
+                    <select
+                      required
+                      id="service"
+                      multiple
+                      size="1"
+                      aria-describedby="serviceHelp"
+                    >
+                      <option value="" disabled selected>
+                        Select one or more plans
+                      </option>
+                      <option value="Level 1 (Accounting & Bookkeeping)">
+                        Level 1 (Accounting & Bookkeeping)
+                      </option>
+                      <option
+                        value="Level 2 (Financial Reporting & Business Intelligence)"
+                      >
+                        Level 2 (Financial Reporting & Business Intelligence)
+                      </option>
+                      <option value="Level 3 (Sales & Marketing Analytics)">
+                        Level 3 (Sales & Marketing Analytics)
+                      </option>
+                      <option value="Not Sure Yet">Not Sure Yet</option>
+                    </select>
+                    <small id="serviceHelp" class="form-helper"
+                      >You can select one or more options</small
+                    >
+                  </div>
+
+                  <div class="input-group">
+                    <div class="form-field">
+                      <label for="email">Email</label>
+                      <input type="email" required id="email" />
+                    </div>
+                    <div class="form-field">
+                      <label for="phone">Phone</label>
+                      <input type="tel" required id="phone" />
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn-primary">
+                    Confirm Meeting
+                  </button>
+                  <p
+                    id="bookingFormNotice"
+                    class="booking-form-notice"
+                    aria-live="polite"
+                  ></p>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- DYNAMIC SUMMARY FOOTER -->
-        <div class="booking-footer" id="bookingFooter">
-          <div class="summary-box">
-            <p>
-              Meeting Summary: <br />
-              <span id="finalDetails">Please select a date...</span>
-            </p>
-          </div>
+          <!-- DYNAMIC SUMMARY -->
+          <aside class="booking-footer" id="bookingFooter">
+            <div class="summary-box">
+              <p>
+                Meeting Summary: <br />
+                <span id="finalDetails"
+                  >Choose a date and time to preview your meeting details.</span
+                >
+              </p>
+            </div>
+          </aside>
         </div>
       </div>
     </main>
 
+    <div
+      id="bookingSuccessModal"
+      class="booking-modal-overlay"
+      aria-hidden="true"
+    >
+      <div class="booking-modal-card" role="dialog" aria-modal="true">
+        <button
+          type="button"
+          class="booking-modal-close"
+          id="closeBookingModal"
+          aria-label="Close confirmation message"
+        >
+          &times;
+        </button>
+        <p class="blue-tag">Meeting Confirmed</p>
+        <h3>Thank you for booking a discovery call.</h3>
+        <p>
+          We are eager to speak with you to understand your business and how we
+          can help you.
+        </p>
+        <p>
+          If you have any other questions, please email us at
+          <a href="mailto:inquiries@ikanbusinesspartners.com"
+            >inquiries@ikanbusinesspartners.com</a
+          >.
+        </p>
+      </div>
+    </div>
+
     <script src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script src="js/booking.js"></script>
   </body>
 </html>

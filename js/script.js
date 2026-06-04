@@ -15,20 +15,51 @@ document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("ikan-loader");
 
   // --- 1. LOADER HIDE LOGIC ---
+  let loaderHidden = false;
+
+  const hideLoaderImmediately = () => {
+    if (loaderHidden) return;
+    if (!preloader) return;
+    loaderHidden = true;
+
+    preloader.classList.add("loader-finished");
+    document.body.classList.remove("content-hidden");
+    document.body.style.opacity = "1";
+
+    // Final fallback: remove from layout so it can never block interaction.
+    setTimeout(() => {
+      preloader.style.display = "none";
+    }, 700);
+  };
+
   const hideLoader = () => {
     if (!preloader) return;
     setTimeout(() => {
-      preloader.classList.add("loader-finished");
-      document.body.classList.remove("content-hidden");
-      document.body.style.opacity = "1";
+      hideLoaderImmediately();
     }, 1000);
   };
+
+  const navigationEntry = performance.getEntriesByType("navigation")[0];
+  const isHistoryNavigation =
+    navigationEntry && navigationEntry.type === "back_forward";
+
+  if (isHistoryNavigation) {
+    hideLoaderImmediately();
+  }
 
   if (document.readyState === "complete") {
     hideLoader();
   } else {
-    window.addEventListener("load", hideLoader);
+    window.addEventListener("load", hideLoader, { once: true });
   }
+
+  // Ensure pages restored from BFCache never keep the loader visible.
+  window.addEventListener("pageshow", () => {
+    hideLoaderImmediately();
+  });
+
+  // Absolute safety net: force-hide after a short delay if anything else fails.
+  setTimeout(hideLoaderImmediately, 2500);
 
   // --- 2. ACTIVE NAV LINK LOGIC ---
   const currentUrl = window.location.pathname.split("/").pop() || "index.html";
@@ -43,6 +74,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // --- 3. PAGE REDIRECTION (Smooth Transitions) ---
   const allLinks = document.querySelectorAll("a");
+
+  // Force all anchors to open in a new tab site-wide.
+  allLinks.forEach((link) => {
+    if (link.closest(".nav-links")) {
+      return;
+    }
+
+    link.setAttribute("target", "_blank");
+    link.setAttribute("rel", "noopener noreferrer");
+  });
+
   allLinks.forEach((link) => {
     link.addEventListener("click", (e) => {
       const destination = link.getAttribute("href");
@@ -58,6 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       ) {
         e.preventDefault();
         if (preloader) {
+          preloader.style.display = "flex";
           preloader.classList.remove("loader-finished");
         }
         setTimeout(() => {

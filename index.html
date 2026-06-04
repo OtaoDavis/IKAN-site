@@ -134,8 +134,7 @@
     <section class="friction-analysis">
       <div class="container">
         <div class="section-header-left">
-          <p class="blue-tag">The Challenge</p>
-          <h2 class="institutional-title">The Friction of <em>Growth.</em></h2>
+          <h2 class="institutional-title">The Friction for <em>Growth.</em></h2>
         </div>
 
         <div class="friction-grid">
@@ -237,7 +236,7 @@
               Your business is supported by a dedicated accountant and financial
               analyst with the backing of the IKAN team
             </p>
-            <a href="about.html" class="pillar-link"
+            <a href="about.html#team" class="pillar-link" target="_blank"
               >Meet the Team Behind IKAN <i class="fa-solid fa-arrow-right"></i
             ></a>
           </div>
@@ -327,7 +326,12 @@
             <p>
               Explore a complimentary business operations or financial analysis
               project
-              <a href="pilot.html" class="btn-explore">Explore</a>
+              <a
+                href="talent.html#internship"
+                target="_blank"
+                class="btn-explore"
+                >Explore</a
+              >
             </p>
           </div>
         </div>
@@ -358,7 +362,7 @@
           <div class="secondary-cta">
             <div class="cta-divider"><span>ALSO</span></div>
             <h3>Explore a complimentary business analysis project</h3>
-            <a href="analysis-form.html" class="btn-text-link"
+            <a href="booking.html" class="btn-text-link" target="_blank"
               >Answer a few simple questions and we will get you started →</a
             >
           </div>
@@ -395,9 +399,9 @@
             <!-- <p class="blue-tag" style="color: #e53e3e">The Risk</p> -->
             <h3>Don't Let Uncertainty Slow Your Growth</h3>
             <p>
-              Without reliable accounting and financial reporting, it becomes
-              harder to make confident business decisions, manage profitability,
-              and plan for sustainable growth.
+              Without reliable accounting and insightful financial reporting, it
+              becomes harder to make confident business decisions, manage
+              profitability, and plan for sustainable growth.
             </p>
           </div>
         </div>
@@ -428,7 +432,10 @@
                   We clean up your past financial records, set up your
                   accounting system, and manage your daily bookkeeping needs.
                 </p>
-                <a href="services/accounting.html" class="btn-explore"
+                <a
+                  href="services/accounting.html"
+                  target="_blank"
+                  class="btn-explore"
                   >Select Your Plan</a
                 >
               </div>
@@ -449,7 +456,10 @@
                   customed reports to help you understand how your business is
                   performing and make smarter decisions.
                 </p>
-                <a href="services/intelligence.html" class="btn-explore"
+                <a
+                  href="services/intelligence.html"
+                  target="_blank"
+                  class="btn-explore"
                   >Select Your Plan</a
                 >
               </div>
@@ -467,10 +477,11 @@
               <div class="c-content">
                 <p>
                   The core of your business is how you acquire and keep
-                  customers. We developed customized sales and marketing
-                  analytics to help you optimize your sales and marketing.
+                  customers. We prepare customized reports to help you track and
+                  optimize your sales and marketing key performance indicators
+                  (KPIs)
                 </p>
-                <a href="services/roi.html" class="btn-explore"
+                <a href="services/roi.html" target="_blank" class="btn-explore"
                   >Select Your Plan</a
                 >
               </div>
@@ -516,33 +527,32 @@
                 The owner, Peter, was managing everything through spreadsheets:
                 inventory, customer and vendor list, sales, and financials. It
                 was time consuming, error prone, and difficult to scale. Alice
-                suggested implementing a real accounting system and Peter
-                agreed.
+                suggested implementing an accounting system.
               </p>
 
               <div class="technical-highlight">
                 <p>
                   She installed <strong>QuickBooks Desktop</strong> and
                   integrated it seamlessly with the store’s website and its
-                  merchant account, <strong>Authorize.net</strong>.
+                  merchant account.
                 </p>
               </div>
 
               <p>
-                That changed everything. Inventory became easy to track. Reports
-                were generated with a click. Online orders flowed directly into
-                the system. Payments synced cleanly thanks to the connection
-                between the bank and Authorize.net. Accounting stabilized. Daily
-                operations finally felt manageable.
+                That changed everything. It became easier to track inventory,
+                manage orders and generate sales, and other financial reports.
+                Synchronizing the sales from the merchant account to the bank
+                and accounting system, eliminated a lot of manual work, enabling
+                Peter to focus on growing his business.
               </p>
 
               <p class="story-conclusion">
                 It’s not just about software. It’s about empowering business
                 owners to reclaim their time, strengthen their operations, and
-                finally run the business seamlessly.
+                finally run their businesses.
               </p>
 
-              <a href="about.html" class="btn-secondary"
+              <a href="about.html" target="_blank" class="btn-secondary"
                 >Read the Full Journey</a
               >
             </div>
@@ -600,12 +610,12 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-info">
-            <p class="blue-tag">CONNECT WITH US</p>
+            <p class="blue-tag">We would love to hear from you</p>
             <h2>Let’s align your <br />vision</h2>
             <p>
-              Whether you’re ready for the Insights Pilot or simply have a
-              question about our global talent model, we’re here to start the
-              conversation.
+              Even if you are not ready to book a discovery call, we would love
+              to hear from you. Tell us what you are thinking. What are you
+              considering that you need help with?
             </p>
 
             <div class="contact-details">
@@ -624,23 +634,34 @@
               <input
                 type="text"
                 id="user_name"
+                name="user_name"
                 placeholder="Your Name"
+                required
+              />
+              <input
+                type="text"
+                id="user_company"
+                name="user_company"
+                placeholder="Company Name"
                 required
               />
               <input
                 type="tel"
                 id="user_phone"
+                name="user_phone"
                 placeholder="Phone Number"
                 required
               />
               <input
                 type="email"
                 id="user_email"
+                name="user_email"
                 placeholder="Email Address"
                 required
               />
               <textarea
                 id="message"
+                name="message"
                 placeholder="How can we help you grow?"
                 rows="5"
               ></textarea>

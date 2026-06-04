@@ -3,7 +3,7 @@
   --blue: #74bdd6;
   --navy: #1a2a3a;
   --white: #ffffff;
-  --soft-bg: #f4f7f8;
+  --soft-bg: #e7e7e7;
   --dark-section: #121820;
   --text: #333;
 }
@@ -182,6 +182,8 @@ body {
 .btn-dark {
   background-color: var(--navy);
   color: white !important;
+  text-decoration: none;
+  text-transform: uppercase;
 }
 
 .btn-dark:hover {
@@ -333,19 +335,147 @@ body {
 }
 
 /* --- FINAL CTA --- */
-.services-cta {
-  padding: 20px 0;
-  background: var(--white);
-  text-align: center;
+/* --- LEVELS COMPARISON SECTION --- */
+.levels-comparison {
+  padding: 40px 0;
+  background-color: var(--soft-bg);
+  border-top: 1px solid var(--border);
 }
-.services-cta h2 {
-  font-size: 5rem;
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* Table Styling */
+.comparison-table-wrapper {
+  overflow-x: auto;
+  margin-bottom: 80px;
+}
+
+.levels-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.levels-table th {
+  padding: 20px;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--text-muted);
+  border-bottom: 2px solid var(--navy);
+}
+
+.levels-table td {
+  padding: 30px 20px;
+  border-bottom: 1px solid var(--border);
+  font-size: 1.1rem;
+  color: var(--navy);
+}
+
+.lvl-num {
+  font-family: "EB Garamond", serif;
+  font-size: 1.8rem !important;
+  color: var(--blue) !important;
+  font-weight: 600;
+}
+
+/* Selection Cards */
+.selection-intro {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.selection-intro p {
+  font-family: "EB Garamond", serif;
+  font-style: italic;
+  font-size: 1.5rem;
+  color: var(--navy);
+}
+
+.level-selection-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-bottom: 60px;
+}
+
+.selection-card {
+  background: var(--soft-bg);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.4s ease;
+  border: 1px solid transparent;
+}
+
+.selection-card.featured {
+  background: var(--white);
+  border: 1px solid var(--blue);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  transform: scale(1.05);
+  z-index: 2;
+}
+
+.selection-card h3 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: var(--navy);
+}
+
+.selection-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.6;
   margin-bottom: 30px;
 }
-.services-cta p {
-  font-size: 1.4rem;
+
+.btn-selection {
+  text-decoration: none;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--navy);
+  border-bottom: 2px solid var(--blue);
+  align-self: flex-start;
+  transition: 0.3s;
+}
+
+.btn-selection:hover {
+  color: var(--blue);
+}
+
+/* Final CTA */
+.final-discovery-cta {
+  text-align: center;
+  padding-top: 40px;
+  border-top: 1px solid var(--border);
+}
+
+.final-discovery-cta p {
+  margin-bottom: 20px;
+  font-weight: 600;
   color: var(--text-muted);
-  margin-bottom: 50px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .level-selection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .selection-card.featured {
+    transform: none;
+  }
+
+  .levels-table th:nth-child(3),
+  .levels-table td:nth-child(3) {
+    display: none; /* Hide 'Focus' column on mobile to save space */
+  }
 }
 
 .btn-outline-large {

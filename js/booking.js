@@ -4,16 +4,40 @@
  */
 
 // --- 1. CONFIGURATION ---
-const BIN_ID = "YOUR_BIN_ID_HERE";
-const API_KEY = "$2b$10$YOUR_MASTER_KEY_HERE";
+const BIN_ID = "6a1c7397ddf5aa59f77c7548";
+const JSONBIN_ACCESS_KEY =
+  "$2a$10$UnslywmJWeF7BNUjrr12U.Z/qUVqhLBRsvtRI/WxwDBJgUduIkjZ."; // Preferred for browser usage
+const JSONBIN_MASTER_KEY = ""; // Optional fallback (leave empty if using access key)
 const URL = `https://api.jsonbin.io/v3/b/${BIN_ID}`;
+const EMAILJS_SERVICE_ID = "service_apy8trc";
+const EMAILJS_BOOKING_TEMPLATE_ID = "template_2u49wd8";
+const PRESENTATION_MODE = true;
+const JSONBIN_ACCESS_KEY_PLACEHOLDER =
+  "$2a$10$UnslywmJWeF7BNUjrr12U.Z/qUVqhLBRsvtRI/WxwDBJgUduIkjZ.";
+
+function getJsonbinHeaders() {
+  if (
+    JSONBIN_ACCESS_KEY &&
+    JSONBIN_ACCESS_KEY !== JSONBIN_ACCESS_KEY_PLACEHOLDER
+  ) {
+    return { "X-Access-Key": JSONBIN_ACCESS_KEY };
+  }
+
+  if (JSONBIN_MASTER_KEY) {
+    return { "X-Master-Key": JSONBIN_MASTER_KEY };
+  }
+
+  throw new Error(
+    "JSONbin is not configured. Add JSONBIN_ACCESS_KEY (preferred) or JSONBIN_MASTER_KEY.",
+  );
+}
 
 const standardSlots = [
-  "09:00 AM",
-  "10:30 AM",
   "01:00 PM",
-  "02:30 PM",
+  "02:00 PM",
+  "03:00 PM",
   "04:00 PM",
+  "05:00 PM",
 ];
 const blackoutDates = ["2024-12-25", "2025-01-01"]; // Manual office closures
 
@@ -23,16 +47,74 @@ let selectedDate = "";
 let selectedDateISO = "";
 let selectedTime = "";
 let currentMonth = new Date();
+const stepDate = document.getElementById("step-date");
+const stepTime = document.getElementById("step-time");
+const stepForm = document.getElementById("step-form");
+const formNotice = document.getElementById("bookingFormNotice");
+const successModal = document.getElementById("bookingSuccessModal");
 const realToday = new Date();
 realToday.setHours(0, 0, 0, 0); // Normalize to midnight for accurate date comparison
+
+function setActiveStep(stepId) {
+  [stepDate, stepTime, stepForm].forEach((step) =>
+    step.classList.remove("active"),
+  );
+
+  if (stepId === "date") stepDate.classList.add("active");
+  if (stepId === "time") stepTime.classList.add("active");
+  if (stepId === "form") stepForm.classList.add("active");
+}
+
+function closeSuccessModal() {
+  successModal.classList.remove("active");
+  successModal.setAttribute("aria-hidden", "true");
+  document.body.style.overflow = "";
+}
+
+function openSuccessModal() {
+  successModal.classList.add("active");
+  successModal.setAttribute("aria-hidden", "false");
+  document.body.style.overflow = "hidden";
+}
+
+function getSelectedPlans() {
+  const serviceSelect = document.getElementById("service");
+  return Array.from(serviceSelect.selectedOptions)
+    .map((option) => option.value)
+    .filter((value) => value);
+}
+
+async function sendBookingEmail() {
+  if (typeof emailjs === "undefined") {
+    throw new Error("EmailJS SDK is not available on this page.");
+  }
+
+  const selectedPlans = getSelectedPlans();
+
+  const params = {
+    full_name: document.getElementById("name").value,
+    your_role: document.getElementById("role").value,
+    company_name: document.getElementById("company").value,
+    state_country: document.getElementById("location").value,
+    business_description: document.getElementById("businessDescription").value,
+    preferred_plan: selectedPlans.join(", "),
+    email: document.getElementById("email").value,
+    phone: document.getElementById("phone").value,
+    meeting_date: selectedDate,
+    meeting_time: selectedTime,
+    meeting_date_iso: selectedDateISO,
+  };
+
+  return emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_BOOKING_TEMPLATE_ID, params);
+}
 
 /**
  * 3. INITIAL DATA FETCH (Read from Cloud)
  */
 async function fetchBookings() {
   try {
-    const response = await axios.get(URL, {
-      headers: { "X-Master-Key": API_KEY },
+    const response = await axios.get(`${URL}/latest`, {
+      headers: getJsonbinHeaders(),
     });
     // JSONbin wraps the data in a "record" object
     remoteBookings = response.data.record.bookedSlots || {};
@@ -60,13 +142,13 @@ async function syncBookings(dateISO, time) {
       {
         headers: {
           "Content-Type": "application/json",
-          "X-Master-Key": API_KEY,
+          ...getJsonbinHeaders(),
         },
       },
     );
   } catch (error) {
     console.error("Cloud Sync Error:", error);
-    alert("There was an issue saving your slot. Please refresh and try again.");
+    throw new Error("There was an issue saving your slot.");
   }
 }
 
@@ -146,11 +228,12 @@ function selectDate(element, day, month, year, dateISO) {
   selectedDateISO = dateISO;
 
   selectedTime = ""; // Reset time selection
+  formNotice.classList.remove("active");
+  formNotice.textContent = "";
   renderTimeSlots(dateISO);
 
-  // Smooth Unfold Transitions
-  document.getElementById("step-time").classList.add("active");
-  document.getElementById("step-form").classList.remove("active");
+  // Replace current step with time selection
+  setActiveStep("time");
   updateSummary();
 }
 
@@ -177,9 +260,11 @@ function renderTimeSlots(dateISO) {
           .forEach((s) => s.classList.remove("active"));
         btn.classList.add("active");
         selectedTime = time;
+        formNotice.classList.remove("active");
+        formNotice.textContent = "";
 
-        // Reveal Form Column
-        document.getElementById("step-form").classList.add("active");
+        // Replace time step with form
+        setActiveStep("form");
         updateSummary();
       };
     }
@@ -193,13 +278,59 @@ function renderTimeSlots(dateISO) {
 document.getElementById("bookingForm").onsubmit = async function (e) {
   e.preventDefault();
   const btn = e.target.querySelector("button");
+  const defaultBtnText = "Confirm Meeting";
+  const selectedPlans = getSelectedPlans();
+
+  if (!selectedDateISO || !selectedTime) {
+    formNotice.textContent =
+      "Please select both a date and time before confirming your meeting.";
+    formNotice.classList.add("active");
+    return;
+  }
+
+  if (selectedPlans.length === 0) {
+    formNotice.textContent = "Please select at least one preferred plan.";
+    formNotice.classList.add("active");
+    return;
+  }
+
+  formNotice.classList.remove("active");
+  formNotice.textContent = "";
 
   btn.innerText = "Processing...";
   btn.disabled = true;
   btn.style.opacity = "0.5";
 
   // 1. Sync with Cloud
-  await syncBookings(selectedDateISO, selectedTime);
+  try {
+    await syncBookings(selectedDateISO, selectedTime);
+  } catch (error) {
+    console.warn("Presentation mode: ignoring sync error.", error);
+
+    if (!PRESENTATION_MODE) {
+      formNotice.textContent =
+        "There was an issue saving your slot. Please refresh and try again.";
+      formNotice.classList.add("active");
+      btn.innerText = defaultBtnText;
+      btn.disabled = false;
+      btn.style.opacity = "1";
+      btn.style.background = "";
+      return;
+    }
+  }
+
+  // 1.5. Send booking confirmation details through EmailJS
+  try {
+    await sendBookingEmail();
+  } catch (error) {
+    console.warn("Presentation mode: ignoring EmailJS error.", error);
+
+    if (!PRESENTATION_MODE) {
+      formNotice.textContent =
+        "Your slot was saved, but email delivery failed. Please verify your EmailJS service/template IDs.";
+      formNotice.classList.add("active");
+    }
+  }
 
   // 2. UI Feedback
   btn.innerText = "Booking Confirmed";
@@ -210,19 +341,22 @@ document.getElementById("bookingForm").onsubmit = async function (e) {
   renderTimeSlots(selectedDateISO);
   renderCalendar();
 
-  alert(
-    `Success! Your discovery call is confirmed for ${selectedDate} at ${selectedTime}.`,
-  );
+  openSuccessModal();
 };
 
 /**
  * 9. SUMMARY & NAVIGATION
  */
 function updateSummary() {
-  const footer = document.getElementById("bookingFooter");
   const text = document.getElementById("finalDetails");
-  footer.style.opacity = "1";
-  text.innerHTML = `${selectedDate} ${selectedTime ? "at " + selectedTime : ""}`;
+
+  if (!selectedDate) {
+    text.textContent =
+      "Choose a date and time to preview your meeting details.";
+    return;
+  }
+
+  text.textContent = `${selectedDate}${selectedTime ? " at " + selectedTime : ""}`;
 }
 
 document.getElementById("prevMo").onclick = () => {
@@ -244,6 +378,43 @@ document.getElementById("nextMo").onclick = () => {
   currentMonth.setMonth(currentMonth.getMonth() + 1);
   renderCalendar();
 };
+
+document.getElementById("changeDateFromTime").onclick = () => {
+  selectedTime = "";
+  formNotice.classList.remove("active");
+  formNotice.textContent = "";
+  setActiveStep("date");
+  updateSummary();
+};
+
+document.getElementById("changeDateFromForm").onclick = () => {
+  selectedTime = "";
+  formNotice.classList.remove("active");
+  formNotice.textContent = "";
+  setActiveStep("date");
+  updateSummary();
+};
+
+document.getElementById("changeTimeFromForm").onclick = () => {
+  formNotice.classList.remove("active");
+  formNotice.textContent = "";
+  setActiveStep("time");
+  updateSummary();
+};
+
+document.getElementById("closeBookingModal").onclick = closeSuccessModal;
+
+successModal.onclick = (event) => {
+  if (event.target === successModal) {
+    closeSuccessModal();
+  }
+};
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape" && successModal.classList.contains("active")) {
+    closeSuccessModal();
+  }
+});
 
 // --- INITIALIZE ---
 document.addEventListener("DOMContentLoaded", fetchBookings);

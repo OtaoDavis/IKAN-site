@@ -155,9 +155,6 @@
 
       <div class="container">
         <div class="credibility-content">
-          <p class="blue-tag" style="color: var(--blue)">
-            Experience & Authority
-          </p>
           <h2>
             Built on Experience and <br />
             <span class="italic">Financial Stewardship.</span>
@@ -181,10 +178,9 @@
     </section>
 
     <!-- 5. THE TEAM GALLERY (Museum Style) -->
-    <section class="team-gallery">
+    <section class="team-gallery" id="team">
       <div class="container">
         <div class="gallery-intro">
-          <p class="blue-tag">LEADERSHIP</p>
           <h2>By Entrepreneurs and Financial Professionals</h2>
           <p>
             A partnership of experienced advisors and universal talent. Click a
@@ -192,43 +188,181 @@
           </p>
         </div>
 
-        <div class="team-mosaic">
-          <!-- Alice -->
-          <div class="mosaic-item" onclick="openBio(this, 'alice')">
-            <img src="images/alice_img.jpeg" alt="Alice Gatua" />
-            <div class="mosaic-overlay">
-              <div class="mosaic-text">
-                <h4>Alice Gatua</h4>
-                <p>Managing Director</p>
+        <div class="leadership-stack">
+          <article class="leader-row">
+            <div class="leader-photo">
+              <img src="images/alice_img.jpeg" alt="Alice Gatua" />
+            </div>
+            <div class="leader-bio">
+              <h3>Alice Gatua</h3>
+              <p class="leader-role">Managing Director</p>
+              <p>
+                Alice brings more than 15 years of experience supporting small
+                businesses through bookkeeping, accounting operations, and
+                financial reporting.
+              </p>
+              <p>
+                Her journey began in her brother's coffee roasting business in
+                Billerica, Massachusetts, where she experienced firsthand the
+                challenges many founders face in managing their finances while
+                growing a business.
+              </p>
+              <p>
+                After transforming the company's accounting systems and
+                financial reporting, she launched her own consulting practice to
+                help other business owners gain the financial clarity they need
+                to grow with confidence.
+              </p>
+            </div>
+          </article>
+
+          <article class="leader-row">
+            <div class="leader-photo">
+              <img src="images/peter_img.jpeg" alt="Peter Kagunye" />
+            </div>
+            <div class="leader-bio">
+              <h3>Peter Kagunye</h3>
+              <p class="leader-role">Advisory Board Member</p>
+              <p>
+                After more than 25 years working across PwC, Bain Capital, and
+                finance and operations leadership roles in the United States and
+                Africa, Peter helped establish IKAN around a simple idea:
+                growing businesses need reliable financial support, and
+                exceptional financial talent should not be limited by geography.
+              </p>
+              <p>
+                Through his work as CEO of Cavendish Africa, he saw firsthand
+                the depth of accounting and finance professionals across Africa
+                and the opportunity to connect that talent with growing
+                businesses around the world.
+              </p>
+            </div>
+          </article>
+
+          <article class="leader-row">
+            <div class="leader-photo">
+              <img
+                src="images/davis_img.jpeg"
+                style="object-position: 20%"
+                alt="Davis Otao"
+              />
+            </div>
+            <div class="leader-bio">
+              <h3>Davis Otao</h3>
+              <p class="leader-role">Financial Systems & Operations Manager</p>
+              <p>
+                From overseeing financial systems and operational workflows to
+                ensuring technology infrastructure, client communications, and
+                business processes function seamlessly, Davis plays a key role
+                in supporting IKAN's day-to-day operations and long-term growth.
+              </p>
+              <p>
+                Combining expertise in financial analysis, accounting
+                operations, and technology management, he helps optimize
+                internal processes, strengthen reporting capabilities, and
+                improve operational efficiency across the firm. His work ensures
+                that both clients and team members benefit from reliable
+                systems, streamlined workflows, and data-driven decision-making.
+              </p>
+              <p>
+                Davis is passionate about leveraging technology and financial
+                insights to create scalable solutions that enhance service
+                delivery, support business growth, and help organizations
+                operate with greater confidence and clarity.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT STORY SWIPER SECTION -->
+    <section class="story-swiper-section" id="story">
+      <div class="container">
+        <!-- Static Intro -->
+        <div class="story-intro">
+          <p class="blue-tag">Our History</p>
+          <blockquote class="swiper-lead-quote">
+            "The battle of building a business is only known to those who have
+            tried to build one"
+          </blockquote>
+        </div>
+
+        <!-- The Swiper -->
+        <div class="swiper storySwiper">
+          <div class="swiper-wrapper">
+            <!-- Slide 1: The Struggle -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/orig2.png" alt="The Beginning" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">2006</span>
+                  <h3>The Entrepreneurial Battle</h3>
+                  <p>
+                    In 2006, Peter established a coffee roasting business in
+                    Billerica, Masschusetts. Despite being a CPA, having an MBA
+                    from Babson College and 8 years of accounting experience, he
+                    struggled to build the business and maintain the books. He
+                    reached out to his sister, Alice.
+                  </p>
+                </div>
               </div>
-              <span class="bio-cta">View Bio +</span>
+            </div>
+
+            <!-- Slide 2: The Alice Effect -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/alice_img.jpeg" alt="The Solution" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">The Turning Point</span>
+                  <h3>The Alice Effect</h3>
+                  <p>
+                    Alice stepped in and transformed Chaos into clarity. She
+                    didn't just do bookkeeping; she simplified the financial and
+                    business operations by integrating QuickBooks with the
+                    merchant and banking system and prepared timey financial
+                    reports, enabling Peter to focus on the business. 
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3: The Vision -->
+            <div class="swiper-slide">
+              <div class="slide-content">
+                <div class="slide-image">
+                  <img src="images/ikan_trans.png" alt="IKAN Today" />
+                </div>
+                <div class="slide-text">
+                  <span class="slide-year">Present</span>
+                  <h3>The Birth of IKAN</h3>
+                  <p>
+                    After spending 10 years in Africa building Cavendish Africa
+                    to provide transformative higher education, Peter approached
+                    Alice, who had been running her accounting consulting
+                    practice for 15 years with an idea. Alice could not keep up
+                    with the demand for accounting services for growing
+                    businesses. Cavendish graduates were talented, but
+                    professional opportunities were limited. Why not establish a
+                    firm to solve both problems - provide accounting support to
+                    growing business while creating professional opportunities
+                    for talented finance professionals developed through
+                    Cavendish. 
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
-          <!-- Peter -->
-          <div class="mosaic-item" onclick="openBio(this, 'peter')">
-            <img src="images/peter_img.jpeg" alt="Peter Kagunye" />
-            <div class="mosaic-overlay">
-              <div class="mosaic-text">
-                <h4>Peter Kagunye</h4>
-                <p>Advisory Board Member</p>
-              </div>
-              <span class="bio-cta">View Bio +</span>
-            </div>
-          </div>
-          <!-- Davis -->
-          <div class="mosaic-item" onclick="openBio(this, 'davis')">
-            <img
-              src="images/davis_img.jpeg"
-              style="object-position: 20%"
-              alt="Davis Otao"
-            />
-            <div class="mosaic-overlay">
-              <div class="mosaic-text">
-                <h4>Davis Otao</h4>
-                <p>Financial Systems & Operations Manager</p>
-              </div>
-              <span class="bio-cta">View Bio +</span>
-            </div>
+
+          <!-- Navigation Buttons -->
+          <div class="swiper-nav-wrapper">
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next"></div>
           </div>
         </div>
       </div>
@@ -254,7 +388,7 @@
               IKAN provides dedicated accounting and financial reporting
               services through highly trained professionals developed through
               <a
-                href="https://cavendishafrica.com"
+                href="talent.html#internship"
                 target="_blank"
                 class="cavendish-link"
                 >Cavendish Africa
@@ -272,9 +406,8 @@
 
             <p class="sub-text">
               By bridging the gap between universal talent and global
-              visionaries, we ensure that founders have access to the elite
-              analytical support required to scale, regardless of where they are
-              based.
+              visionaries, we ensure that founders have access to the financial
+              support required to scale, regardless of where they are based.
             </p>
           </div>
         </div>
@@ -360,92 +493,6 @@
       </div>
     </section>
 
-    <!-- ABOUT STORY SWIPER SECTION -->
-    <section class="story-swiper-section" id="story">
-      <div class="container">
-        <!-- Static Intro -->
-        <div class="story-intro">
-          <p class="blue-tag">Our History</p>
-          <blockquote class="swiper-lead-quote">
-            "The battle of building a business is only known to those who have
-            tried to build one"
-          </blockquote>
-        </div>
-
-        <!-- The Swiper -->
-        <div class="swiper storySwiper">
-          <div class="swiper-wrapper">
-            <!-- Slide 1: The Struggle -->
-            <div class="swiper-slide">
-              <div class="slide-content">
-                <div class="slide-image">
-                  <img src="images/orig2.png" alt="The Beginning" />
-                </div>
-                <div class="slide-text">
-                  <span class="slide-year">2006</span>
-                  <h3>The Entrepreneurial Battle</h3>
-                  <p>
-                    In 2006, a coffee roasting business launched in
-                    Massachusetts. Despite an MBA and 12 years of finance
-                    experience, the founder was drowning. Three years in, the
-                    "dream" had become a struggle of spreadsheets and backlogged
-                    books.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 2: The Alice Effect -->
-            <div class="swiper-slide">
-              <div class="slide-content">
-                <div class="slide-image">
-                  <img src="images/alice_img.jpeg" alt="The Solution" />
-                </div>
-                <div class="slide-text">
-                  <span class="slide-year">The Turning Point</span>
-                  <h3>The Alice Effect</h3>
-                  <p>
-                    Alice stepped in and transformed chaos into clarity. She
-                    didn't just do bookkeeping; she built an ecosystem by
-                    integrating QuickBooks, merchant services, and monthly
-                    closings that allowed the founder to finally lead with
-                    vision instead of fear.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <!-- Slide 3: The Vision -->
-            <div class="swiper-slide">
-              <div class="slide-content">
-                <div class="slide-image">
-                  <img src="images/ikan_trans.png" alt="IKAN Today" />
-                </div>
-                <div class="slide-text">
-                  <span class="slide-year">Present</span>
-                  <h3>The Birth of IKAN</h3>
-                  <p>
-                    After years of building her business independently, Alice
-                    partnered with Peter to establish IKAN Business Partners —
-                    combining their expertise to deliver broader services while
-                    creating opportunities for talented individuals dedicated to
-                    exceptional financial stewardship
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Navigation Buttons -->
-          <div class="swiper-nav-wrapper">
-            <div class="swiper-button-prev"></div>
-            <div class="swiper-pagination"></div>
-            <div class="swiper-button-next"></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- 6. THE COMMITMENT (Parallax Finish) -->
     <!-- <section class="immersive-commitment">
       <div class="commitment-parallax-bg"></div>
@@ -493,7 +540,7 @@
                 business and operational challenges under professional guidance.
               </p>
               <p>
-                The program helps students develop the skills, confidence, and
+                This program helps students develop the skills, confidence, and
                 global perspective needed to build successful professional
                 careers.
               </p>
@@ -513,10 +560,7 @@
           <!-- Right Side: Visual Anchor -->
           <div class="internship-visual">
             <div class="image-accent-frame">
-              <img
-                src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=2070"
-                alt="Global Internship Collaboration"
-              />
+              <img src="images/cav.png" alt="Global Internship Collaboration" />
               <div class="accent-border"></div>
             </div>
           </div>
@@ -672,7 +716,12 @@
                 required
                 name="company_name"
               />
-              <input type="text" placeholder="State" required name="state" />
+              <input
+                type="text"
+                placeholder="State/Province and Country"
+                required
+                name="state"
+              />
             </div>
 
             <div class="form-row-single">

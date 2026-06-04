@@ -772,108 +772,69 @@ em {
   }
 }
 
-/* --- 4. TEAM GALLERY (MOSAIC) --- */
+/* --- 4. LEADERSHIP SECTION --- */
 .team-gallery {
   padding: 20px 0;
   background-color: var(--white);
 }
 .gallery-intro {
   max-width: 1000px;
-  margin-bottom: 20px;
+  margin-bottom: 28px;
 }
 .gallery-intro h2 {
   font-size: 3.5rem;
   margin-bottom: 10px;
 }
 
-.team-mosaic {
+.leadership-stack {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-  background-color: var(--border);
+  gap: 18px;
+}
+
+.leader-row {
+  display: grid;
+  grid-template-columns: 320px 1fr;
   border: 1px solid var(--border);
+  background: #fbfdff;
 }
 
-.mosaic-item {
-  background-color: var(--white);
-  position: relative;
-  overflow: hidden;
-  cursor: pointer;
-  aspect-ratio: 4 / 5;
+.leader-photo {
+  min-height: 320px;
 }
 
-.mosaic-item img {
+.leader-photo img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: all 0.6s cubic-bezier(0.2, 1, 0.3, 1);
 }
 
-.mosaic-item:hover img {
-  filter: grayscale(0%);
-  transform: scale(1.05);
-}
-
-.mosaic-overlay {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 30px;
-  background: linear-gradient(
-    to top,
-    rgba(15, 23, 42, 0.9) 0%,
-    rgba(15, 23, 42, 0.4) 60%,
-    transparent 100%
-  );
+.leader-bio {
+  padding: 30px 34px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  height: 45%;
-  transition: all 0.4s ease;
+  gap: 12px;
 }
 
-/* Text Visibility Logic */
-.mosaic-text {
-  transform: translateY(35px); /* Initially positioned lower */
-  transition: transform 0.5s cubic-bezier(0.2, 1, 0.3, 1);
-}
-
-.mosaic-text h4 {
-  color: white;
-  font-size: 1.6rem;
-  margin: 0;
-}
-.mosaic-text p {
+.leader-role {
   color: var(--blue);
-  font-weight: 600;
-  text-transform: uppercase;
   font-size: 0.7rem;
   letter-spacing: 2px;
-  margin-top: 5px;
-}
-
-.bio-cta {
-  color: white;
-  font-size: 0.65rem;
-  font-weight: 600;
   text-transform: uppercase;
-  letter-spacing: 2px;
-  border-bottom: 1px solid var(--blue);
-  padding-bottom: 2px;
-  margin-top: 15px;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: all 0.4s ease;
+  font-weight: 700;
+  margin: 0;
 }
 
-.mosaic-item:hover .mosaic-text {
-  transform: translateY(0);
+.leader-bio h3 {
+  margin: 0;
+  font-size: 2rem;
+  color: var(--navy);
 }
-.mosaic-item:hover .bio-cta {
-  opacity: 1;
-  transform: translateY(0);
+
+.leader-bio p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.02rem;
+  line-height: 1.72;
 }
 
 /* --- 6. COMMITMENT (PARALLAX & LINK FIX) --- */
@@ -1245,7 +1206,7 @@ em {
   .grid-2,
   .mission-grid,
   .values-list-visual,
-  .team-mosaic,
+  .leader-row,
   .modal-card {
     grid-template-columns: 1fr;
     flex-direction: column;
@@ -1272,6 +1233,14 @@ em {
   .modal-img-side {
     height: 300px;
     flex: none;
+  }
+
+  .leader-photo {
+    min-height: 340px;
+  }
+
+  .leader-bio {
+    padding: 24px;
   }
 }
 

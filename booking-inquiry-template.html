@@ -1,0 +1,438 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      /* Mobile-specific overrides */
+      @media only screen and (max-width: 600px) {
+        .container {
+          width: 100% !important;
+          padding: 20px !important;
+        }
+        .header-text {
+          font-size: 20px !important;
+        }
+        .data-label {
+          width: 100% !important;
+          display: block !important;
+          padding-bottom: 5px !important;
+        }
+        .data-value {
+          width: 100% !important;
+          display: block !important;
+          padding-bottom: 15px !important;
+        }
+      }
+    </style>
+  </head>
+  <body
+    style="
+      margin: 0;
+      padding: 0;
+      background-color: #f4f7f8;
+      font-family: &quot;Georgia&quot;, serif;
+    "
+  >
+    <table border="0" cellpadding="0" cellspacing="0" width="100%">
+      <tr>
+        <td style="padding: 20px 0">
+          <!-- Main Content Box -->
+          <table
+            class="container"
+            align="center"
+            border="0"
+            cellpadding="0"
+            cellspacing="0"
+            width="600"
+            style="background-color: #ffffff; border: 1px solid #e2e8f0"
+          >
+            <!-- Branding Header -->
+            <tr>
+              <td style="padding: 40px; border-bottom: 3px solid #74bdd6">
+                <p
+                  style="
+                    margin: 0;
+                    font-family: &quot;Helvetica&quot;, sans-serif;
+                    font-size: 11px;
+                    font-weight: bold;
+                    letter-spacing: 3px;
+                    color: #74bdd6;
+                    text-transform: uppercase;
+                  "
+                >
+                  Discovery Call Booking
+                </p>
+                <h1
+                  class="header-text"
+                  style="
+                    margin: 10px 0 0 0;
+                    font-size: 26px;
+                    color: #1a2a3a;
+                    font-weight: normal;
+                  "
+                >
+                  IKAN Business Partners
+                </h1>
+              </td>
+            </tr>
+
+            <!-- Lead Details Section -->
+            <tr>
+              <td style="padding: 40px">
+                <p style="margin: 0 0 20px 0; font-size: 16px; color: #334155">
+                  New booking from website:
+                </p>
+
+                <table
+                  border="0"
+                  cellpadding="0"
+                  cellspacing="0"
+                  width="100%"
+                  style="
+                    font-family: &quot;Helvetica&quot;, sans-serif;
+                    font-size: 14px;
+                  "
+                >
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Full Name
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{full_name}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Your Role
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{your_role}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Company Name
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{company_name}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      State and Country
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{state_country}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Email Address
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{email}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Phone
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{phone}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Preferred Plan
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #74bdd6;
+                        font-size: 15px;
+                        font-weight: bold;
+                      "
+                    >
+                      {{preferred_plan}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Meeting Date
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{meeting_date}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Meeting Time
+                    </td>
+                    <td
+                      class="data-value"
+                      style="
+                        padding: 12px 0;
+                        border-bottom: 1px solid #f1f5f9;
+                        color: #1a2a3a;
+                        font-size: 15px;
+                      "
+                    >
+                      {{meeting_time}}
+                    </td>
+                  </tr>
+                  <tr>
+                    <td
+                      class="data-label"
+                      width="30%"
+                      style="
+                        padding: 12px 0;
+                        color: #94a3b8;
+                        font-weight: bold;
+                        text-transform: uppercase;
+                        font-size: 10px;
+                        letter-spacing: 1px;
+                      "
+                    >
+                      Date ISO
+                    </td>
+                    <td
+                      class="data-value"
+                      style="padding: 12px 0; color: #1a2a3a; font-size: 15px"
+                    >
+                      {{meeting_date_iso}}
+                    </td>
+                  </tr>
+                </table>
+
+                <!-- Message Context -->
+                <div
+                  style="
+                    margin-top: 40px;
+                    padding: 25px;
+                    background-color: #f9fbfc;
+                    border-left: 4px solid #1a2a3a;
+                  "
+                >
+                  <p
+                    style="
+                      margin: 0 0 10px 0;
+                      font-family: &quot;Helvetica&quot;, sans-serif;
+                      font-size: 10px;
+                      font-weight: bold;
+                      color: #1a2a3a;
+                      text-transform: uppercase;
+                      letter-spacing: 1px;
+                    "
+                  >
+                    Brief Description of Business:
+                  </p>
+                  <p
+                    style="
+                      margin: 0;
+                      font-size: 16px;
+                      font-style: italic;
+                      color: #4a5568;
+                      line-height: 1.6;
+                    "
+                  >
+                    "{{business_description}}"
+                  </p>
+                </div>
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td
+                style="
+                  padding: 30px 40px;
+                  background-color: #fcfcfc;
+                  border-top: 1px solid #f1f5f9;
+                  text-align: center;
+                "
+              >
+                <p
+                  style="
+                    margin: 0;
+                    font-family: &quot;Helvetica&quot;, sans-serif;
+                    font-size: 11px;
+                    color: #a0aec0;
+                    letter-spacing: 1px;
+                  "
+                >
+                  SENT VIA WEBSITE BOOKING FORM
+                </p>
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
