@@ -60,33 +60,41 @@ body {
 
 .s-hero-text {
   /* Aligned with your custom padding from the About Hero */
-  padding-left: 12%;
-  padding-right: 80px;
+  padding-left: clamp(20px, 5vw, 80px);
+  padding-right: clamp(20px, 5vw, 80px);
 }
 
-.s-hero-text h1 {
-  font-size: 5.5rem;
+.s-hero-title {
+  font-size: clamp(1.55rem, 4.8vw, 5rem);
   line-height: 1.05;
   color: var(--navy);
   margin-bottom: 30px;
 }
 
+.s-hero-title .title-line {
+  display: block;
+  white-space: nowrap;
+}
+
+.s-hero-title .title-line-em {
+  font-weight: 400;
+}
+
 .s-hero-lead {
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--text-muted);
   font-weight: 300;
   line-height: 1.6;
   max-width: 600px;
-  margin-bottom: 60px;
 }
 
 /* --- SERVICE QUICK-INDEX --- */
 .service-index {
   display: flex;
-  gap: 60px;
+  gap: 120px;
   border-top: 1px solid var(--border);
   padding-top: 40px;
-  max-width: 600px;
+  max-width: 800px;
 }
 
 .index-item {
@@ -96,7 +104,7 @@ body {
 
 .index-item span {
   font-family: "EB Garamond", serif;
-  font-size: 1.8rem;
+  font-size: 2rem;
   color: var(--blue);
   margin-bottom: 10px;
 }
@@ -104,7 +112,7 @@ body {
 .index-item p {
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 600;
   color: var(--navy);
 }
@@ -126,11 +134,9 @@ body {
 
 /* --- RESPONSIVE --- */
 @media (max-width: 1200px) {
-  .s-hero-text h1 {
-    font-size: 4rem;
-  }
   .s-hero-text {
     padding-left: 5%;
+    padding-right: 5%;
   }
 }
 
@@ -150,6 +156,27 @@ body {
   }
   .service-index {
     gap: 30px;
+  }
+}
+
+@media (max-width: 600px) {
+  .s-hero-text {
+    padding: 42px 24px 36px;
+  }
+
+  .s-hero-title {
+    font-size: clamp(1.55rem, 7.8vw, 2.3rem);
+    line-height: 1.12;
+    margin-bottom: 22px;
+  }
+
+  .s-hero-lead {
+    font-size: 1rem;
+  }
+
+  .service-index {
+    gap: 18px;
+    padding-top: 30px;
   }
 }
 
